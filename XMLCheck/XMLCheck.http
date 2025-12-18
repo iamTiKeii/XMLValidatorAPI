@@ -1,0 +1,6 @@
+@XMLCheck_HostAddress = http://localhost:5038
+
+GET {{XMLCheck_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
