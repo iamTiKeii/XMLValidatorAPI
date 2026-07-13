@@ -1,0 +1,109 @@
+{
+  "info": {
+    "name": "XMLCheck API",
+    "description": "Postman collection for the XMLCheck ASP.NET Core project. Current project exposes one main endpoint for validating XML payloads.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5038",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Check XML",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"data\": {\n    \"base64Xml\": \"<replace-with-base64-encoded-xml>\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/check/check-xml"
+        },
+        "description": "Validate XML content by sending a base64-encoded XML document."
+      },
+      "response": [
+        {
+          "name": "200 OK - XML hợp lệ",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"data\": {\n    \"base64Xml\": \"<base64-string>\"\n  }\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/check/check-xml"
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "body": "{\n  \"code\": 200,\n  \"message\": \"XML hợp lệ (1 hồ sơ)\",\n  \"values\": null\n}"
+        },
+        {
+          "name": "422 Unprocessable Entity - XML không hợp lệ",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"data\": {\n    \"base64Xml\": \"<base64-string>\"\n  }\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/check/check-xml"
+            }
+          },
+          "status": "Unprocessable Entity",
+          "code": 422,
+          "body": "{\n  \"code\": 422,\n  \"message\": \"Dữ liệu XML không hợp lệ\",\n  \"values\": [\n    {\n      \"type\": \"XML1\",\n      \"details\": [\"...\"]\n    }\n  ]\n}"
+        },
+        {
+          "name": "400 Bad Request - Base64 không hợp lệ",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"data\": {\n    \"base64Xml\": \"invalid-base64\"\n  }\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/check/check-xml"
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "body": "{\n  \"code\": 400,\n  \"message\": \"Base64 XML không hợp lệ\"\n}"
+        }
+      ]
+    }
+  ]
+}

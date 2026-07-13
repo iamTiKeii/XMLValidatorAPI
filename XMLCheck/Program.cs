@@ -20,6 +20,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseMiddleware<XMLCheck.Middleware.ApiKeyMiddleware>();
+
 app.UseAuthorization();
 
 app.MapControllers();
