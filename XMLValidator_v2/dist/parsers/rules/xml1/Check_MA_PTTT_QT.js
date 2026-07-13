@@ -1,0 +1,21 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Check_MA_PTTT_QT = void 0;
+const xml1RuleBase_1 = require("./xml1RuleBase");
+class Check_MA_PTTT_QT extends xml1RuleBase_1.Xml1RuleBase {
+    get key() { return 'MA_PTTT_QT'; }
+    check(model, context) {
+        var value = model.MA_PTTT_QT;
+        if (!value || !value.trim())
+            return null;
+        if (value?.length > 125) {
+            return this.error("MA_PTTT_QT quá kích thước tối đa (125)");
+        }
+        if (value.includes(",") || value.includes("|")) {
+            return this.error("Các MA_PTTT_QT phải cách nhau bằng dấu ';'");
+        }
+        return null;
+    }
+}
+exports.Check_MA_PTTT_QT = Check_MA_PTTT_QT;
+//# sourceMappingURL=Check_MA_PTTT_QT.js.map

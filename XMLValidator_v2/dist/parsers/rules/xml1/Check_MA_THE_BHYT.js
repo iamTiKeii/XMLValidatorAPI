@@ -1,0 +1,42 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Check_MA_THE_BHYT = void 0;
+const xml1RuleBase_1 = require("./xml1RuleBase");
+const dictionary_cache_1 = require("../../dictionary.cache");
+class Check_MA_THE_BHYT extends xml1RuleBase_1.Xml1RuleBase {
+    get key() {
+        return 'MA_THE_BHYT';
+    }
+    check(model, context) {
+        if (!model.MA_THE_BHYT || !model.MA_THE_BHYT.trim()) {
+            return this.error(`${this.key} không được để trống`);
+        }
+        const cards = model.MA_THE_BHYT
+            .split(';')
+            .map(x => x.trim())
+            .filter(x => x.length > 0);
+        if (cards.length > 1 && !model.MA_THE_BHYT.includes(';')) {
+            return this.error(`Các ${this.key} phải cách nhau bằng dấu ';'`);
+        }
+        for (const card of cards) {
+            if (card.length < 15) {
+                return this.error(`${this.key} không đúng định dạng: ${card}`);
+            }
+            const doiTuong = card.substring(0, 2);
+            if (!(doiTuong in dictionary_cache_1.DictionaryCacheInstance.doiTuongBHYT)) {
+                return this.error(`MA_THE_BHYT có mã đối tượng không hợp lệ: ${doiTuong}`);
+            }
+            const quyenLoi = card.charAt(2);
+            if (quyenLoi < '1' || quyenLoi > '5') {
+                return this.error("Ký tự thứ 3 của MA_THE_BHYT phải là số từ 1 đến 5");
+            }
+            const soCuoi = card.substring(card.length - 10);
+            if (!/^\d{10}$/.test(soCuoi)) {
+                return this.error("10 ký tự cuối của MA_THE_BHYT phải là số");
+            }
+        }
+        return null;
+    }
+}
+exports.Check_MA_THE_BHYT = Check_MA_THE_BHYT;
+//# sourceMappingURL=Check_MA_THE_BHYT.js.map
