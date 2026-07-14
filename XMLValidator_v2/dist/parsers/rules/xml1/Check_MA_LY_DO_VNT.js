@@ -5,7 +5,7 @@ const xml1RuleBase_1 = require("./xml1RuleBase");
 class Check_MA_LY_DO_VNT extends xml1RuleBase_1.Xml1RuleBase {
     get key() { return 'MA_LY_DO_VNT'; }
     check(model, context) {
-        if (model.MA_LOAI_KCB == "03" && !model.MA_LY_DO_VNT || !model.MA_LY_DO_VNT.trim()) {
+        if (model.MA_LOAI_KCB === "03" && (!model.MA_LY_DO_VNT || !model.MA_LY_DO_VNT.trim())) {
             return this.error("MA_LY_DO_VNT không được để trống khi MA_LOAI_KCB=03");
         }
         return null;

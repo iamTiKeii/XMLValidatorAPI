@@ -10,7 +10,7 @@ export class Check_MA_LY_DO_VNT extends Xml1RuleBase
 
         public check(model: Xml1Model, context: HoSoContext): ErrorDetails | null
         {
-            if (model.MA_LOAI_KCB == "03" && !model.MA_LY_DO_VNT || !model.MA_LY_DO_VNT.trim())
+            if (model.MA_LOAI_KCB === "03" && (!model.MA_LY_DO_VNT || !model.MA_LY_DO_VNT.trim()))
             {
                 return this.error("MA_LY_DO_VNT không được để trống khi MA_LOAI_KCB=03");
             }
