@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@nestjs/core");
 const swagger_1 = require("@nestjs/swagger");
-const compression = require("compression");
+const compression_1 = require("compression");
 const helmet_1 = require("helmet");
 const dotenv = require("dotenv");
 const app_module_1 = require("./app.module");
@@ -20,7 +20,7 @@ async function bootstrap() {
     app.use((0, helmet_1.default)({
         contentSecurityPolicy: false,
     }));
-    app.use(compression());
+    app.use((0, compression_1.default)());
     app.useGlobalFilters(new exception_filter_1.GlobalExceptionFilter());
     const swaggerConfig = new swagger_1.DocumentBuilder()
         .setTitle('XMLCheck API')
