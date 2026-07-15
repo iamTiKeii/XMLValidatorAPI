@@ -1,0 +1,71 @@
+{
+  "id": "xml5",
+  "name": "Bảng 5. Chỉ tiêu chi tiết diễn biến lâm sàng",
+  "description": "Bảng dữ liệu ghi nhận quá trình diễn biến bệnh, các chỉ số sinh tồn, kết quả hội chẩn và mô tả phẫu thuật thủ thuật trong quá trình điều trị. Lưu ý: Cơ sở KBCB chỉ gửi dữ liệu Bảng này trong trường hợp người bệnh điều trị ngoại trú (MA_LOAI_KCB = 02, 05, 08) hoặc điều trị nội trú hoặc điều trị nội trú ban ngày hoặc điều trị lưu tại TYT tuyến xã, PKĐKKV hoặc điều trị nội trú dưới 04 giờ.",
+  "fileName": "xml5.json",
+  "fields": [
+    {
+      "stt": 1,
+      "fieldName": "MA_LK",
+      "dataType": "Chuỗi",
+      "maxLength": 100,
+      "description": "Là mã đợt điều trị duy nhất (dùng để liên kết giữa Bảng chỉ tiêu tổng hợp khám bệnh, chữa bệnh (bảng XML 1) và các bảng còn lại ban hành kèm theo Quyết định này trong một lần khám bệnh, chữa bệnh (PRIMARY KEY)) [1]."
+    },
+    {
+      "stt": 2,
+      "fieldName": "STT",
+      "dataType": "Số",
+      "maxLength": 10,
+      "description": "Số thứ tự tăng từ 1 đến hết trong một lần gửi dữ liệu [1]."
+    },
+    {
+      "stt": 3,
+      "fieldName": "DIEN_BIEN_LS",
+      "dataType": "Chuỗi",
+      "maxLength": "n",
+      "description": "Ghi diễn biến lâm sàng của người bệnh trong lần khám và/hoặc ghi nội dung chăm sóc của nhân viên y tế. Trường hợp người bệnh có được đo các chỉ số sinh tồn khi mô tả diễn biến của người bệnh thì ghi chỉ số sinh tồn theo quy ước như sau: Mạch (M), nhiệt độ (T), huyết áp (HA), nhịp thở (NT), SP02 (SP), chế độ hộ lý (HL),... Ví dụ: Mạch 75 lần/phút, nhiệt độ 37 độ C, huyết áp 120/70 mmHg, nhịp thở 18 lần/phút, chế độ hộ lý cấp II được ghi là: \"CSST<M75_T37_HA120/70_NT18 HL2>\" [1], [2]."
+    },
+    {
+      "stt": 4,
+      "fieldName": "GIAI_DOAN_BENH",
+      "dataType": "Chuỗi",
+      "maxLength": "n",
+      "description": "Ghi giai đoạn bệnh trong trường hợp người bệnh đã được cơ sở KBCB xác định giai đoạn bệnh [1]."
+    },
+    {
+      "stt": 5,
+      "fieldName": "HOI_CHAN",
+      "dataType": "Chuỗi",
+      "maxLength": "n",
+      "description": "Ghi kết quả hội chẩn (nếu có) [1]."
+    },
+    {
+      "stt": 6,
+      "fieldName": "PHAU_THUAT",
+      "dataType": "Chuỗi",
+      "maxLength": "n",
+      "description": "Ghi mô tả cách thức phẫu thuật, thủ thuật (nếu có) [1]."
+    },
+    {
+      "stt": 7,
+      "fieldName": "THOI_DIEM_DBLS",
+      "dataType": "Chuỗi",
+      "maxLength": 12,
+      "description": "Ghi thời điểm diễn biến lâm sàng, gồm 12 ký tự, theo cấu trúc: yyyymmddHHMM, trong đó: 04 ký tự năm (yyyy) + 02 ký tự tháng (mm) + 02 ký tự ngày (dd) + 02 ký tự giờ, tính theo 24 giờ (HH) + 02 ký tự phút (MM). Ví dụ: ngày 31/03/2015 15:20 được hiển thị là: 201503311520 [3]."
+    },
+    {
+      "stt": 8,
+      "fieldName": "NGUOI_THUC_HIEN",
+      "dataType": "Chuỗi",
+      "maxLength": 255,
+      "description": "Ghi mã của nhân viên y tế thực hiện ghi chép diễn biến lâm sàng (mã hóa theo số GPHN). Trường hợp nhân viên y tế không phải đăng ký hành nghề thì ghi số CCCD hoặc số định danh cá nhân. Lưu ý: Trường hợp có nhiều người thực hiện ghi chép diễn biến lâm sàng thì ghi người thực hiện chính đầu tiên, giữa các người thực hiện ghi chép diễn biến lâm sàng cách nhau bằng dấu chấm phẩy \";\" [4]."
+    },
+    {
+      "stt": 9,
+      "fieldName": "DU_PHONG",
+      "dataType": "Chuỗi",
+      "maxLength": "n",
+      "description": "Trường dữ liệu dự phòng khi cần thiết [4]."
+    }
+  ]
+}

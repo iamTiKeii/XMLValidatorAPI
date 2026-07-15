@@ -3,8 +3,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Check_GT_THE_DEN = void 0;
 const xml1RuleBase_1 = require("./xml1RuleBase");
 class Check_GT_THE_DEN extends xml1RuleBase_1.Xml1RuleBase {
-    get key() {
-        return 'GT_THE_DEN';
+    constructor() {
+        super({
+            ruleId: 'RULE_XML1_GT_THE_DEN_01',
+            xmlType: 'XML1',
+            field: 'GT_THE_DEN',
+            severity: 'ERROR',
+            description: 'Kiểm tra quy định cho trường GT_THE_DEN',
+            errorMessage: 'GT_THE_DEN không được để trống',
+            reference: 'QĐ 3176/QĐ-BYT',
+        });
     }
     check(model, context) {
         if (!model.GT_THE_DEN) {

@@ -1,0 +1,148 @@
+{
+    "id": "xml15",
+    "name": "Bảng 15. Chỉ tiêu thông tin quản lý điều trị bệnh lao",
+    "description": "Bảng dữ liệu chi tiết về thông tin quản lý, phác đồ và kết quả điều trị đối với người bệnh lao. Cơ sở KBCB gửi bảng này đồng thời với các bảng 1, 2, 3, 4 về Cổng tiếp nhận dữ liệu và địa chỉ của Chương trình Chống lao Quốc gia.",
+    "fileName": "xml15.json",
+    "fields": [
+        {
+            "stt": 1,
+            "fieldName": "MA_LK",
+            "dataType": "Chuỗi",
+            "maxLength": 100,
+            "description": "Là mã đợt điều trị duy nhất (dùng để liên kết giữa Bảng chỉ tiêu tổng hợp khám bệnh, chữa bệnh (bảng XML 1) và các bảng còn lại ban hành kèm theo Quyết định này trong một lần khám bệnh, chữa bệnh (PRIMARY KEY))."
+        },
+        {
+            "stt": 2,
+            "fieldName": "STT",
+            "dataType": "Số",
+            "maxLength": 10,
+            "description": "Là số thứ tự tăng từ 1 đến hết trong một lần gửi dữ liệu."
+        },
+        {
+            "stt": 3,
+            "fieldName": "MA_BN",
+            "dataType": "Chuỗi",
+            "maxLength": 100,
+            "description": "Là mã người bệnh theo quy định của cơ sở KBCB."
+        },
+        {
+            "stt": 4,
+            "fieldName": "HO_TEN",
+            "dataType": "Chuỗi",
+            "maxLength": 255,
+            "description": "Là họ và tên của người bệnh. Lưu ý đối với trẻ sơ sinh: Nếu có mẹ/cha thì ghi họ tên mẹ/cha; nếu không có mẹ/cha nhưng có người giám hộ thì ghi họ tên người giám hộ; nếu bị bỏ rơi thì ghi tên cơ sở KBCB nơi đang điều trị."
+        },
+        {
+            "stt": 5,
+            "fieldName": "SO_CCCD",
+            "dataType": "Chuỗi",
+            "maxLength": "n",
+            "description": "Ghi số căn cước công dân hoặc số định danh cá nhân trên thẻ căn cước hoặc giấy chứng nhận căn cước hoặc giấy khai sinh của người bệnh. Trường hợp người bệnh là người nước ngoài thì ghi số hộ chiếu. Trường hợp bất khả kháng như trẻ sơ sinh hoặc người bệnh mất ý thức, tâm thần không thể lấy được thông tin số định danh cá nhân thì để trống."
+        },
+        {
+            "stt": 6,
+            "fieldName": "PHANLOAI_LAO_VITRI",
+            "dataType": "Số",
+            "maxLength": 1,
+            "description": "Ghi mã phân loại Bệnh nhân lao theo vị trí giải phẫu: 1 (Lao phổi); 2 (Lao ngoài phổi)."
+        },
+        {
+            "stt": 7,
+            "fieldName": "PHANLOAI_LAO_TS",
+            "dataType": "Số",
+            "maxLength": 1,
+            "description": "Ghi mã phân loại Bệnh nhân lao theo tiền sử điều trị: 1 (Lao mới); 2 (Tái phát); 3 (Thất bại); 4 (Điều trị lại sau bỏ trị); 5 (Điều trị lại khác); 6 (Không rõ tiền sử điều trị)."
+        },
+        {
+            "stt": 8,
+            "fieldName": "PHANLOAI_LAO_HIV",
+            "dataType": "Số",
+            "maxLength": 1,
+            "description": "Ghi mã phân loại bệnh nhân lao theo tình trạng nhiễm HIV: 1 (Lao/HIV (+)); 2 (Lao/HIV (-)); 3 (BN lao không rõ tình trạng HIV)."
+        },
+        {
+            "stt": 9,
+            "fieldName": "PHANLOAI_LAO_VK",
+            "dataType": "Số",
+            "maxLength": 1,
+            "description": "Ghi mã phân loại Bệnh nhân lao theo bằng chứng vi khuẩn học: 1 (Lao có bằng chứng vi khuẩn học); 2 (Lao không có bằng chứng vi khuẩn học)."
+        },
+        {
+            "stt": 10,
+            "fieldName": "PHANLOAI_LAO_KT",
+            "dataType": "Số",
+            "maxLength": 1,
+            "description": "Ghi mã phân loại BN lao theo tình trạng kháng thuốc: 1 (Lao kháng đơn thuốc); 2 (Lao kháng nhiều thuốc); 3 (Lao đa kháng thuốc); 4 (Lao kháng Rifampicin-Lao kháng R); 5 (Lao tiền siêu kháng); 6 (Lao siêu kháng thuốc)."
+        },
+        {
+            "stt": 11,
+            "fieldName": "LOAI_DTRI_LAO",
+            "dataType": "Số",
+            "maxLength": 1,
+            "description": "Ghi mã loại điều trị lao: 0 (Không điều trị lao); 1 (Điều trị lao tiềm ẩn); 2 (Điều trị lao nhạy cảm thuốc); 3 (Điều trị lao kháng thuốc)."
+        },
+        {
+            "stt": 12,
+            "fieldName": "NGAYBD_DTRI_LAO",
+            "dataType": "Chuỗi",
+            "maxLength": 8,
+            "description": "Ghi thời điểm bắt đầu điều trị bệnh lao hoặc lao tiềm ẩn tại cơ sở KBCB, định dạng yyyymmdd."
+        },
+        {
+            "stt": 13,
+            "fieldName": "PHACDO_DTRI_LAO",
+            "dataType": "Số",
+            "maxLength": 2,
+            "description": "Ghi mã phác đồ điều trị lao. \n1. Lao nhạy cảm thuốc: 1 (A1: 2HRZE/4RHE); 2 (A2: 2HRZE/4RH); 3 (A1a: 2HPMZ/2HPM); 4 (A2a: 2HRZE/2RH); 5 (B1: 2HRZE/10RHE); 6 (B2: 2HRZE/10RH); 7 (B2a: 6HRZEto); 8 (Cá thể). \n2. Lao kháng thuốc: 9 (C1a); 10 (C1b); 11 (C2a); 12 (C2b); 13 (C3); 14 (BPaL-M); 15 (BPaL); 16 (D1); 17 (D2); 18 (E); 19 (Khác). \n3. Lao tiềm ẩn: 20 (6H/9H); 21 (3RH); 22 (3HP); 23 (1HP); 24 (4R); 25 (6L); 26 (INH); 27 (Khác)."
+        },
+        {
+            "stt": 14,
+            "fieldName": "NGAYKT_DTRI_LAO",
+            "dataType": "Chuỗi",
+            "maxLength": 8,
+            "description": "Ghi thời điểm kết thúc điều trị bệnh lao hoặc lao tiềm ẩn tại cơ sở KBCB, định dạng yyyymmdd. Trường hợp chưa kết thúc điều trị thì để trống."
+        },
+        {
+            "stt": 15,
+            "fieldName": "KET_QUA_DTRI_LAO",
+            "dataType": "Số",
+            "maxLength": 1,
+            "description": "Ghi mã đánh giá kết quả điều trị: 1 (Khỏi: Có bằng chứng vi khuẩn học); 2 (Hoàn thành điều trị: Không có bằng chứng thất bại nhưng không có xét nghiệm âm tính tháng cuối); 3 (Thất bại: Có kết quả dương tính từ tháng thứ 5 trở đi); 4 (Chết); 5 (Không theo dõi được/bỏ trị); 6 (Không đánh giá: Chuyển đơn vị khác không có phản hồi)."
+        },
+        {
+            "stt": 16,
+            "fieldName": "MA_CSKCB",
+            "dataType": "Chuỗi",
+            "maxLength": 5,
+            "description": "Ghi mã cơ sở KBCB nơi người bệnh đến khám bệnh, điều trị do cơ quan có thẩm quyền cấp."
+        },
+        {
+            "stt": 17,
+            "fieldName": "NGAYKD_HIV",
+            "dataType": "Chuỗi",
+            "maxLength": 8,
+            "description": "Ghi thời điểm khẳng định HIV của người nhiễm HIV, định dạng yyyymmdd. Trường hợp điều trị phơi nhiễm thì để trống trường thông tin này."
+        },
+        {
+            "stt": 18,
+            "fieldName": "BDDT_ARV",
+            "dataType": "Chuỗi",
+            "maxLength": 8,
+            "description": "Ghi thời điểm đầu tiên người bệnh nhận thuốc ARV trong chương trình chăm sóc và điều trị được ghi trong hồ sơ bệnh án của người bệnh; định dạng yyyymmdd."
+        },
+        {
+            "stt": 19,
+            "fieldName": "NGAY_BAT_DAU_DT_CTX",
+            "dataType": "Chuỗi",
+            "maxLength": 8,
+            "description": "Ghi thời điểm bắt đầu điều trị Cotrimoxazol (CTX), định dạng yyyymmdd."
+        },
+        {
+            "stt": 20,
+            "fieldName": "DU_PHONG",
+            "dataType": "Chuỗi",
+            "maxLength": "n",
+            "description": "Trường dữ liệu dự phòng khi cần thiết. Bổ sung: Ghi dữ liệu chữ ký số của cơ sở KBCB."
+        }
+    ]
+}

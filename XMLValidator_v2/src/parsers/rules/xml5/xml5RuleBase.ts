@@ -1,20 +1,12 @@
 import { Xml5Model } from '../../../interfaces/xml-models.interface';
 import { HoSoContext } from '../../../services/hoso-context';
 import { ErrorDetails } from '../../../dto/xml-check.dto';
+import { BaseRule } from '../base.rule';
 
 export interface IXml5Rule {
   readonly key: string;
+  readonly isEnabled: boolean;
   check(model: Xml5Model, context: HoSoContext): ErrorDetails | null;
 }
 
-export abstract class Xml5RuleBase implements IXml5Rule {
-  public abstract get key(): string;
-  public abstract check(model: Xml5Model, context: HoSoContext): ErrorDetails | null;
-
-  protected error(message: string): ErrorDetails {
-    return {
-      key: this.key,
-      message,
-    };
-  }
-}
+export abstract class Xml5RuleBase extends BaseRule<Xml5Model> implements IXml5Rule {}

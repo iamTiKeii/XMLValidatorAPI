@@ -1,0 +1,337 @@
+    {
+        "id": "xml6",
+        "name": "Bảng 6. Chỉ tiêu hồ sơ bệnh án chăm sóc và điều trị HIV/AIDS",
+        "description": "Bảng dữ liệu chi tiết về hồ sơ bệnh án chăm sóc và điều trị HIV/AIDS, gắn với HSBA điều trị HIV/AIDS ban hành kèm theo Thông tư 28/2018/TT-BYT.",
+        "fileName": "xml6.json",
+        "fields": [
+            {
+                "stt": 1,
+                "fieldName": "MA_LK",
+                "dataType": "Chuỗi",
+                "maxLength": 100,
+                "description": "Là mã đợt điều trị duy nhất (dùng để liên kết giữa Bảng chỉ tiêu tổng hợp khám bệnh, chữa bệnh (bảng XML 1) và các bảng còn lại ban hành kèm theo Quyết định này trong một lần khám bệnh, chữa bệnh (PRIMARY KEY))."
+            },
+            {
+                "stt": 2,
+                "fieldName": "MA_THE_BHYT",
+                "dataType": "Chuỗi",
+                "maxLength": "n",
+                "description": "Ghi mã thẻ BHYT của người bệnh do cơ quan BHXH cấp. Lưu ý: Khi tiếp đón người bệnh, cơ sở KBCB có trách nhiệm tra cứu trên Cổng tiếp nhận dữ liệu Hệ thống thông tin giám định BHYT để kiểm tra thông tin thẻ BHYT. Trường hợp cấp cứu mà không xuất trình được thẻ ngay thì tra cứu trước khi ra viện. Đối với thẻ có mã QN, HC, LS, XK, CY, CA do BHXH Bộ Quốc phòng, Bộ Công an cấp: Tra cứu để kiểm tra thời hạn sử dụng. Trường hợp trong thời gian điều trị được cấp thẻ mới có thay đổi thông tin thì ghi tiếp mã thẻ mới, cách nhau bằng dấu chấm phẩy \";\". Nếu chưa có thẻ BHYT, cơ sở KBCB tra cứu thẻ tạm của trẻ em hoặc người hiến tạng. Nếu không có BHYT thì để trống."
+            },
+            {
+                "stt": 3,
+                "fieldName": "SO_CCCD",
+                "dataType": "Chuỗi",
+                "maxLength": "n",
+                "description": "Ghi số căn cước công dân hoặc số định danh cá nhân trên thẻ căn cước hoặc giấy chứng nhận căn cước hoặc giấy khai sinh của người bệnh. Trường hợp người bệnh là người nước ngoài thì ghi số hộ chiếu. Trường hợp bất khả kháng như trẻ sơ sinh hoặc người bệnh mất ý thức, tâm thần không thể lấy được thông tin số định danh cá nhân của người bệnh thì để trống. (Thay đổi kiểu dữ liệu thành Chuỗi và kích thước tối đa n ký tự)."
+            },
+            {
+                "stt": 4,
+                "fieldName": "NGAY_SINH",
+                "dataType": "Chuỗi",
+                "maxLength": 12,
+                "description": "Sử dụng thông tin tại trường NGAY_SINH trong Bảng 1 ban hành kèm theo Quyết định này."
+            },
+            {
+                "stt": 5,
+                "fieldName": "GIOI_TINH",
+                "dataType": "Số",
+                "maxLength": 1,
+                "description": "Sử dụng thông tin tại trường GIOI_TINH trong Bảng 1 ban hành kèm theo Quyết định này."
+            },
+            {
+                "stt": 6,
+                "fieldName": "DIA_CHI",
+                "dataType": "Chuỗi",
+                "maxLength": 1024,
+                "description": "Sử dụng thông tin tại trường DIA_CHI trong Bảng 1 ban hành kèm theo Quyết định này."
+            },
+            {
+                "stt": 7,
+                "fieldName": "MATINH_CU_TRU",
+                "dataType": "Chuỗi",
+                "maxLength": 3,
+                "description": "Sử dụng thông tin tại trường MATINH_CU_TRU trong Bảng 1 ban hành kèm theo Quyết định này."
+            },
+            {
+                "stt": 8,
+                "fieldName": "MAHUYEN_CU_TRU",
+                "dataType": "Chuỗi",
+                "maxLength": 3,
+                "description": "Sử dụng thông tin tại trường MAHUYEN_CU_TRU trong Bảng 1 ban hành kèm theo Quyết định này."
+            },
+            {
+                "stt": 9,
+                "fieldName": "MAXA_CU_TRU",
+                "dataType": "Chuỗi",
+                "maxLength": 5,
+                "description": "Sử dụng thông tin tại trường MAXA_CU_TRU trong Bảng 1 ban hành kèm theo Quyết định này."
+            },
+            {
+                "stt": 10,
+                "fieldName": "NGAYKD_HIV",
+                "dataType": "Chuỗi",
+                "maxLength": 8,
+                "description": "Ghi thời điểm khẳng định HIV của người nhiễm HIV, định dạng yyyymmdd. Trường hợp điều trị phơi nhiễm thì để trống trường thông tin này."
+            },
+            {
+                "stt": 11,
+                "fieldName": "NOI_LAY_MAU_XN",
+                "dataType": "Chuỗi",
+                "maxLength": 5,
+                "description": "Ghi mã cơ sở KBCB nơi lấy mẫu máu xét nghiệm HIV do cơ quan có thẩm quyền cấp."
+            },
+            {
+                "stt": 12,
+                "fieldName": "NOI_XN_KD",
+                "dataType": "Chuỗi",
+                "maxLength": 5,
+                "description": "Ghi mã cơ sở KBCB nơi người bệnh làm xét nghiệm khẳng định HIV do cơ quan có thẩm quyền cấp."
+            },
+            {
+                "stt": 13,
+                "fieldName": "NOI_BDDT_ARV",
+                "dataType": "Chuỗi",
+                "maxLength": 5,
+                "description": "Ghi mã cơ sở KBCB đầu tiên nơi người bệnh nhận thuốc ARV trong chương trình chăm sóc và điều trị được ghi trong hồ sơ bệnh án của người bệnh do cơ quan có thẩm quyền cấp."
+            },
+            {
+                "stt": 14,
+                "fieldName": "BDDT_ARV",
+                "dataType": "Chuỗi",
+                "maxLength": 8,
+                "description": "Ghi thời điểm đầu tiên người bệnh nhận thuốc ARV trong chương trình chăm sóc và điều trị được ghi trong hồ sơ bệnh án của người bệnh; định dạng yyyymmdd."
+            },
+            {
+                "stt": 15,
+                "fieldName": "MA_PHAC_DO_DIEU_TRI_BD",
+                "dataType": "Chuỗi",
+                "maxLength": 200,
+                "description": "Ghi mã phác đồ điều trị HIV/AIDS khi bắt đầu điều trị ARV theo danh mục mã phác đồ điều trị HIV/AIDS tại Phụ lục 10 ban hành kèm theo Quyết định số 5937/QĐ-BYT."
+            },
+            {
+                "stt": 16,
+                "fieldName": "MA_BAC_PHAC_DO_BD",
+                "dataType": "Số",
+                "maxLength": 1,
+                "description": "Ghi mã bậc phác đồ khi bắt đầu điều trị ARV sử dụng phác đồ điều trị là \"Khác\", trong đó: Mã \"1\": Phác đồ bậc 1; Mã \"2\": Phác đồ bậc 2; Mã \"3\": Phác đồ bậc 3."
+            },
+            {
+                "stt": 17,
+                "fieldName": "MA_LYDO_DTRI",
+                "dataType": "Số",
+                "maxLength": 1,
+                "description": "Ghi mã lý do bệnh nhân đăng ký giai đoạn điều trị tại cơ sở KBCB, trong đó: Mã \"1\": Bệnh nhân HIV mới đăng ký lần đầu; Mã \"2\": Bệnh nhân HIV chưa điều trị ARV chuyển tới; Mã \"3\": Bệnh nhân HIV đã điều trị ARV chuyển tới; Mã \"4\": Bệnh nhân HIV đã điều trị ARV nay điều trị lại; Mã \"5\": Bệnh nhân HIV chưa điều trị ARV đăng ký lại."
+            },
+            {
+                "stt": 18,
+                "fieldName": "LOAI_DTRI_LAO",
+                "dataType": "Số",
+                "maxLength": 1,
+                "description": "Ghi mã loại điều trị lao, trong đó: Mã \"0\": Không điều trị lao; Mã \"1\": Điều trị lao tiềm ẩn; Mã \"2\": Điều trị lao nhạy cảm thuốc; Mã \"3\": Điều trị lao kháng thuốc."
+            },
+            {
+                "stt": 19,
+                "fieldName": "SANG_LOC_LAO",
+                "dataType": "Số",
+                "maxLength": 1,
+                "description": "Mã các phương pháp sàng lọc lao được thực hiện, trong đó: Mã \"1\": Không sàng lọc; Mã \"2\": Sàng lọc triệu chứng; Mã \"3\": Chụp X-quang phổi; Mã \"4\": Xét nghiệm Protein phản ứng C."
+            },
+            {
+                "stt": 20,
+                "fieldName": "PHACDO_DTRI_LAO",
+                "dataType": "Số",
+                "maxLength": 2,
+                "description": "Ghi mã phác đồ điều trị lao nhạy cảm thuốc, điều trị lao kháng thuốc ở người nhiễm HIV, điều trị lao tiềm ẩn theo bộ mã DMDC do Bộ Y tế quy định. \n- Lao nhạy cảm thuốc: Mã 1 (A1), 2 (A2), 3 (A1a), 4 (A2a), 5 (B1), 6 (B2), 7 (B2a), 8 (Cá thể). \n- Lao kháng thuốc: Mã 9 (C1a), 10 (C1b), 11 (C2a), 12 (C2b), 13 (C3), 14 (BPaL-M), 15 (BPaL), 16 (D1), 17 (D2), 18 (E), 19 (Khác). \n- Lao tiềm ẩn: Mã 20 (6H/9H), 21 (3RH), 22 (3HP), 23 (1HP), 24 (4R), 25 (6L), 26 (INH), 27 (Khác)."
+            },
+            {
+                "stt": 21,
+                "fieldName": "NGAYBD_DTRI_LAO",
+                "dataType": "Chuỗi",
+                "maxLength": 8,
+                "description": "Ghi thời điểm bắt đầu điều trị bệnh lao hoặc lao tiềm ẩn tại cơ sở KBCB, định dạng yyyymmdd."
+            },
+            {
+                "stt": 22,
+                "fieldName": "NGAYKT_DTRI_LAO",
+                "dataType": "Chuỗi",
+                "maxLength": 8,
+                "description": "Ghi thời điểm kết thúc điều trị bệnh lao hoặc lao tiềm ẩn tại cơ sở KBCB, định dạng yyyymmdd. Trường hợp chưa kết thúc điều trị thì để trống."
+            },
+            {
+                "stt": 23,
+                "fieldName": "KQ_DTRI_LAO",
+                "dataType": "Số",
+                "maxLength": 1,
+                "description": "Ghi mã kết quả điều trị lao, điều trị lao tiềm ẩn, trong đó: Mã \"1\": Đang điều trị; Mã \"2\": Hoàn thành; Mã \"3\": Thất bại; Mã \"4\": Tử vong; Mã \"5\": Bỏ điều trị; Mã \"6\": Ngừng điều trị (ghi rõ lý do); Mã \"7\": Không đánh giá."
+            },
+            {
+                "stt": 24,
+                "fieldName": "MA_LYDO_XNTL_VR",
+                "dataType": "Số",
+                "maxLength": 1,
+                "description": "Ghi mã lý do chỉ định xét nghiệm đo tải lượng vi rút ở người bệnh đang điều trị ARV, trong đó: Mã \"1\": Thường quy; Mã \"2\": Nghi ngờ thất bại điều trị; Mã \"3\": Khác."
+            },
+            {
+                "stt": 25,
+                "fieldName": "NGAY_XN_TLVR",
+                "dataType": "Chuỗi",
+                "maxLength": 8,
+                "description": "Ghi thời điểm lấy mẫu làm xét nghiệm tải lượng virus, gồm 08 ký tự theo định dạng yyyymmdd."
+            },
+            {
+                "stt": 26,
+                "fieldName": "KQ_XNTL_VR",
+                "dataType": "Số",
+                "maxLength": 1,
+                "description": "Ghi mã kết quả xét nghiệm tải lượng vi rút HIV, là số lượng bản sao vi rút HIV trên 1 ml máu, trong đó: Mã \"1\": Không phát hiện; Mã \"2\": Dưới 50 bản sao/ml; Mã \"3\": Từ 50 đến dưới 200 bản sao/ml; Mã \"4\": Từ 200 đến 1000 bản sao/ml; Mã \"5\": Trên 1000 bản sao/ml."
+            },
+            {
+                "stt": 27,
+                "fieldName": "NGAY_KQ_XN_TLVR",
+                "dataType": "Chuỗi",
+                "maxLength": 8,
+                "description": "Ghi thời điểm có kết quả xét nghiệm tải lượng virus, gồm 08 ký tự theo định dạng yyyymmdd."
+            },
+            {
+                "stt": 28,
+                "fieldName": "MA_LOAI_BN",
+                "dataType": "Số",
+                "maxLength": 1,
+                "description": "Ghi mã đối tượng đến khám, trong đó: Mã \"1\": Người nhiễm HIV; Mã \"2\": Trẻ phơi nhiễm với HIV; Mã \"3\": Điều trị dự phòng trước phơi nhiễm; Mã \"4\": Điều trị dự phòng sau phơi nhiễm; Mã \"5\": Khác."
+            },
+            {
+                "stt": 29,
+                "fieldName": "GIAI_DOAN_LAM_SANG",
+                "dataType": "Số",
+                "maxLength": 1,
+                "description": "Ghi mã giai đoạn lâm sàng, trong đó: Mã \"1\": Giai đoạn I; Mã \"2\": Giai đoạn II; Mã \"3\": Giai đoạn III; Mã \"4\": Giai đoạn IV."
+            },
+            {
+                "stt": 30,
+                "fieldName": "NHOM_DOI_TUONG",
+                "dataType": "Số",
+                "maxLength": 2,
+                "description": "Ghi mã nhóm đối tượng, trong đó: \n- Mã \"1\": Người sử dụng ma túy;\n- Mã \"2\": Người bán dâm;\n- Mã \"3\": Người có quan hệ tình dục đồng giới;\n- Mã \"4\": Người chuyển đổi giới tính;\n- Mã \"5\": Vợ, chồng và thành viên khác của gia đình cùng sống chung với người nhiễm HIV; vợ, chồng của đối tượng quy định tại các mã 1, 2, 3, 4;\n- Mã \"6\": Người có quan hệ tình dục với người nhiễm HIV;\n- Mã \"7\": Người mắc các bệnh lây truyền qua đường tình dục;\n- Mã \"8\": Phạm nhân, người bị tạm giam, trại viên cơ sở giáo dục bắt buộc, học sinh trường giáo dưỡng, học viên cơ sở cai nghiện ma túy;\n- Mã \"9\": Nhóm bệnh nhân Lao;\n- Mã \"10\": Người nghi ngờ AIDS;\n- Mã \"11\": Đối tượng khác."
+            },
+            {
+                "stt": 31,
+                "fieldName": "MA_TINH_TRANG_DK",
+                "dataType": "Chuỗi",
+                "maxLength": 18,
+                "description": "Ghi mã tình trạng của đối tượng đến khám, trong đó: 1 (Trẻ dưới 18 tháng sinh ra từ mẹ nhiễm HIV); 2 (Phơi nhiễm); 3 (Đang điều trị lao); 4 (Có bầu); 5 (Chuyển dạ); 6 (Sau sinh); 7 (Viêm gan); 8 (Nghiện chích ma túy); 9 (Khác). Trường hợp đối tượng khám có 2 tình trạng trở lên thì các Mã cách nhau bởi dấu chấm phẩy \";\"."
+            },
+            {
+                "stt": 32,
+                "fieldName": "LAN_XN_PCR",
+                "dataType": "Số",
+                "maxLength": 1,
+                "description": "Ghi mã lần thực hiện xét nghiệm PCR, trong đó: 1 (lần 1); 2 (lần 2); 3 (lần 3 - chỉ áp dụng trong lần 1 âm tính và lần 2 dương tính). Trường thông tin này chỉ áp dụng cho trẻ dưới 18 tháng tuổi bị phơi nhiễm với HIV."
+            },
+            {
+                "stt": 33,
+                "fieldName": "NGAY_XN_PCR",
+                "dataType": "Chuỗi",
+                "maxLength": 8,
+                "description": "Ghi ngày mà người bệnh thực hiện xét nghiệm PCR, gồm 08 ký tự theo định dạng yyyymmdd. Trường thông tin này chỉ áp dụng cho trẻ dưới 18 tháng tuổi bị phơi nhiễm với HIV."
+            },
+            {
+                "stt": 34,
+                "fieldName": "NGAY_KQ_XN_PCR",
+                "dataType": "Chuỗi",
+                "maxLength": 8,
+                "description": "Ghi ngày mà người bệnh có kết quả xét nghiệm PCR1, gồm 08 ký tự theo định dạng yyyymmdd. Trường thông tin này chỉ áp dụng cho trẻ dưới 18 tháng tuổi bị phơi nhiễm với HIV."
+            },
+            {
+                "stt": 35,
+                "fieldName": "MA_KQ_XN_PCR",
+                "dataType": "Số",
+                "maxLength": 1,
+                "description": "Ghi mã kết quả xét nghiệm PCR1, trong đó: 0 (Âm tính); 1 (Dương tính). Trường thông tin này chỉ áp dụng cho trẻ dưới 18 tháng tuổi bị phơi nhiễm với HIV."
+            },
+            {
+                "stt": 36,
+                "fieldName": "NGAY_NHAN_TT_MANG_THAI",
+                "dataType": "Chuỗi",
+                "maxLength": 8,
+                "description": "Ghi thời điểm nhận thông tin mang thai, gồm 08 ký tự theo định dạng yyyymmdd."
+            },
+            {
+                "stt": 37,
+                "fieldName": "NGAY_BAT_DAU_DT_CTX",
+                "dataType": "Chuỗi",
+                "maxLength": 8,
+                "description": "Ghi thời điểm bắt đầu điều trị Cotrimoxazol (CTX), gồm 08 ký tự theo định dạng yyyymmdd."
+            },
+            {
+                "stt": 38,
+                "fieldName": "MA_XU_TRI",
+                "dataType": "Chuỗi",
+                "maxLength": 10,
+                "description": "Ghi mã xử trí của cơ sở y tế, trong đó: 1 (Điều trị ARV); 2 (Điều trị lao); 3 (Dự phòng lao); 4 (Cotrimoxazol); 5 (PLTMC); 6 (Điều trị viêm gan B); 7 (Điều trị viêm gan C); 8 (Khác). Trường hợp có nhiều xử trí thì ghi các mã xử trí, giữa các mã xử trí phân cách bằng dấu chấm phẩy \";\". (Thay đổi kiểu dữ liệu thành Chuỗi và kích thước tối đa 10 ký tự)."
+            },
+            {
+                "stt": 39,
+                "fieldName": "NGAY_BAT_DAU_XU_TRI",
+                "dataType": "Chuỗi",
+                "maxLength": 8,
+                "description": "Ghi ngày bắt đầu xử trí của đợt điều trị ARV (áp dụng đối với trường hợp có mã xử trí (MA_XU_TRI) là \"1\"), gồm 08 ký tự theo định dạng yyyymmdd."
+            },
+            {
+                "stt": 40,
+                "fieldName": "NGAY_KET_THUC_XU_TRI",
+                "dataType": "Chuỗi",
+                "maxLength": 8,
+                "description": "Ghi ngày kết thúc xử trí của đợt điều trị ARV (áp dụng đối với trường hợp có mã xử trí (MA_XU_TRI) là \"1\"), gồm 08 ký tự theo định dạng yyyymmdd."
+            },
+            {
+                "stt": 41,
+                "fieldName": "MA_PHAC_DO_DIEU_TRI",
+                "dataType": "Chuỗi",
+                "maxLength": 200,
+                "description": "Ghi mã phác đồ điều trị HIV/AIDS của đợt điều trị (Tham chiếu danh mục mã phác đồ điều trị HIV/AIDS tại Phụ lục 10 ban hành kèm theo Quyết định số 5937/QĐ-BYT ngày 30/12/2021 của Bộ trưởng Bộ Y tế)."
+            },
+            {
+                "stt": 42,
+                "fieldName": "MA_BAC_PHAC_DO",
+                "dataType": "Số",
+                "maxLength": 1,
+                "description": "Ghi mã bậc phác đồ của đợt điều trị khi phác đồ điều trị là \"Khác\", trong đó: Mã \"1\": Phác đồ bậc 1; Mã \"2\": Phác đồ bậc 2; Mã \"3\": Phác đồ bậc 3."
+            },
+            {
+                "stt": 43,
+                "fieldName": "SO_NGAY_CAP_THUOC_ARV",
+                "dataType": "Số",
+                "maxLength": 3,
+                "description": "Ghi số ngày thuốc ARV được cấp (nhỏ hơn hoặc bằng với ngày trong trường thông tin NGAY_KET_THUC_XU_TRI trừ đi (-) ngày trong trường thông tin NGAY_BAT_DAU_XU_TRI)."
+            },
+            {
+                "stt": 44,
+                "fieldName": "NGAY_CHUYEN_PHAC_DO",
+                "dataType": "Chuỗi",
+                "maxLength": 8,
+                "description": "Ghi ngày chuyển phác đồ điều trị, gồm 08 ký tự theo định dạng yyyymmdd."
+            },
+            {
+                "stt": 45,
+                "fieldName": "LY_DO_CHUYEN_PHAC_DO",
+                "dataType": "Số",
+                "maxLength": 1,
+                "description": "Ghi mã lý do chuyển phác đồ, trong đó: Mã \"1\": Thiếu thuốc; Mã \"2\": Tác dụng phụ; Mã \"3\": Thất bại điều trị; Mã \"4\": Tối ưu hoá phác đồ; Mã \"5\": Phác đồ mới theo hướng dẫn quốc gia; Mã \"6\": Khác."
+            },
+            {
+                "stt": 46,
+                "fieldName": "MA_CSKCB",
+                "dataType": "Chuỗi",
+                "maxLength": 5,
+                "description": "Ghi mã cơ sở KBCB nơi người bệnh đến khám bệnh, điều trị HIV/AIDS, do cơ quan có thẩm quyền cấp."
+            },
+            {
+                "stt": 47,
+                "fieldName": "DU_PHONG",
+                "dataType": "Chuỗi",
+                "maxLength": "n",
+                "description": "Trường dữ liệu dự phòng khi cần thiết."
+            }
+        ]
+    }

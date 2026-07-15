@@ -4,9 +4,19 @@ import { HoSoContext } from '../../../services/hoso-context';
 import { ErrorDetails } from '../../../dto/xml-check.dto';
 
 export class Check_T_TONGCHI_BV extends Xml1RuleBase {
-  public get key(): string {
-    return 'T_TONGCHI_BV';
+  constructor() {
+    super({
+      ruleId: 'RULE_XML1_T_TONGCHI_BV_01',
+      xmlType: 'XML1',
+      field: 'T_TONGCHI_BV',
+      severity: 'ERROR',
+      description: 'Kiểm tra quy định cho trường T_TONGCHI_BV',
+      errorMessage: 'T_TONGCHI_BV phải bằng 0 khi không có chi phí',
+      reference: 'QĐ 3176/QĐ-BYT',
+    });
   }
+
+  
 
   public check(model: Xml1Model, context: HoSoContext): ErrorDetails | null {
     const hasXml2 = context.xml2 && context.xml2.length > 0;

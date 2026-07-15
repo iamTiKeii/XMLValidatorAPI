@@ -3,8 +3,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Check_SO_NGAY_DTRI = void 0;
 const xml1RuleBase_1 = require("./xml1RuleBase");
 class Check_SO_NGAY_DTRI extends xml1RuleBase_1.Xml1RuleBase {
-    get key() {
-        return 'SO_NGAY_DTRI';
+    constructor() {
+        super({
+            ruleId: 'RULE_XML1_SO_NGAY_DTRI_01',
+            xmlType: 'XML1',
+            field: 'SO_NGAY_DTRI',
+            severity: 'ERROR',
+            description: 'Kiểm tra quy định tính số ngày điều trị dựa trên loại KCB và ngày vào/ra',
+            errorMessage: 'SO_NGAY_DTRI không được để trống',
+            reference: 'QĐ 3176/QĐ-BYT',
+        });
     }
     check(model, context) {
         const raw = model.SO_NGAY_DTRI_RAW;
@@ -15,13 +23,13 @@ class Check_SO_NGAY_DTRI extends xml1RuleBase_1.Xml1RuleBase {
         if (isNaN(soNgay)) {
             return this.error('SO_NGAY_DTRI sai kiểu dữ liệu (số)');
         }
-        if (model.MA_LOAI_KCB === '1' || model.MA_LOAI_KCB === '7' || model.MA_LOAI_KCB === '9') {
+        if (model.MA_LOAI_KCB === '01' || model.MA_LOAI_KCB === '07' || model.MA_LOAI_KCB === '09') {
             if (soNgay !== 0) {
-                return this.error('SO_NGAY_DTRI phải bằng 0 khi MA_LOAI_KCB ∈ (1,7,9)');
+                return this.error('SO_NGAY_DTRI phải bằng 0 khi MA_LOAI_KCB ∈ (01,07,09)');
             }
             return null;
         }
-        if (model.MA_LOAI_KCB === '2' || model.MA_LOAI_KCB === '3' || model.MA_LOAI_KCB === '4' || model.MA_LOAI_KCB === '6') {
+        if (model.MA_LOAI_KCB === '02' || model.MA_LOAI_KCB === '03' || model.MA_LOAI_KCB === '04' || model.MA_LOAI_KCB === '06') {
             if (!model.NGAY_VAO || !model.NGAY_RA) {
                 return this.error('Không đủ dữ liệu NGAY_VAO / NGAY_RA để tính SO_NGAY_DTRI');
             }

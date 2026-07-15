@@ -6,7 +6,19 @@ import { DictionaryCacheInstance } from '../../dictionary.cache';
 
 export class Check_MA_DOITUONG_KCB extends Xml1RuleBase
     {
-        public get key(): string { return 'MA_DOITUONG_KCB'; }
+  constructor() {
+    super({
+      ruleId: 'RULE_XML1_MA_DOITUONG_KCB_01',
+      xmlType: 'XML1',
+      field: 'MA_DOITUONG_KCB',
+      severity: 'ERROR',
+      description: 'Kiểm tra quy định cho trường MA_DOITUONG_KCB',
+      errorMessage: 'MA_DOITUONG_KCB không được để trống',
+      reference: 'QĐ 3176/QĐ-BYT',
+    });
+  }
+
+        
 
         public check(model: Xml1Model, context: HoSoContext): ErrorDetails | null
         {

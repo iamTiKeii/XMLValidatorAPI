@@ -6,7 +6,19 @@ import { DictionaryCacheInstance } from '../../dictionary.cache';
 
 export class Check_MA_TAI_NAN extends Xml1RuleBase
     {
-        public get key(): string { return 'MA_TAI_NAN'; }
+  constructor() {
+    super({
+      ruleId: 'RULE_XML1_MA_TAI_NAN_01',
+      xmlType: 'XML1',
+      field: 'MA_TAI_NAN',
+      severity: 'ERROR',
+      description: 'Kiểm tra quy định cho trường MA_TAI_NAN',
+      errorMessage: 'MA_TAI_NAN quá kích thước tối đa (1)',
+      reference: 'QĐ 3176/QĐ-BYT',
+    });
+  }
+
+        
 
         public check(model: Xml1Model, context: HoSoContext): ErrorDetails | null
         {

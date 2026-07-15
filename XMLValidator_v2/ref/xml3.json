@@ -1,0 +1,337 @@
+{
+    "id": "xml3",
+    "name": "Bảng 3. Chỉ tiêu chi tiết dịch vụ kỹ thuật và vật tư y tế",
+    "description": "Bảng dữ liệu chi tiết về các dịch vụ kỹ thuật, vật tư y tế, thuốc đi kèm dịch vụ, tiền giường đã thực hiện cho người bệnh trong đợt khám bệnh, chữa bệnh.",
+    "fileName": "xml3.json",
+    "fields": [
+        {
+            "stt": 1,
+            "fieldName": "MA_LK",
+            "dataType": "Chuỗi",
+            "maxLength": 100,
+            "description": "Là mã đợt điều trị duy nhất (dùng để liên kết giữa Bảng chỉ tiêu tổng hợp khám bệnh, chữa bệnh (bảng XML 1) và các bảng còn lại ban hành kèm theo Quyết định này trong một lần khám bệnh, chữa bệnh (PRIMARY KEY))."
+        },
+        {
+            "stt": 2,
+            "fieldName": "STT",
+            "dataType": "Số",
+            "maxLength": 10,
+            "description": "Số thứ tự tăng từ 1 đến hết trong một lần gửi dữ liệu."
+        },
+        {
+            "stt": 3,
+            "fieldName": "MA_DICH_VU",
+            "dataType": "Chuỗi",
+            "maxLength": 50,
+            "description": "Ghi mã dịch vụ kỹ thuật hoặc mã tiền khám hoặc mã tiền giường bệnh theo hạng bệnh viện theo quy định tại Bộ mã DMDC do Bộ Y tế ban hành. \nLưu ý: \n- Vận chuyển người bệnh: Ghi VC.XXXXX, trong đó XXXXX là mã cơ sở KBCB nơi người bệnh được chuyển đến; \n- Mã tiền giường theo hạng bệnh viện quy định tại Bộ mã DMDC do Bộ trưởng Bộ Y tế ban hành; \n- Trường hợp phải chuyển mẫu bệnh phẩm hoặc chuyển người bệnh đến cơ sở KBCB khác để thực hiện dịch vụ cận lâm sàng theo quy định của Thông tư 09/2019/TT-BYT thì mã hoá theo nguyên tắc: XX.YYYY.ZZZZ.K.WWWWW, trong đó XX.YYYY.ZZZZ là mã dịch vụ cận lâm sàng tại Bộ mã DMDC do Bộ trưởng Bộ Y tế ban hành, WWWWW là mã cơ sở KBCB nơi thực hiện dịch vụ cận lâm sàng. \n- Đối với DVKT sử dụng phương pháp vô cảm gây tê, bổ sung ký hiệu \"_GT\" sau mã DVKT tương đương. Cụ thể: (XX.YYYY.ZZZZ_GT). \n- Đối với DVKT đã được cấp có thẩm quyền phê duyệt thực hiện nhưng chưa được quy định mức giá theo quy định tại khoản 3 Điều 7 Thông tư số 39/2018/TT-BYT thì mã hoá DVKT theo nguyên tắc mã DVKT tương đương, 04 ký tự cuối ghi \"0000\" (khi đó, mã có cấu trúc: XX.YYYY.0000); DON_GIA_BH = 0; \n- Đối với DVKT đã chỉ định thực hiện nhưng vì nguyên nhân diễn biến bệnh hoặc thể trạng người bệnh nên không thể tiếp tục thực hiện được kỹ thuật đã chỉ định theo quy định tại khoản 3 Điều 7 Thông tư số 39/2018/TT-BYT thì bổ sung các ký tự \"_TB\" sau mã DVKT tương đương (khi đó, mã có cấu trúc: XX.YYYY.ZZZZ_TB); DON_GIA_BH = 0; DON_GIA_BV = 0; các thuốc, VTYT (thuộc phạm vi chi trả của quỹ BHYT) đã được sử dụng cho người bệnh thì cơ sở KBCB thống kê vào các trường dữ liệu tương ứng của Bảng XML 2, Bảng XML 3. \n- Trường hợp dịch vụ kỹ thuật có sử dụng vật tư y tế kèm theo: Ghi mã dịch vụ kỹ thuật vào trường MA_DICH_VU, ghi mã vật tư y tế vào trường MA_VAT_TU của Bảng này; \n- Đối với DVKT đã được cấp có thẩm quyền phê duyệt thực hiện nhưng chưa được quy định mức giá theo quy định tại khoản 2 Điều 7 Thông tư số 22/2023/TT-BYT thì mã hoá DVKT theo nguyên tắc mã DVKT tương đương, 04 ký tự cuối ghi \"0000\" (khi đó, mã có cấu trúc: XX.YYYY.0000); DON_GIA_BH = 0; DON_GIA_BV = 0; các thuốc, VTYT (thuộc phạm vi chi trả của quỹ BHYT) đã được sử dụng cho người bệnh thì cơ sở KBCB thống kê vào các trường dữ liệu tương ứng của Bảng 2, Bảng 3; \n- Đối với DVKT đã chỉ định thực hiện nhưng do diễn biến bệnh hoặc thể trạng người bệnh nên không thể tiếp tục thực hiện được kỹ thuật đã chỉ định theo quy định tại khoản 2 Điều 7 Thông tư số 22/2023/TT-BYT thì bổ sung các ký tự \"_TB\"; \n- Đối với DVKT thực hiện bằng phương pháp gây tê nhưng chưa được quy định mức giá tại Phụ lục V Thông tư số 22/2023/TT-BYT thì bổ sung các ký tự \"_TT\" sau mã DVKT tương đương (mã có cấu trúc: XX.YYYY.ZZZZ_TT), trong đó lưu ý đối với dịch vụ kỹ thuật thì DON_GIA_BH = 0, DON_GIA_BV = 0; các thuốc, VTYT (thuộc phạm vi chi trả của quỹ BHYT) đã được sử dụng cho người bệnh thì cơ sở KBCB thống kê vào các trường dữ liệu tương ứng của Bảng 2, Bảng 3. \n- Đối với xét nghiệm COVID-19, ghi thông tin trường MA_DICH_VU theo hướng dẫn tại Phụ lục 9 ban hành kèm theo Quyết định số 5937/QĐ-BYT ngày 30/12/2021 của Bộ trưởng Bộ Y tế."
+        },
+        {
+            "stt": 4,
+            "fieldName": "MA_PTTT_QT",
+            "dataType": "Chuỗi",
+            "maxLength": 255,
+            "description": "Ghi mã phẫu thuật, thủ thuật quốc tế ICD-9 CM (theo mã phẫu thuật, thủ thuật ICD-9 CM do Bộ trưởng Bộ Y tế ban hành kèm theo Quyết định số 4440/QĐ-BYT ngày 27 tháng 10 năm 2020). \nLưu ý: \n- Trường hợp có nhiều phẫu thuật, thủ thuật thì mỗi mã được phân cách bằng dấu chấm phẩy (;); \n- Chỉ ghi trong trường hợp người bệnh có thực hiện phẫu thuật, thủ thuật."
+        },
+        {
+            "stt": 5,
+            "fieldName": "MA_VAT_TU",
+            "dataType": "Chuỗi",
+            "maxLength": 255,
+            "description": "Ghi mã nhóm VTYT quy định tại Thông tư số 04/2017/TT-BYT. \nLưu ý: \n- Chỉ ghi các VTYT chưa có trong cơ cấu giá dịch vụ kỹ thuật, khám bệnh, ngày giường điều trị hoặc thu trọn gói theo trường hợp bệnh, VTYT sử dụng trong DVKT đã chỉ định thực hiện nhưng vì nguyên nhân diễn biến bệnh hoặc thể trạng người bệnh nên không thể tiếp tục thực hiện được kỹ thuật đã chỉ định theo quy định tại khoản 3 Điều 7 Thông tư số 39/2018/TT-BYT hoặc khoản 2 Điều 7 Thông tư số 22/2023/TT-BYT; VTYT sử dụng trong DVKT đã được cấp có thẩm quyền phê duyệt thực hiện nhưng chưa được quy định mức giá theo quy định tại khoản 3 Điều 7 Thông tư số 39/2018/TT-BYT hoặc khoản 2 Điều 7 Thông tư số 22/2023/TT-BYT. \n- Các VTYT sử dụng trong phẫu thuật, thủ thuật được thanh toán riêng: ghi mã phẫu thuật, thủ thuật vào trường thông tin: <MA_DICH_VU>; \n- Các VTYT không sử dụng trong phẫu thuật, thủ thuật: trường thông tin mã dịch vụ <MA_DICH_VU> để trống; \n- Đối với sinh phẩm xét nghiệm COVID-19: Ghi mã sinh phẩm xét nghiệm COVID-19 theo hướng dẫn tại Phụ lục 9 ban hành kèm theo Quyết định số 5937/QĐ-BYT ngày 30/12/2021 của Bộ trưởng Bộ Y tế. \n- Những VTYT đã được cấp mã theo quy định tại Quyết định số 5086/QĐ-BYT ngày 04/11/2021 của Bộ trưởng Bộ Y tế thì tiếp tục sử dụng mã được cấp."
+        },
+        {
+            "stt": 6,
+            "fieldName": "MA_NHOM",
+            "dataType": "Số",
+            "maxLength": 2,
+            "description": "Ghi mã nhóm theo chi phí, dùng để phân loại, sắp xếp các chi phí vào các nhóm, ghi theo Phụ lục số 3 ban hành kèm theo Quyết định số 5937/QĐ-BYT ngày 30 tháng 12 năm 2021 của Bộ trưởng Bộ Y tế. Bổ sung mã nhóm theo chi phí đối với các dịch vụ khác còn lại (VD: tiền ăn, tiền đi lại, tiền lưu trú,...): Ghi mã 19."
+        },
+        {
+            "stt": 7,
+            "fieldName": "GOI_VTYT",
+            "dataType": "Chuỗi",
+            "maxLength": 3,
+            "description": "Ghi mã gói VTYT trong một lần sử dụng dịch vụ kỹ thuật (lần thứ nhất ghi G1, lần thứ hai ghi G2,...). \n- Trường hợp DVKT thực hiện có phát sinh gói VTYT đi kèm thì ghi thông tin gói tương ứng tại dòng DVKT phát sinh."
+        },
+        {
+            "stt": 8,
+            "fieldName": "TEN_VAT_TU",
+            "dataType": "Chuỗi",
+            "maxLength": 1024,
+            "description": "Ghi tên nhóm VTYT theo quy định tại Thông tư số 04/2017/TT-BYT."
+        },
+        {
+            "stt": 9,
+            "fieldName": "TEN_DICH_VU",
+            "dataType": "Chuỗi",
+            "maxLength": 1024,
+            "description": "Ghi tên dịch vụ kỹ thuật hoặc tên dịch vụ khám bệnh hoặc tên giường bệnh đề nghị quỹ BHYT thanh toán. \nLưu ý: \n- Đối với dịch vụ kỹ thuật, trường hợp cần ghi rõ vị trí, phương pháp thực hiện hoặc phân biệt các mức giá khác nhau thì sau tên dịch vụ kỹ thuật ghi phần mô tả chi tiết trong ngoặc vuông [ ]; \n- Đối với DVKT sử dụng phương pháp vô cảm gây tê, bổ sung cụm từ \"[gây tê]\" sau tên dịch vụ; \n- Đối với trường hợp xét nghiệm COVID-19 thì ghi tên dịch vụ theo quy định tại Phụ lục 9 ban hành kèm theo Quyết định số 5937/QĐ-BYT ngày 30/12/2021 của Bộ trưởng Bộ Y tế."
+        },
+        {
+            "stt": 10,
+            "fieldName": "MA_XANG_DAU",
+            "dataType": "Chuỗi",
+            "maxLength": 20,
+            "description": "Ghi mã loại xăng, dầu để tính chi phí vận chuyển người bệnh, ghi theo Bộ mã DMDC do Bộ trưởng Bộ Y tế ban hành."
+        },
+        {
+            "stt": 11,
+            "fieldName": "DON_VI_TINH",
+            "dataType": "Chuỗi",
+            "maxLength": 50,
+            "description": "Ghi đơn vị tính của VTYT hoặc DVKT đề nghị thanh toán."
+        },
+        {
+            "stt": 12,
+            "fieldName": "PHAM_VI",
+            "dataType": "Số",
+            "maxLength": 1,
+            "description": "Ghi mã để xác định phạm vi của VTYT, dịch vụ kỹ thuật, trong đó: \n- Mã \"1\": VTYT, dịch vụ kỹ thuật được quỹ BHYT thanh toán; \n- Mã \"2\": VTYT, dịch vụ kỹ thuật do người bệnh tự trả; \n- Mã \"3\": VTYT, dịch vụ kỹ thuật được sử dụng cho các đối tượng thuộc quân đội, công an, cơ yếu theo quy định tại khoản 2 Điều 10 Nghị định 70/2015/NĐ-CP của Chính phủ."
+        },
+        {
+            "stt": 13,
+            "fieldName": "SO_LUONG",
+            "dataType": "Số",
+            "maxLength": 10,
+            "description": "Ghi số lượng ngày giường bệnh, công khám, dịch vụ kỹ thuật hoặc VTYT thực tế sử dụng cho người bệnh, làm tròn số đến 3 chữ số thập phân. Sử dụng dấu chấm \".\" để phân cách giữa số Nguyên (hàng đơn vị) với số thập phân đầu tiên."
+        },
+        {
+            "stt": 14,
+            "fieldName": "DON_GIA_BV",
+            "dataType": "Số",
+            "maxLength": 15,
+            "description": "Ghi đơn giá dịch vụ kỹ thuật, tiền giường bệnh, tiền công khám bệnh (theo giá do cấp có thẩm quyền quy định hoặc giá do cơ sở KBCB xây dựng) hoặc đơn giá của VTYT (Giá theo hóa đơn mua vào của cơ sở KBCB); làm tròn đến 3 (ba) chữ số thập phân. Sử dụng dấu chấm \".\" để phân cách giữa số Nguyên (hàng đơn vị) với số thập phân đầu tiên. \n- Đối với cơ sở KBCB nhà nước: Ghi đơn giá dịch vụ kỹ thuật, tiền giường bệnh, tiền công khám bệnh theo yêu cầu (nếu có) hoặc giá dịch vụ KBCB không thuộc danh mục do BHYT thanh toán mà không phải là dịch vụ KBCB theo yêu cầu; \n- Đối với cơ sở KBCB tư nhân: Giá do cơ sở KBCB tư nhân ban hành theo quy định của pháp luật; \n- Đối với VTYT: Ghi giá theo hóa đơn mua vào của cơ sở KBCB. Trường hợp VTYT do cơ sở KBCB tự sản xuất: là giá do cơ sở KBCB xây dựng phê duyệt theo quy định làm căn cứ thanh toán BHYT; \nLưu ý: Trường hợp VTYT tái sử dụng được tính theo công thức: DON_GIA_BV = DON_GIA_BH (là giá thanh toán của 1 lần tái sử dụng VTYT)."
+        },
+        {
+            "stt": 15,
+            "fieldName": "DON_GIA_BH",
+            "dataType": "Số",
+            "maxLength": 15,
+            "description": "Ghi đơn giá dịch vụ kỹ thuật, VTYT, tiền giường bệnh, tiền công khám bệnh do quỹ BHYT thanh toán; làm tròn đến 3 (ba) chữ số thập phân. Sử dụng dấu chấm \".\" để phân cách giữa số Nguyên (hàng đơn vị) với số thập phân đầu tiên. \nLưu ý: \n- Đối với dịch vụ kỹ thuật, tiền giường bệnh, tiền công khám bệnh: Ghi đơn giá do cơ quan có thẩm quyền ban hành/phê duyệt áp dụng trong thanh toán BHYT; \n- Đối với VTYT: Ghi đơn giá đấu thầu, mua sắm VTYT hoặc giá thanh toán VTYT tại cơ sở KBCB tư nhân theo quy định; \n- Trường hợp VTYT có quy định mức thanh toán BHYT và đơn giá mua vào (DON_GIA_BV) cao hơn mức thanh toán BHYT thì DON_GIA_BH = T_TRANTT, trường hợp VTYT có quy định mức thanh toán BHYT và đơn giá mua vào (DON_GIA_BV) không cao hơn mức thanh toán BHYT thì DON_GIA_BH = DON_GIA_BV; \n- Trường hợp VTYT tái sử dụng: DON_GIA_BH là giá thanh toán của 1 lần tái sử dụng VTYT (bao gồm chi phí để tái sử dụng theo quy định của Bộ trưởng Bộ Y tế, thống nhất với cơ quan BHXH để làm căn cứ thanh toán). \n- Đối với VTYT do cơ sở KBCB tự sản xuất: đơn giá của VTYT do người đứng đầu cơ sở KBCB xây dựng, phê duyệt và thống nhất với cơ quan BHXH để làm căn cứ thanh toán theo quy định tại khoản 4 Điều 3 Thông tư số 04/2017/TT-BYT."
+        },
+        {
+            "stt": 16,
+            "fieldName": "TT_THAU",
+            "dataType": "Chuỗi",
+            "maxLength": 50,
+            "description": "Ghi thông tin thầu của VTYT theo thứ tự, gồm: Số quyết định phê duyệt kết quả lựa chọn nhà thầu; số gói thầu; mã nhóm thầu (theo quy định tại Phụ lục số 7 ban hành kèm theo Quyết định số 5937/QĐ-BYT ngày 30 tháng 12 năm 2021 của Bộ trưởng Bộ Y tế); năm ban hành quyết định phê duyệt kết quả lựa chọn nhà thầu. Các thông tin này cách nhau bằng dấu chấm phẩy \";\". \nLưu ý: \n- Những VTYT đã được đấu thầu mua sắm hoặc đã được phê duyệt kế hoạch lựa chọn nhà thầu trước ngày 14/4/2023: Sử dụng mã nhóm thầu VTYT theo Phụ lục 7 ban hành kèm theo Quyết định số 5937/QĐ-BYT ngày 30/12/2021 của Bộ trưởng Bộ Y tế; \n- Những VTYT được đấu thầu mua sắm hoặc được phê duyệt kế hoạch lựa chọn nhà thầu kể từ ngày 14/4/2023: Tạm thời sử dụng mã nhóm thầu là \"N0\"; \n- Trường hợp VTYT áp thầu thì Trường thông tin TT_THAU của VTYT ghi như sau: Số quyết định.Mã đơn vị ban hành quyết định;Gi;Ni;XXXX. Mã đơn vị ban hành quyết định trúng thầu của VTYT thực hiện như sau: TTMSTT quốc gia là mã \"00\"; trường hợp các tỉnh, thành phố đấu thầu tập trung thì sử dụng mã tỉnh, thành phố; trường hợp cơ sở KBCB đấu thầu thì sử dụng mã cơ sở KBCB; Gi là số gói thầu; Ni là số nhóm thầu; XXXX là năm ban hành quyết định). \n- Trường hợp VTYT tự sản xuất: Số quyết định trúng thầu thì ghi theo số văn bản gửi cơ quan BHXH, năm ban hành quyết định thì ghi năm ban hành văn bản; \n- Trường hợp VTYT được phê duyệt kế hoạch lựa chọn nhà thầu trước ngày Thông tư số 14/2020/TT-BYT có hiệu lực thì trường TT_THAU ghi như sau: Số quyết định.Mã đơn vị ban hành quyết định;Gi;XXXX."
+        },
+        {
+            "stt": 17,
+            "fieldName": "TYLE_TT_DV",
+            "dataType": "Số",
+            "maxLength": 3,
+            "description": "Ghi tỷ lệ thanh toán đối với một số dịch vụ kỹ thuật đặc biệt. Tỷ lệ này là số nguyên dương. Cụ thể: \n- Đối với ngày giường bệnh điều trị nội trú, trường hợp người bệnh chuyển từ 02 khoa trở lên trong cùng một ngày: \n+ Khoa có giá tiền giường cao nhất và thấp nhất: mã tiền giường và đơn giá không thay đổi; số lượng ghi 0,5; trường thông tin \"TYLE_TT_DV\" ghi 100; \n+ Các khoa khác (nếu có), mã tiền giường và đơn giá không thay đổi: số lượng ghi \"0\"; \n- Trường hợp người bệnh chuyển từ 02 khoa trở lên trong cùng một ngày đồng thời có nằm ghép: \n+ Nếu nằm ghép 02 người, mã tiền giường và đơn giá không thay đổi: số lượng ghi 0,5; trường thông tin TYLE_TT_DV ghi 50; \n+ Nếu nằm ghép từ 03 người trở lên: mã tiền giường và đơn giá không thay đổi: số lượng ghi 0,5; trường thông tin \"TYLE_TT_DV\" ghi 33; \n+ Nếu nằm 01 người/giường bệnh thì trường thông tin \"TYLE_TT_DV\" ghi 100; \n+ Trường hợp 01 người bệnh nằm trên 01 băng ca/giường gấp: mã tiền giường và đơn giá không thay đổi, trường thông tin \"TYLE_TT_DV\" ghi 50. \n- Đối với tiền khám bệnh, trường thông tin \"TYLE_TT_DV\" ghi 100 tương ứng với lần khám bệnh thứ nhất, ghi 30 tương ứng với lần khám thứ hai đến lần khám thứ tư, ghi 10 tương ứng với lần khám thứ năm, ghi 0 từ lần khám thứ sáu trở đi. \n- Đối với trường hợp thực hiện nhiều can thiệp trong cùng một lần phẫu thuật, từ dịch vụ kỹ thuật thứ 2 trở đi, trường thông tin \"TYLE_TT_DV\" ghi 50 đối với trường hợp phẫu thuật do một kíp phẫu thuật thực hiện; ghi 80 đối với trường hợp phẫu thuật do kíp phẫu thuật khác thực hiện; ghi 80 nếu dịch vụ phát sinh là thủ thuật. \n- Các trường hợp còn lại TYLE_TT_DV ghi 100."
+        },
+        {
+            "stt": 18,
+            "fieldName": "TYLE_TT_BH",
+            "dataType": "Số",
+            "maxLength": 3,
+            "description": "Ghi tỷ lệ thanh toán BHYT đối với dịch vụ kỹ thuật hoặc VTYT có quy định tỷ lệ (%). Tỷ lệ này là số nguyên dương. Ví dụ: Tỷ lệ thanh toán của dịch vụ kỹ thuật hoặc VTYT là 50%, thì trường thông tin này ghi là 50. \n- Trường hợp dịch vụ kỹ thuật hoặc VTYT không quy định tỷ lệ thanh toán thì ghi 100; \n- Trường hợp dịch vụ kỹ thuật hoặc VTYT không thuộc phạm vi thanh toán của quỹ BHYT thì ghi là 0."
+        },
+        {
+            "stt": 19,
+            "fieldName": "THANH_TIEN_BV",
+            "dataType": "Số",
+            "maxLength": 15,
+            "description": "Ghi số tiền thanh toán theo giá của bệnh viện. Trường thông tin này được xác định như sau: THANH_TIEN_BV = SO_LUONG * DON_GIA_BV * TYLE_TT_DV/100, làm tròn số đến 2 chữ số thập phân. Sử dụng dấu chấm \".\" để phân cách giữa số Nguyên (hàng đơn vị) với số thập phân đầu tiên. \n- Trường hợp cơ sở y tế thu đủ theo đơn giá bệnh viện: TYLE_TT_DV = 100; \n- Trường hợp cơ sở y tế giảm đơn giá bệnh viện: điều chỉnh tỷ lệ TYLE_TT_DV = 100 - TỶ LỆ GIẢM ĐƠN GIÁ. Ví dụ giảm 10% đơn giá bệnh viện thì ghi TYLE_TT_DV = 100 - 10 = 90; \n- Khi cơ sở y tế không thu thêm của người bệnh phần chênh của DON_GIA_BH trong các trường hợp đặc biệt."
+        },
+        {
+            "stt": 20,
+            "fieldName": "THANH_TIEN_BH",
+            "dataType": "Số",
+            "maxLength": 15,
+            "description": "Ghi mức giá do quỹ BHYT thanh toán theo quy định của cơ quan có thẩm quyền. Trường thông tin này được xác định như sau: THANH_TIEN_BH = SO_LUONG * DON_GIA_BH * TYLE_TT_DV/100 * TYLE_TT_BH/100, làm tròn số đến 2 chữ số thập phân. Sử dụng dấu chấm \".\" để phân cách giữa số nguyên (hàng đơn vị) với số thập phân đầu tiên."
+        },
+        {
+            "stt": 21,
+            "fieldName": "T_TRANTT",
+            "dataType": "Số",
+            "maxLength": 15,
+            "description": "Đối với các VTYT có mức thanh toán BHYT theo quy định tại Thông tư của Bộ Y tế ban hành danh mục và tỷ lệ, điều kiện thanh toán đối với VTYT thuộc phạm vi được hưởng của người tham gia BHYT: Ghi mức thanh toán BHYT của VTYT. Trường hợp không có trần thanh toán thì để trống trường thông tin này."
+        },
+        {
+            "stt": 22,
+            "fieldName": "MUC_HUONG",
+            "dataType": "Số",
+            "maxLength": 3,
+            "description": "Ghi mức hưởng tương ứng với từng loại chi phí, trong đó: \n- Trường hợp người bệnh KBCB BHYT đúng tuyến ghi mức hưởng là 80 hoặc 95 hoặc 100; \n- Trường hợp trái tuyến ghi mức hưởng sau khi đã nhân với tỷ lệ hưởng trái tuyến tương ứng với tuyến chuyên môn kỹ thuật của cơ sở KBCB. Ví dụ: Người bệnh có mức hưởng BHYT 80%, điều trị trái tuyến nội trú tại cơ sở KBCB tuyến trung ương (có tỷ lệ hưởng trái tuyến là 40%): ghi mức hưởng là 32; \n- Trường hợp người bệnh KBCB BHYT đúng tuyến, có tổng chi phí trong phạm vi được hưởng dưới 15% mức lương cơ sở hoặc KBCB tại Trạm y tế tuyến xã hoặc người bệnh đủ điều kiện được hưởng miễn cùng chi trả trong năm: ghi mức hưởng 100; \n- Trường hợp người bệnh KBCB BHYT trái tuyến, có tổng chi phí dưới 15% mức lương cơ sở ghi mức trái tuyến tương ứng với tuyến chuyên môn kỹ thuật của cơ sở KBCB; \n- Trường hợp người bệnh có bệnh mạn tính, đã được khám và chỉ định thuốc ở tuyến trên, nhưng được cấp phát thuốc tại Trạm y tế tuyến xã theo quy định của Thông tư số 30/2018/TT-BYT và điểm h khoản 1 Điều 14 Nghị định số 146/2018/NĐ-CP thì ghi mức hưởng tổng chi phí KBCB trong một lần khám bệnh dưới 15% mức lương cơ sở thì ghi mức hưởng là 100)."
+        },
+        {
+            "stt": 23,
+            "fieldName": "T_NGUONKHAC_NSNN",
+            "dataType": "Số",
+            "maxLength": 15,
+            "description": "Ghi số tiền dịch vụ kỹ thuật hoặc VTYT được ngân sách nhà nước (Trung ương và/hoặc địa phương) hỗ trợ, làm tròn số đến 2 chữ số thập phân. Sử dụng dấu chấm \".\" để phân cách giữa số Nguyên (hàng đơn vị) với số thập phân đầu tiên."
+        },
+        {
+            "stt": 24,
+            "fieldName": "T_NGUONKHAC_VTNN",
+            "dataType": "Số",
+            "maxLength": 15,
+            "description": "Ghi số tiền dịch vụ kỹ thuật hoặc VTYT được các tổ chức, đơn vị có trụ sở ngoài lãnh thổ Việt Nam hoặc các cá nhân đang sinh sống, học tập, lao động ngoài lãnh thổ Việt Nam hỗ trợ; làm tròn số đến 2 chữ số thập phân. Sử dụng dấu chấm \".\" để phân cách giữa số Nguyên (hàng đơn vị) với số thập phân đầu tiên."
+        },
+        {
+            "stt": 25,
+            "fieldName": "T_NGUONKHAC_VTTN",
+            "dataType": "Số",
+            "maxLength": 15,
+            "description": "Ghi số tiền dịch vụ kỹ thuật hoặc VTYT được các tổ chức, cơ quan, đơn vị có trụ sở trong lãnh thổ Việt Nam hoặc các cá nhân đang sinh sống, học tập, lao động trong lãnh thổ Việt Nam hỗ trợ, làm tròn số đến 2 chữ số thập phân. Sử dụng dấu chấm \".\" để phân cách giữa số Nguyên (hàng đơn vị) với số thập phân đầu tiên."
+        },
+        {
+            "stt": 26,
+            "fieldName": "T_NGUONKHAC_CL",
+            "dataType": "Số",
+            "maxLength": 15,
+            "description": "Ghi số tiền dịch vụ kỹ thuật hoặc VTYT được các nguồn khác còn lại (Không thuộc một trong ba nguồn của các trường thông tin trong bảng này: \"T_NGUONKHAC_NSNN\", \"T_NGUONKHAC_VTNN\", \"T_NGUONKHAC_VTTN\") hỗ trợ, làm tròn số đến 2 chữ số thập phân. Sử dụng dấu chấm \".\" để phân cách giữa số Nguyên (hàng đơn vị) với số thập phân đầu tiên."
+        },
+        {
+            "stt": 27,
+            "fieldName": "T_NGUONKHAC",
+            "dataType": "Số",
+            "maxLength": 15,
+            "description": "Là số tiền do nguồn khác chi trả. Khi T_NGUONKHAC > 0 thì giảm trừ lần lượt vào các khoản T_BNTT, T_BNCCT, T_BHTT cho đến khi hết số tiền T_NGUONKHAC."
+        },
+        {
+            "stt": 28,
+            "fieldName": "T_BNTT",
+            "dataType": "Số",
+            "maxLength": 15,
+            "description": "Ghi số tiền người bệnh tự trả ngoài phạm vi chi trả của Quỹ BHYT, làm tròn số đến 2 chữ số thập phân. Sử dụng dấu chấm \".\" để phân cách giữa số Nguyên (hàng đơn vị) với số thập phân đầu tiên. \n- Công thức tính: T_BNTT = THANH_TIEN_BV - THANH_TIEN_BH \n- Trường hợp có T_NGUONKHAC thì xác định T_BNTT theo hướng dẫn tại trường T_NGUONKHAC."
+        },
+        {
+            "stt": 29,
+            "fieldName": "T_BNCCT",
+            "dataType": "Số",
+            "maxLength": 15,
+            "description": "Ghi số tiền người bệnh cùng chi trả trong phạm vi quyền lợi mức hưởng BHYT, làm tròn số đến 2 chữ số thập phân. Sử dụng dấu chấm \".\" để phân cách giữa số Nguyên (hàng đơn vị) với số thập phân đầu tiên. \n- Công thức tính: T_BNCCT = THANH_TIEN_BH - T_BHTT \n- Trường hợp có T_NGUONKHAC thì xác định T_BNCCT theo hướng dẫn tại trường T_NGUONKHAC."
+        },
+        {
+            "stt": 30,
+            "fieldName": "T_BHTT",
+            "dataType": "Số",
+            "maxLength": 15,
+            "description": "Ghi số tiền cơ sở KBCB đề nghị cơ quan BHXH thanh toán theo phạm vi quyền lợi mức hưởng BHYT của người bệnh, làm tròn số đến 2 chữ số thập phân. Sử dụng dấu chấm \".\" để phân cách giữa số Nguyên (hàng đơn vị) với số thập phân đầu tiên. \n- Công thức tính: T_BHTT = THANH_TIEN_BH * MUC_HUONG/100 \n- Trường hợp có T_NGUONKHAC thì xác định T_BHTT theo hướng dẫn tại trường T_NGUONKHAC."
+        },
+        {
+            "stt": 31,
+            "fieldName": "MA_KHOA",
+            "dataType": "Chuỗi",
+            "maxLength": 50,
+            "description": "Ghi mã khoa nơi người bệnh được cung cấp DVKT, VTYT, giường bệnh. Mã khoa ghi theo Phụ lục số 5 ban hành kèm theo Quyết định số 5937/QĐ-BYT ngày 30 tháng 12 năm 2021 của Bộ trưởng Bộ Y tế."
+        },
+        {
+            "stt": 32,
+            "fieldName": "MA_GIUONG",
+            "dataType": "Chuỗi",
+            "maxLength": 50,
+            "description": "Ghi mã giường tại khoa điều trị. Mã giường gồm 04 ký tự và được mã hóa theo nguyên tắc: \n- Đối với giường kế hoạch: H + số giường tại khoa điều trị (đánh số từ 001 đến hết); \n- Đối với giường kê thêm: T + số giường tại khoa điều trị (đánh số từ 001 đến hết); \n- Đối với giường tự chọn: C + số giường tại khoa điều trị (đánh số từ 001 đến hết); \n- Đối với các loại giường khác (băng ca, giường gấp...): K + số giường tại từng khoa điều trị (đánh số từ 001 đến hết); \nLưu ý: Nếu người bệnh chuyển nhiều giường thì giữa các mã giường cách nhau bằng dấu chấm phẩy \";\"."
+        },
+        {
+            "stt": 33,
+            "fieldName": "MA_BAC_SI",
+            "dataType": "Chuỗi",
+            "maxLength": 255,
+            "description": "Ghi mã người hành nghề thực hiện khám, chỉ định (mã hóa theo số GPHN). \nLưu ý: \n- Trường hợp dịch vụ kỹ thuật được chỉ định bởi bác sỹ tuyến/cấp chuyên môn kỹ thuật cao hơn theo hình thức KBCB từ xa, hỗ trợ KBCB từ xa thì ghi theo nguyên tắc: MA_BAC_SI.TX.XXXXX, trong đó MA_BAC_SI ghi theo số GPHN của bác sỹ tuyến/cấp chuyên môn kỹ thuật cao hơn, XXXXX là mã cơ sở KCB nơi hỗ trợ chuyên môn; đồng thời ghi thêm mã bác sỹ tuyến/cấp chuyên môn kỹ thuật đang điều trị cho người bệnh. \n- Trường hợp bác sỹ đang trong thời gian thực hành theo quy định tại Điều 3 Nghị định số 96/2023/NĐ-CP thì ghi mã GPHN của bác sỹ được phân công hướng dẫn thực hành, sau đó ghi số CCCD của bác sỹ thực hành, cách nhau bằng dấu chấm (.); \n- Trường hợp người hành nghề được huy động, điều động tham gia phòng, chống dịch hoặc thiên tai, thảm họa tại cơ sở KBCB khác, mã hoá theo nguyên tắc: MA_BAC_SI.HD.XXXXX, trong đó MA_BAC_SI ghi theo số GPHN của người hành nghề được điều động, XXXXX là mã cơ sở KCB nơi cử người hành nghề đi; trường hợp người hành nghề không đăng ký hành nghề nhưng được huy động thì XXXXX ghi 2 ký tự đầu là mã tỉnh nơi ra quyết định huy động, 3 ký tự sau ghi XXX. \n- Trường hợp dịch vụ kỹ thuật được thực hiện bởi bác sỹ tại cơ sở KBCB chuyển giao kỹ thuật theo quy định tại Điều 84, Điều 85 Nghị định số 96/2023/NĐ-CP thì ghi theo nguyên tắc: MA_BAC_SI.CG.XXXXX, trong đó MA_BAC_SI ghi theo số GPHN của bác sỹ thực hiện chuyển giao kỹ thuật, XXXXX là mã cơ sở KBCB chuyển giao kỹ thuật."
+        },
+        {
+            "stt": 34,
+            "fieldName": "NGUOI_THUC_HIEN",
+            "dataType": "Chuỗi",
+            "maxLength": 255,
+            "description": "Ghi mã nhân viên y tế thực hiện dịch vụ kỹ thuật (là mã định danh y tế của nhân viên y tế). Trường hợp có nhiều nhân viên y tế cùng thực hiện thì ghi mã định danh y tế của các nhân viên y tế, cách nhau bằng dấu chấm phẩy \";\". Quy tắc mã hóa các trường hợp đặc biệt (thực hành, điều động, chuyển giao kỹ thuật...) áp dụng tương tự như trường MA_BAC_SI."
+        },
+        {
+            "stt": 35,
+            "fieldName": "MA_BENH",
+            "dataType": "Chuỗi",
+            "maxLength": 100,
+            "description": "Ghi mã ICD10 của bệnh hoặc triệu chứng cần chỉ định DVKT, kể cả các trường hợp điều trị triệu chứng, bệnh nghi ngờ cần theo dõi hoặc các DVKT để chẩn đoán phân biệt. Trường hợp không có thông tin ở trường này thì được hiểu là DVKT được chỉ định để chẩn đoán, điều trị bệnh chính (MA_BENH_CHINH) ở Bảng 1."
+        },
+        {
+            "stt": 36,
+            "fieldName": "MA_BENH_YHCT",
+            "dataType": "Chuỗi",
+            "maxLength": 150,
+            "description": "Trường hợp người bệnh được chỉ định DVKT YHCT, kể cả các trường hợp điều trị triệu chứng, bệnh nghi ngờ cần theo dõi hoặc các DVKT để chẩn đoán phân biệt. Trường hợp không có thông tin ở trường này thì được hiểu là DVKT YHCT được chỉ định để chẩn đoán, điều trị bệnh chính."
+        },
+        {
+            "stt": 37,
+            "fieldName": "NGAY_YL",
+            "dataType": "Chuỗi",
+            "maxLength": 12,
+            "description": "Ghi thời điểm ra y lệnh, gồm 12 ký tự, theo cấu trúc: yyyymmddHHMM. \nLưu ý: \n- Riêng ngày giường bệnh, cơ sở KBCB phải thực hiện việc ghi ngày y lệnh theo ngày bắt đầu sử dụng hoặc ngày thay đổi mã giường, loại giường, giá giường, nằm ghép, chuyển giữa các khoa. \n- Đối với vật tư y tế: Ghi ngày thực hiện phẫu thuật, thủ thuật, can thiệp có sử dụng vật tư y tế để xác định mức trần thanh toán vật tư y tế cho một lần sử dụng dịch vụ kỹ thuật (vật tư y tế chưa có trong cơ cấu giá dịch vụ kỹ thuật)."
+        },
+        {
+            "stt": 38,
+            "fieldName": "NGAY_TH_YL",
+            "dataType": "Chuỗi",
+            "maxLength": 12,
+            "description": "Ghi thời điểm thực hiện y lệnh, gồm 12 ký tự, theo cấu trúc: yyyymmddHHMM. \nLưu ý: Đối với giường điều trị ban ngày thì ghi theo từng ngày điều trị trong đó NGAY_TH_YL là thời điểm bắt đầu sử dụng giường bệnh."
+        },
+        {
+            "stt": 39,
+            "fieldName": "NGAY_KQ",
+            "dataType": "Chuỗi",
+            "maxLength": 12,
+            "description": "Ghi thời điểm có kết quả, gồm 12 ký tự, theo cấu trúc: yyyymmddHHMM. \nLưu ý: \n- Trường hợp kết quả xét nghiệm để đánh giá kết quả điều trị có sau ngày người bệnh kết thúc đợt KBCB, cơ sở KBCB bổ sung đầy đủ thông tin trường này và gửi hồ sơ thay thế lên Cổng tiếp nhận để đề nghị thanh toán; \n- Đối với giường điều trị ban ngày thì ghi theo từng ngày điều trị trong đó NGAY_KQ là thời điểm kết thúc sử dụng giường bệnh."
+        },
+        {
+            "stt": 40,
+            "fieldName": "MA_PTTT",
+            "dataType": "Số",
+            "maxLength": 1,
+            "description": "Ghi mã phương thức thanh toán, trong đó: \n- Mã \"1\": thanh toán theo phí dịch vụ; \n- Mã \"2\": thanh toán theo định suất; \n- Mã \"3\": thanh toán theo trường hợp bệnh (DRG)."
+        },
+        {
+            "stt": 41,
+            "fieldName": "VET_THUONG_TP",
+            "dataType": "Số",
+            "maxLength": 1,
+            "description": "Ghi mã của vết thương tái phát. Chỉ ghi số \"1\" nếu sử dụng DVKT, VTYT có quy định tỷ lệ thanh toán BHYT để điều trị vết thương tái phát, bệnh tật tái phát cho các đối tượng là thương binh, bao gồm cả thương binh loại B được công nhận trước ngày 31 tháng 12 năm 1993, người hưởng chính sách như thương binh, bệnh binh khi điều trị vết thương, bệnh tật tái phát."
+        },
+        {
+            "stt": 42,
+            "fieldName": "PP_VO_CAM",
+            "dataType": "Số",
+            "maxLength": 1,
+            "description": "Ghi mã phương pháp vô cảm được sử dụng trong phẫu thuật, thủ thuật, trong đó: \n- Mã \"1\": Gây mê; \n- Mã \"2\": Gây tê; \n- Mã \"3\": Châm tê; \n- Mã \"4\": các phương pháp vô cảm khác. \nTrường thông tin này chỉ bắt buộc khi thực hiện phẫu thuật, thủ thuật có sử dụng phương pháp vô cảm."
+        },
+        {
+            "stt": 43,
+            "fieldName": "VI_TRI_TH_DVKT",
+            "dataType": "Số",
+            "maxLength": 3,
+            "description": "Ghi mã vị trí thực hiện phẫu thuật hoặc thủ thuật theo danh mục mã vị trí cơ thể. Cơ sở KBCB áp dụng thực hiện trường thông tin này khi Bộ trưởng Bộ Y tế ban hành danh mục mã vị trí cơ thể."
+        },
+        {
+            "stt": 44,
+            "fieldName": "MA_MAY",
+            "dataType": "Chuỗi",
+            "maxLength": 1024,
+            "description": "Ghi mã các máy thực hiện dịch vụ cận lâm sàng, phẫu thuật, thủ thuật (máy xét nghiệm, máy XQuang, máy siêu âm...), tạm thời được ghi theo nguyên tắc: XX.n.Z, trong đó: \n- XX hoặc XXX: Mã nhóm máy thực hiện (HH, VS, SH, SA, XQ, CL, MRI, PT, TT, DC, XT, SP, PET, XH, NS, DSA, ĐT...); \n- n: Ký hiệu của nguồn kinh phí mua máy (1: ngân sách nhà nước; 2: tài trợ, viện trợ, hỗ trợ; 3: nguồn khác - ghi cụ thể trong dấu [...]); \n- Z: Số serial của máy (Ghi cả phần chữ và phần số). Đối với hệ thống máy gồm nhiều máy thì ghi tất cả các serial của các máy, cách nhau bằng dấu chấm phẩy \";\". \nTrường thông tin này không bắt buộc trong trường hợp xét nghiệm cận lâm sàng được chuyển nơi khác thực hiện hoặc DVKT không thực hiện trên máy."
+        },
+        {
+            "stt": 45,
+            "fieldName": "MA_HIEU_SP",
+            "dataType": "Chuỗi",
+            "maxLength": 255,
+            "description": "Ghi mã hiệu sản phẩm của VTYT, là mã hiệu do Công ty sản xuất tự đặt cho sản phẩm của mình. Mã hiệu có thể là số Model sản phẩm hoặc số Serial hoặc số EMEI được in trên sản phẩm hoặc bao bì sản phẩm. Mã hiệu sản phẩm chỉ bắt buộc đối với VTYT có thông tin mã hiệu sản phẩm."
+        },
+        {
+            "stt": 46,
+            "fieldName": "TAI_SU_DUNG",
+            "dataType": "Số",
+            "maxLength": 1,
+            "description": "Là mã đánh dấu đối với VTYT tái sử dụng, trong đó: \n- Ghi mã \"1\" nếu là VTYT tái sử dụng; \n- Nếu VTYT không tái sử dụng thì để trống trường thông tin này."
+        },
+        {
+            "stt": 47,
+            "fieldName": "DU_PHONG",
+            "dataType": "Chuỗi",
+            "maxLength": "n",
+            "description": "Trường dữ liệu dự phòng khi cần."
+        }
+    ]
+}

@@ -3,7 +3,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Check_MA_BENH_CHINH = void 0;
 const xml1RuleBase_1 = require("./xml1RuleBase");
 class Check_MA_BENH_CHINH extends xml1RuleBase_1.Xml1RuleBase {
-    get key() { return 'MA_BENH_CHINH'; }
+    constructor() {
+        super({
+            ruleId: 'RULE_XML1_MA_BENH_CHINH_01',
+            xmlType: 'XML1',
+            field: 'MA_BENH_CHINH',
+            severity: 'ERROR',
+            description: 'Kiểm tra quy định cho trường MA_BENH_CHINH',
+            errorMessage: 'MA_BENH_CHINH không được để trống',
+            reference: 'QĐ 3176/QĐ-BYT',
+        });
+    }
     check(model, context) {
         if (!model.MA_BENH_CHINH || !model.MA_BENH_CHINH.trim()) {
             return this.error("MA_BENH_CHINH không được để trống");

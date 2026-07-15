@@ -3,8 +3,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Check_T_TONGCHI_BV = void 0;
 const xml1RuleBase_1 = require("./xml1RuleBase");
 class Check_T_TONGCHI_BV extends xml1RuleBase_1.Xml1RuleBase {
-    get key() {
-        return 'T_TONGCHI_BV';
+    constructor() {
+        super({
+            ruleId: 'RULE_XML1_T_TONGCHI_BV_01',
+            xmlType: 'XML1',
+            field: 'T_TONGCHI_BV',
+            severity: 'ERROR',
+            description: 'Kiểm tra quy định cho trường T_TONGCHI_BV',
+            errorMessage: 'T_TONGCHI_BV phải bằng 0 khi không có chi phí',
+            reference: 'QĐ 3176/QĐ-BYT',
+        });
     }
     check(model, context) {
         const hasXml2 = context.xml2 && context.xml2.length > 0;

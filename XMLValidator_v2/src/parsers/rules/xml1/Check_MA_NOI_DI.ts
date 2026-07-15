@@ -6,7 +6,19 @@ import { DictionaryCacheInstance } from '../../dictionary.cache';
 
 export class Check_MA_NOI_DI extends Xml1RuleBase
     {
-        public get key(): string { return 'MA_NOI_DI'; }
+  constructor() {
+    super({
+      ruleId: 'RULE_XML1_MA_NOI_DI_01',
+      xmlType: 'XML1',
+      field: 'MA_NOI_DI',
+      severity: 'ERROR',
+      description: 'Kiểm tra quy định cho trường MA_NOI_DI',
+      errorMessage: 'MA_NOI_DI quá kích thước tối đa (max 5)',
+      reference: 'QĐ 3176/QĐ-BYT',
+    });
+  }
+
+        
 
         public check(model: Xml1Model, context: HoSoContext): ErrorDetails | null
         {

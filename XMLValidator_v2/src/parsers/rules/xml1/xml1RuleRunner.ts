@@ -84,6 +84,7 @@ export class Xml1RuleRunner {
     const errors: ErrorDetails[] = [];
 
     for (const rule of this.rules) {
+      if (!rule.isEnabled) continue;
       const err = rule.check(model, context);
       if (err) {
         errors.push(err);

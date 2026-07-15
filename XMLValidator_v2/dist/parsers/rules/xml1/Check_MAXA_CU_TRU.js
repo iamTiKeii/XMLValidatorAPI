@@ -3,7 +3,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Check_MAXA_CU_TRU = void 0;
 const xml1RuleBase_1 = require("./xml1RuleBase");
 class Check_MAXA_CU_TRU extends xml1RuleBase_1.Xml1RuleBase {
-    get key() { return 'MAXA_CU_TRU'; }
+    constructor() {
+        super({
+            ruleId: 'RULE_XML1_MAXA_CU_TRU_01',
+            xmlType: 'XML1',
+            field: 'MAXA_CU_TRU',
+            severity: 'ERROR',
+            description: 'Kiểm tra quy định cho trường MAXA_CU_TRU',
+            errorMessage: 'MAXA_CU_TRU quá kích thước tối đa (5 ký tự)',
+            reference: 'QĐ 3176/QĐ-BYT',
+        });
+    }
     check(model, context) {
         if (!model.MAXA_CU_TRU || !model.MAXA_CU_TRU.trim()) {
             return null;

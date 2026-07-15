@@ -1,0 +1,162 @@
+{
+    "id": "xml8",
+    "name": "Bảng 8. Chỉ tiêu dữ liệu tóm tắt hồ sơ bệnh án",
+    "description": "Bảng dữ liệu tóm tắt các thông tin quan trọng trong hồ sơ bệnh án của người bệnh, dùng để liên thông dữ liệu phục vụ quản lý, giám định và thanh toán BHYT.",
+    "fileName": "xml8.json",
+    "fields": [
+        {
+            "stt": 1,
+            "fieldName": "MA_LK",
+            "dataType": "Chuỗi",
+            "maxLength": 100,
+            "description": "Là mã đợt điều trị duy nhất (dùng để liên kết giữa Bảng chỉ tiêu tổng hợp khám bệnh, chữa bệnh (bảng XML 1) và các bảng còn lại ban hành kèm theo Quyết định này trong một lần khám bệnh, chữa bệnh (PRIMARY KEY))."
+        },
+        {
+            "stt": 2,
+            "fieldName": "MA_LOAI_KCB",
+            "dataType": "Chuỗi",
+            "maxLength": 2,
+            "description": "Ghi mã hình thức khám bệnh, chữa bệnh. Các mã gồm:\n- Mã \"02\": Điều trị ngoại trú;\n- Mã \"03\": Điều trị nội trú;\n- Mã \"04\": Điều trị nội trú ban ngày;\n- Mã \"05\": Điều trị ngoại trú các bệnh mạn tính dài ngày liên tục trong năm, áp dụng cho các bệnh theo danh mục ban hành kèm theo Thông tư số 46/2016/TT-BYT, có khám bệnh và lĩnh thuốc và các văn bản có quy định, điều chỉnh, bổ sung;\n- Mã \"06\": Điều trị lưu tại Trạm Y tế tuyến xã, Phòng khám đa khoa khu vực;\n- Mã \"08\": Điều trị ngoại trú các bệnh mạn tính dài ngày liên tục trong năm, áp dụng cho các bệnh theo danh mục ban hành kèm theo Thông tư số 46/2016/TT-BYT, có khám bệnh, có thực hiện các dịch vụ kỹ thuật và/hoặc được sử dụng thuốc;\n- Mã \"09\": Điều trị nội trú dưới 04 (bốn) giờ."
+        },
+        {
+            "stt": 3,
+            "fieldName": "HO_TEN_CHA",
+            "dataType": "Chuỗi",
+            "maxLength": 255,
+            "description": "Ghi họ và tên cha (bố) theo hồ sơ bệnh án của người bệnh (nếu có)."
+        },
+        {
+            "stt": 4,
+            "fieldName": "HO_TEN_ME",
+            "dataType": "Chuỗi",
+            "maxLength": 255,
+            "description": "Ghi họ và tên mẹ theo hồ sơ bệnh án của người bệnh (nếu có)."
+        },
+        {
+            "stt": 5,
+            "fieldName": "NGUOI_GIAM_HO",
+            "dataType": "Chuỗi",
+            "maxLength": 255,
+            "description": "Ghi họ và tên người giám hộ theo hồ sơ bệnh án của người bệnh (nếu có)."
+        },
+        {
+            "stt": 6,
+            "fieldName": "DON_VI",
+            "dataType": "Chuỗi",
+            "maxLength": 1024,
+            "description": "Ghi tên đơn vị của người hưởng.\nLưu ý:\n- Ghi rõ đơn vị nơi người bệnh làm việc và đóng bảo hiểm xã hội theo thông tin do người đến khám bệnh cung cấp;\n- Trường hợp con ốm thì ghi tên đơn vị mà người cha (bố) hoặc mẹ đang làm việc và đóng bảo hiểm xã hội theo thông tin do người đến khám bệnh cung cấp. Thực hiện việc ghi giấy chứng nhận nghỉ việc hưởng BHXH theo hướng dẫn tại Thông tư số 18/2022/TT-BYT của Bộ trưởng Bộ Y tế."
+        },
+        {
+            "stt": 7,
+            "fieldName": "NGAY_VAO",
+            "dataType": "Chuỗi",
+            "maxLength": 12,
+            "description": "Ghi thời điểm người bệnh đến KBCB, gồm 12 ký tự, theo định dạng yyyymmddHHMM. Ví dụ: người bệnh đến KBCB lúc 15 giờ 20 phút ngày 31/03/2017 được hiển thị là: 201703311520."
+        },
+        {
+            "stt": 8,
+            "fieldName": "NGAY_RA",
+            "dataType": "Chuỗi",
+            "maxLength": 12,
+            "description": "Ghi thời điểm người bệnh kết thúc lần khám bệnh hoặc đợt điều trị tại cơ sở KBCB, gồm 12 ký tự theo định dạng yyyymmddHHMM.\nLưu ý: Trường hợp điều trị ngoại trú thì ghi thời điểm kết thúc việc khám, chỉ định điều trị."
+        },
+        {
+            "stt": 9,
+            "fieldName": "CHAN_DOAN_VAO",
+            "dataType": "Chuỗi",
+            "maxLength": "n",
+            "description": "Ghi chẩn đoán của cơ sở KBCB ở thời điểm tiếp nhận người bệnh (Chẩn đoán sơ bộ)."
+        },
+        {
+            "stt": 10,
+            "fieldName": "CHAN_DOAN_RV",
+            "dataType": "Chuỗi",
+            "maxLength": "n",
+            "description": "Ghi đầy đủ chẩn đoán xác định bệnh chính, bệnh kèm theo và/hoặc các triệu chứng hoặc hội chứng, được bác sỹ ghi trong hồ sơ KBCB tại thời điểm kết thúc KBCB đối với người bệnh.\nLưu ý: Đối với việc ghi chẩn đoán ra viện để phục vụ việc tạo lập giấy chứng nhận nghỉ việc hưởng bảo hiểm xã hội thì thực hiện theo hướng dẫn tại Thông tư số 18/2022/TT-BYT của Bộ trưởng Bộ Y tế, trong đó:\n- Nội dung chẩn đoán phải mô tả cụ thể về tình trạng sức khỏe hoặc ghi tên bệnh hoặc mã bệnh.\n- Trường hợp mắc bệnh cần chữa trị dài ngày thì ghi mã bệnh; trường hợp chưa có mã bệnh thì ghi đầy đủ tên bệnh. Việc ghi mã bệnh và tên bệnh thực hiện theo quy định tại Thông tư số 46/2016/TT-BYT ngày 30 tháng 12 năm 2016 của Bộ trưởng Bộ Y tế ban hành danh mục bệnh dài ngày;\n- Trường hợp điều trị dưỡng thai: Ghi rõ cụm từ \"dưỡng thai\"."
+        },
+        {
+            "stt": 11,
+            "fieldName": "QT_BENHLY",
+            "dataType": "Chuỗi",
+            "maxLength": "n",
+            "description": "Ghi quá trình bệnh lý và diễn biến lâm sàng."
+        },
+        {
+            "stt": 12,
+            "fieldName": "TOMTAT_KQ",
+            "dataType": "Chuỗi",
+            "maxLength": "n",
+            "description": "Ghi tóm tắt kết quả xét nghiệm cận lâm sàng có giá trị chẩn đoán."
+        },
+        {
+            "stt": 13,
+            "fieldName": "PP_DIEUTRI",
+            "dataType": "Chuỗi",
+            "maxLength": "n",
+            "description": "Ghi phương pháp điều trị cho người bệnh như nội khoa, ngoại khoa, xạ trị, hoá trị hoặc xạ trị + nội khoa."
+        },
+        {
+            "stt": 14,
+            "fieldName": "NGAY_SINHCON",
+            "dataType": "Chuỗi",
+            "maxLength": 8,
+            "description": "Trường hợp con chết sau khi sinh thì nhập ngày, tháng, năm sinh của con, theo định dạng yyyymmdd."
+        },
+        {
+            "stt": 15,
+            "fieldName": "NGAY_CONCHET",
+            "dataType": "Chuỗi",
+            "maxLength": 8,
+            "description": "Trường hợp con chết sau khi sinh thì nhập ngày, tháng, năm con chết, theo định dạng yyyymmdd."
+        },
+        {
+            "stt": 16,
+            "fieldName": "SO_CONCHET",
+            "dataType": "Số",
+            "maxLength": 2,
+            "description": "Trường hợp con chết sau khi sinh thì nhập số con bị chết."
+        },
+        {
+            "stt": 17,
+            "fieldName": "KET_QUA_DTRI",
+            "dataType": "Số",
+            "maxLength": 1,
+            "description": "Ghi mã kết quả điều trị, trong đó:\n- Mã \"1\": Khỏi;\n- Mã \"2\": Đỡ;\n- Mã \"3\": Không thay đổi;\n- Mã \"4\": Nặng hơn;\n- Mã \"5\": Tử vong tại cơ sở KBCB;\n- Mã \"6\": Tiên lượng nặng xin về;\n- Mã \"7\": Chưa xác định (không thuộc một trong các mã kết quả điều trị nêu trên);\n- Mã \"8\": Tử vong ngoại viện."
+        },
+        {
+            "stt": 18,
+            "fieldName": "GHI_CHU",
+            "dataType": "Chuỗi",
+            "maxLength": "n",
+            "description": "Trường thông tin này chỉ áp dụng đối với trường hợp người mất hoặc bị hạn chế năng lực hành vi dân sự hoặc trẻ em dưới 16 tuổi phải ghi đầy đủ họ, tên của cha (bố) hoặc của mẹ hoặc người giám hộ của người bệnh theo quy định tại Phụ lục 4 ban hành kèm theo Thông tư số 18/2022/TT-BYT của Bộ trưởng Bộ Y tế."
+        },
+        {
+            "stt": 19,
+            "fieldName": "MA_TTDV",
+            "dataType": "Chuỗi",
+            "maxLength": 255,
+            "description": "Ghi mã của người đứng đầu cơ sở KBCB hoặc người được người đứng đầu cơ sở KBCB ủy quyền được ký và đóng dấu của cơ sở KBCB đó (mã hoá theo số GPHN)."
+        },
+        {
+            "stt": 20,
+            "fieldName": "NGAY_CT",
+            "dataType": "Chuỗi",
+            "maxLength": 8,
+            "description": "Ghi ngày chứng từ (Tóm tắt hồ sơ bệnh án), theo định dạng yyyymmdd, là ngày Trưởng khoa hoặc Trưởng phòng hoặc Phó trưởng khoa hoặc Phó trưởng phòng cấp tóm tắt hồ sơ bệnh án."
+        },
+        {
+            "stt": 21,
+            "fieldName": "MA_THE_TAM",
+            "dataType": "Chuỗi",
+            "maxLength": 15,
+            "description": "Ghi mã thẻ BHYT tạm thời của trẻ em sinh ra hoặc của người hiến tạng nhưng chưa được cơ quan BHXH cấp thẻ BHYT. Cơ sở KBCB sử dụng chức năng “Thông tuyến khám chữa bệnh\\Tra cứu thẻ tạm của trẻ em hoặc của người hiến tạng” trên Cổng tiếp nhận dữ liệu Hệ thống thông tin giám định BHYT của BHXH Việt Nam để tra cứu mã thẻ BHYT tạm thời."
+        },
+        {
+            "stt": 22,
+            "fieldName": "DU_PHONG",
+            "dataType": "Chuỗi",
+            "maxLength": "n",
+            "description": "Trường dữ liệu dự phòng khi cần thiết."
+        }
+    ]
+}

@@ -3,8 +3,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Check_MA_DKBD = void 0;
 const xml1RuleBase_1 = require("./xml1RuleBase");
 class Check_MA_DKBD extends xml1RuleBase_1.Xml1RuleBase {
-    get key() {
-        return 'MA_DKBD';
+    constructor() {
+        super({
+            ruleId: 'RULE_XML1_MA_DKBD_01',
+            xmlType: 'XML1',
+            field: 'MA_DKBD',
+            severity: 'ERROR',
+            description: 'Kiểm tra quy định cho trường MA_DKBD',
+            errorMessage: 'MA_DKBD không được để trống',
+            reference: 'QĐ 3176/QĐ-BYT',
+        });
     }
     check(model, context) {
         if (!model.MA_DKBD || !model.MA_DKBD.trim()) {

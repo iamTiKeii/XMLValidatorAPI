@@ -6,7 +6,19 @@ import { DictionaryCacheInstance } from '../../dictionary.cache';
 
 export class Check_HO_TEN extends Xml1RuleBase
     {
-        public get key(): string { return 'HO_TEN'; }
+  constructor() {
+    super({
+      ruleId: 'RULE_XML1_HO_TEN_01',
+      xmlType: 'XML1',
+      field: 'HO_TEN',
+      severity: 'ERROR',
+      description: 'Kiểm tra quy định cho trường HO_TEN',
+      errorMessage: 'HO_TEN không được rỗng',
+      reference: 'QĐ 3176/QĐ-BYT',
+    });
+  }
+
+        
 
         public check(model: Xml1Model, context: HoSoContext): ErrorDetails | null
         {

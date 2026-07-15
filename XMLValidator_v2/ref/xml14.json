@@ -1,0 +1,162 @@
+{
+    "id": "xml14",
+    "name": "Bảng 14. Chỉ tiêu dữ liệu giấy hẹn khám lại",
+    "description": "Bảng dữ liệu chi tiết về giấy hẹn khám lại cấp cho người bệnh, bao gồm thông tin hành chính, chẩn đoán và thông tin hẹn khám.",
+    "fileName": "xml14.json",
+    "fields": [
+        {
+            "stt": 1,
+            "fieldName": "MA_LK",
+            "dataType": "Chuỗi",
+            "maxLength": 100,
+            "description": "Là mã đợt điều trị duy nhất (dùng để liên kết giữa Bảng chỉ tiêu tổng hợp khám bệnh, chữa bệnh (bảng XML 1) và các bảng còn lại ban hành kèm theo Quyết định này trong một lần khám bệnh, chữa bệnh (PRIMARY KEY)) [1]."
+        },
+        {
+            "stt": 2,
+            "fieldName": "SO_GIAYHEN_KL",
+            "dataType": "Chuỗi",
+            "maxLength": 50,
+            "description": "Ghi số giấy hẹn khám lại do cơ sở KBCB cấp theo mẫu số 5 của Phụ lục ban hành kèm theo Nghị định 75/2023/NĐ-CP của Chính phủ [1]."
+        },
+        {
+            "stt": 3,
+            "fieldName": "MA_CSKCB",
+            "dataType": "Chuỗi",
+            "maxLength": 5,
+            "description": "Ghi mã cơ sở KBCB nơi cấp giấy hẹn khám lại [1]."
+        },
+        {
+            "stt": 4,
+            "fieldName": "HO_TEN",
+            "dataType": "Chuỗi",
+            "maxLength": 255,
+            "description": "Ghi họ và tên của người bệnh được cấp giấy hẹn khám lại [1]."
+        },
+        {
+            "stt": 5,
+            "fieldName": "NGAY_SINH",
+            "dataType": "Chuỗi",
+            "maxLength": 12,
+            "description": "Sử dụng thông tin tại trường NGAY_SINH trong Bảng 1 ban hành kèm theo Quyết định này [1]."
+        },
+        {
+            "stt": 6,
+            "fieldName": "GIOI_TINH",
+            "dataType": "Số",
+            "maxLength": 1,
+            "description": "Sử dụng thông tin tại trường GIOI_TINH trong Bảng 1 ban hành kèm theo Quyết định này [1]."
+        },
+        {
+            "stt": 7,
+            "fieldName": "DIA_CHI",
+            "dataType": "Chuỗi",
+            "maxLength": 1024,
+            "description": "Sử dụng thông tin tại trường DIA_CHI trong Bảng 1 ban hành kèm theo Quyết định này [1]."
+        },
+        {
+            "stt": 8,
+            "fieldName": "MA_THE_BHYT",
+            "dataType": "Chuỗi",
+            "maxLength": "n",
+            "description": "Sử dụng thông tin tại trường MA_THE_BHYT trong Bảng 1 ban hành kèm theo Quyết định này [1]."
+        },
+        {
+            "stt": 9,
+            "fieldName": "GT_THE_DEN",
+            "dataType": "Chuỗi",
+            "maxLength": "n",
+            "description": "Sử dụng thông tin tại trường GT_THE_DEN trong Bảng 1 ban hành kèm theo Quyết định này [1]."
+        },
+        {
+            "stt": 10,
+            "fieldName": "NGAY_VAO",
+            "dataType": "Chuỗi",
+            "maxLength": 12,
+            "description": "Sử dụng thông tin tại trường NGAY_VAO trong Bảng 1 ban hành kèm theo Quyết định này [1]."
+        },
+        {
+            "stt": 11,
+            "fieldName": "NGAY_VAO_NOI_TRU",
+            "dataType": "Chuỗi",
+            "maxLength": 12,
+            "description": "Sử dụng thông tin tại trường NGAY_VAO_NOI_TRU trong Bảng 1 ban hành kèm theo Quyết định này [1]."
+        },
+        {
+            "stt": 12,
+            "fieldName": "NGAY_RA",
+            "dataType": "Chuỗi",
+            "maxLength": 12,
+            "description": "Sử dụng thông tin tại trường NGAY_RA trong Bảng 1 ban hành kèm theo Quyết định này [1]."
+        },
+        {
+            "stt": 13,
+            "fieldName": "NGAY_HEN_KL",
+            "dataType": "Chuỗi",
+            "maxLength": 8,
+            "description": "Ghi thời điểm người bệnh được hẹn khám lại, gồm 08 ký tự theo định dạng yyyymmdd [2]."
+        },
+        {
+            "stt": 15,
+            "fieldName": "CHAN_DOAN_RV",
+            "dataType": "Chuỗi",
+            "maxLength": "n",
+            "description": "Sử dụng thông tin tại trường CHAN_DOAN_RV trong Bảng 1 ban hành kèm theo Quyết định này [2]."
+        },
+        {
+            "stt": 16,
+            "fieldName": "MA_BENH_CHINH",
+            "dataType": "Chuỗi",
+            "maxLength": 7,
+            "description": "Sử dụng thông tin tại trường MA_BENH_CHINH trong Bảng 1 ban hành kèm theo Quyết định này [2]."
+        },
+        {
+            "stt": 17,
+            "fieldName": "MA_BENH_KT",
+            "dataType": "Chuỗi",
+            "maxLength": 100,
+            "description": "Sử dụng thông tin tại trường MA_BENH_KT trong Bảng 1 ban hành kèm theo Quyết định này [2]."
+        },
+        {
+            "stt": 18,
+            "fieldName": "MA_BENH_YHCT",
+            "dataType": "Chuỗi",
+            "maxLength": 255,
+            "description": "Sử dụng thông tin tại trường MA_BENH_YHCT trong Bảng 1 ban hành kèm theo Quyết định này [2]."
+        },
+        {
+            "stt": 19,
+            "fieldName": "MA_DOITUONG_KCB",
+            "dataType": "Chuỗi",
+            "maxLength": 4,
+            "description": "Sử dụng thông tin tại trường MA_DOITUONG_KCB trong Bảng 1 ban hành kèm theo Quyết định này [2]."
+        },
+        {
+            "stt": 20,
+            "fieldName": "MA_BAC_SI",
+            "dataType": "Chuỗi",
+            "maxLength": 255,
+            "description": "Ghi mã người hành nghề chỉ định người bệnh khám lại (mã hóa theo số GPHN). Lưu ý: Trường hợp người hành nghề được huy động, điều động tham gia phòng, chống dịch hoặc thiên tai, thảm họa tại cơ sở KBCB khác, mã hoá theo nguyên tắc: MA_BAC_SI.HD.XXXXX, trong đó MA_BAC_SI ghi theo số GPHN của người hành nghề được điều động, XXXXX là mã cơ sở KCB nơi cử người hành nghề đi; trường hợp người hành nghề không đăng ký hành nghề nhưng được huy động thì XXXXX ghi 2 ký tự đầu là mã tỉnh nơi ra quyết định huy động, 3 ký tự sau ghi XXX [2], [3]."
+        },
+        {
+            "stt": 21,
+            "fieldName": "MA_TTDV",
+            "dataType": "Chuỗi",
+            "maxLength": 255,
+            "description": "Ghi mã của người đứng đầu cơ sở KBCB hoặc người được người đứng đầu cơ sở KBCB ủy quyền được ký giấy hẹn khám lại (mã hoá theo số GPHN). Trường hợp không có GPHN thì ghi số căn cước công dân hoặc số định danh cá nhân [4]."
+        },
+        {
+            "stt": 22,
+            "fieldName": "NGAY_CT",
+            "dataType": "Chuỗi",
+            "maxLength": 8,
+            "description": "Ghi ngày cấp giấy hẹn khám lại, theo định dạng yyyymmdd [4]."
+        },
+        {
+            "stt": 23,
+            "fieldName": "DU_PHONG",
+            "dataType": "Chuỗi",
+            "maxLength": "n",
+            "description": "Trường dữ liệu dự phòng khi cần thiết. Bổ sung: Ghi dữ liệu chữ ký số của cơ sở KBCB [4]."
+        }
+    ]
+}

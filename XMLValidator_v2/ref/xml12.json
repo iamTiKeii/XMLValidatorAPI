@@ -1,0 +1,253 @@
+{
+    "id": "xml12",
+    "name": "Bảng 12. Chỉ tiêu dữ liệu giám định y khoa",
+    "description": "Bảng dữ liệu phục vụ giải quyết chế độ cho các đối tượng giám định (Trừ giám định pháp y). Hiện nay các cơ sở giám định y khoa chưa kết nối liên thông với Cổng tiếp nhận dữ liệu Hệ thống thông tin giám định BHYT của BHXH Việt Nam, vì vậy nội dung này quy định các trường thông tin cần thiết để nhập dữ liệu trực tiếp trên Cổng tiếp nhận.",
+    "fileName": "xml12.json",
+    "fields": [
+        {
+            "stt": 1,
+            "fieldName": "NGUOI_CHU_TRI",
+            "dataType": "Chuỗi",
+            "maxLength": 255,
+            "description": "Ghi họ và tên người chủ trì trong danh mục người chủ trì hội đồng giám định y khoa đã nhập trên Cổng tiếp nhận của cơ quan BHXH."
+        },
+        {
+            "stt": 2,
+            "fieldName": "CHUC_VU",
+            "dataType": "Số",
+            "maxLength": 1,
+            "description": "Ghi chức vụ của người chủ trì, trong đó: mã \"1\": Chủ tịch; mã \"2\": Người ký thay chủ tịch."
+        },
+        {
+            "stt": 3,
+            "fieldName": "NGAY_HOP",
+            "dataType": "Chuỗi",
+            "maxLength": 8,
+            "description": "Ghi ngày, tháng, năm họp hội đồng giám định y khoa, theo định dạng yyyymmdd."
+        },
+        {
+            "stt": 4,
+            "fieldName": "HO_TEN",
+            "dataType": "Chuỗi",
+            "maxLength": 255,
+            "description": "Ghi họ và tên người được giám định y khoa."
+        },
+        {
+            "stt": 5,
+            "fieldName": "NGAY_SINH",
+            "dataType": "Chuỗi",
+            "maxLength": 8,
+            "description": "Ghi ngày, tháng, năm sinh của người được giám định y khoa, theo định dạng yyyymmdd."
+        },
+        {
+            "stt": 6,
+            "fieldName": "SO_CCCD",
+            "dataType": "Chuỗi",
+            "maxLength": "n",
+            "description": "Ghi số định danh cá nhân trên thẻ căn cước hoặc căn cước công dân hoặc giấy chứng nhận căn cước hoặc giấy khai sinh của người được giám định y khoa. \n- Trường hợp người được giám định y khoa là người nước ngoài thì ghi số hộ chiếu. \n- Trường hợp bất khả kháng như trẻ sơ sinh hoặc người mất ý thức, tâm thần không thể lấy được thông tin số định danh cá nhân thì để trống."
+        },
+        {
+            "stt": 7,
+            "fieldName": "NGAY_CAP_CCCD",
+            "dataType": "Chuỗi",
+            "maxLength": 8,
+            "description": "Ghi ngày cấp chứng minh nhân dân hoặc thẻ căn cước công dân hoặc hộ chiếu của người được giám định y khoa, theo định dạng yyyymmdd."
+        },
+        {
+            "stt": 8,
+            "fieldName": "NOI_CAP_CCCD",
+            "dataType": "Chuỗi",
+            "maxLength": 1024,
+            "description": "Ghi nơi cấp chứng minh nhân dân hoặc thẻ căn cước công dân hoặc hộ chiếu của người được giám định y khoa."
+        },
+        {
+            "stt": 9,
+            "fieldName": "DIA_CHI",
+            "dataType": "Chuỗi",
+            "maxLength": 1024,
+            "description": "Ghi địa chỉ nơi cư trú hiện tại của người được giám định y khoa. Lưu ý: Ghi cụ thể số nhà hoặc Thôn/Xóm; phường/xã; quận, huyện/thị xã/TP thuộc tỉnh; tỉnh, thành phố trực thuộc trung ương."
+        },
+        {
+            "stt": 10,
+            "fieldName": "MATINH_CU_TRU",
+            "dataType": "Chuỗi",
+            "maxLength": 3,
+            "description": "Mã đơn vị hành chính cấp tỉnh nơi người bệnh đang cư trú (thường trú hoặc tạm trú). Ghi theo 02 ký tự cuối của mã đơn vị hành chính của tỉnh, thành phố trực thuộc Trung ương nơi người bệnh cư trú (Quy định tại Phụ lục 1 Thông tư số 07/2016/TT-BCA ngày 01/02/2016 của Bộ trưởng Bộ Công an)."
+        },
+        {
+            "stt": 11,
+            "fieldName": "MAHUYEN_CU_TRU",
+            "dataType": "Chuỗi",
+            "maxLength": 3,
+            "description": "Mã đơn vị hành chính cấp huyện nơi người bệnh đang cư trú (thường trú hoặc tạm trú). Ghi mã đơn vị hành chính cấp huyện theo Quyết định số 124/2004/QĐ-TTg ngày 08/7/2004 của Thủ tướng Chính phủ ban hành danh mục mã đơn vị hành chính, được cập nhật trên Cổng tiếp nhận dữ liệu thuộc Hệ thống thông tin giám định BHYT của BHXH Việt Nam."
+        },
+        {
+            "stt": 12,
+            "fieldName": "MAXA_CU_TRU",
+            "dataType": "Chuỗi",
+            "maxLength": 5,
+            "description": "Mã đơn vị hành chính cấp xã nơi người bệnh đang cư trú (thường trú hoặc tạm trú). Ghi mã đơn vị hành chính cấp xã theo Quyết định số 124/2004/QĐ-TTg ngày 08/7/2004 của Thủ tướng Chính phủ ban hành danh mục mã đơn vị hành chính, được cập nhật trên Cổng tiếp nhận dữ liệu thuộc Hệ thống thông tin giám định BHYT của BHXH Việt Nam. Trường hợp xã chưa có mã đơn vị hành chính thì để trống."
+        },
+        {
+            "stt": 13,
+            "fieldName": "MA_BHXH",
+            "dataType": "Chuỗi",
+            "maxLength": 10,
+            "description": "Ghi mã số bảo hiểm xã hội của người được giám định y khoa."
+        },
+        {
+            "stt": 14,
+            "fieldName": "MA_THE_BHYT",
+            "dataType": "Chuỗi",
+            "maxLength": 15,
+            "description": "Ghi mã thẻ BHYT của người được giám định y khoa (nếu có)."
+        },
+        {
+            "stt": 15,
+            "fieldName": "NGHE_NGHIEP",
+            "dataType": "Chuỗi",
+            "maxLength": 100,
+            "description": "Ghi nghề nghiệp của người đề nghị khám giám định y khoa (nếu có)."
+        },
+        {
+            "stt": 16,
+            "fieldName": "DIEN_THOAI",
+            "dataType": "Chuỗi",
+            "maxLength": 15,
+            "description": "Ghi số điện thoại liên hệ của người đề nghị giám định y khoa."
+        },
+        {
+            "stt": 17,
+            "fieldName": "MA_DOI_TUONG",
+            "dataType": "Chuỗi",
+            "maxLength": 20,
+            "description": "Ghi mã đối tượng giám định (BB: Bệnh binh; BHXH1L: Hưởng BHXH 1 lần; BNN: Bệnh nghề nghiệp; CĐHH: Chất độc hóa học; KNLĐH: Nghỉ hưu trước tuổi; KNLĐT: Tuất; NKT: Người khuyết tật; NVQS: Khám tuyển nghĩa vụ quân sự; TB: Thương binh; TH: Giám định tổng hợp; TNLĐ: Tai nạn lao động). Ghi chú: Trường hợp một đối tượng mà có từ hai mã đối tượng trở lên thì liệt kê các mã đối tượng, giữa các mã đối tượng cách nhau bằng dấu chấm phẩy \";\"."
+        },
+        {
+            "stt": 18,
+            "fieldName": "KHAM_GIAM_DINH",
+            "dataType": "Số",
+            "maxLength": 1,
+            "description": "Ghi mã khám giám định, trong đó: \n- Mã \"1\": Khám giám định lần đầu; \n- Mã \"2\": Khám giám định lại; \n- Mã \"3\": Khám giám định tái phát; \n- Mã \"4\": Khám phúc quyết (vượt khả năng chuyên môn, hoặc đối tượng không đồng ý, hoặc theo đề nghị của Cục Quản lý KCB/Cục Người có công/BHXH); \n- Mã \"5\": Khám phúc quyết lần cuối; \n- Mã \"6\": Khám bổ sung; \n- Mã \"7\": Khám vết thương còn sót; \n- Mã \"8\": Giám định tổng hợp."
+        },
+        {
+            "stt": 19,
+            "fieldName": "SO_BIEN_BAN",
+            "dataType": "Chuỗi",
+            "maxLength": 200,
+            "description": "Ghi số thứ tự trong biên bản họp hội đồng giám định y khoa."
+        },
+        {
+            "stt": 20,
+            "fieldName": "TYLE_TTCT_CU",
+            "dataType": "Số",
+            "maxLength": 3,
+            "description": "Ghi tỷ lệ (%) tổn thương cơ thể do thương tật, bệnh tật, bệnh nghề nghiệp của lần giám định trước (lần gần nhất) theo kết luận của Hội đồng giám định y khoa. Ghi chú: Trường thông tin này để trống nếu không có tỷ lệ tổn thương cơ thể của lần giám định trước (lần gần nhất)."
+        },
+        {
+            "stt": 21,
+            "fieldName": "DANG_HUONG_CHE_DO",
+            "dataType": "Chuỗi",
+            "maxLength": 10,
+            "description": "Ghi mã chế độ đang hưởng, trong đó: \n- Mã \"1\": Thương binh; \n- Mã \"2\": Bệnh, tật; \n- Mã \"3\": Bệnh nghề nghiệp; \n- Mã \"4\": Tai nạn lao động; \n- Mã \"5\": Chất độc hoá học; \n- Mã \"6\": Bệnh binh; \n- Mã \"7\": Khác (không thuộc một trong các đối tượng quy định từ mã \"1\" đến mã \"6\" của trường thông tin này). \nGhi chú: \n- Trường hợp đang được hưởng cùng lúc nhiều chế độ khác nhau thì ghi mã các chế độ đang được hưởng, phân cách bằng dấu chấm phẩy \";\"; \n- Trường thông tin này để trống nếu không thuộc một trong các chế độ nêu trên."
+        },
+        {
+            "stt": 22,
+            "fieldName": "NGAY_CHUNG_TU",
+            "dataType": "Chuỗi",
+            "maxLength": 8,
+            "description": "Ghi ngày chứng từ (ngày họp Hội đồng giám định y khoa), theo định dạng yyyymmdd."
+        },
+        {
+            "stt": 23,
+            "fieldName": "SO_GIAY_GIOI_THIEU",
+            "dataType": "Chuỗi",
+            "maxLength": 200,
+            "description": "Ghi số giấy giới thiệu."
+        },
+        {
+            "stt": 24,
+            "fieldName": "NGAY_DE_NGHI",
+            "dataType": "Chuỗi",
+            "maxLength": 8,
+            "description": "Ghi ngày đề nghị, theo định dạng yyyymmdd."
+        },
+        {
+            "stt": 25,
+            "fieldName": "MA_DONVI",
+            "dataType": "Chuỗi",
+            "maxLength": 200,
+            "description": "Ghi mã cơ quan, đơn vị quản lý hoặc cơ quan, đơn vị giới thiệu đối tượng khám giám định y khoa."
+        },
+        {
+            "stt": 26,
+            "fieldName": "GIOI_THIEU_CUA",
+            "dataType": "Chuỗi",
+            "maxLength": 1024,
+            "description": "Ghi tên đầy đủ của cơ quan, đơn vị quản lý hoặc cơ quan, đơn vị giới thiệu đối tượng khám giám định y khoa."
+        },
+        {
+            "stt": 27,
+            "fieldName": "KET_QUA_KHAM",
+            "dataType": "Chuỗi",
+            "maxLength": "n",
+            "description": "Ghi kết quả khám của Hội đồng Giám định y khoa (được thể hiện trong Biên bản giám định y khoa)."
+        },
+        {
+            "stt": 28,
+            "fieldName": "SO_VAN_BAN_CAN_CU",
+            "dataType": "Chuỗi",
+            "maxLength": 200,
+            "description": "Ghi số văn bản (Ghi đầy đủ số và ký tự của văn bản) làm căn cứ khám giám định y khoa phù hợp với đối tượng giám định (Ví dụ: Thông tư 34/2012/TTLT-BYT-BLĐTBXH; ...). Nếu có nhiều văn bản làm căn cứ giám định, kết luận thì ghi đầy đủ các số hiệu văn bản, giữa các số hiệu văn bản phân cách bằng dấu chấm phẩy \";\"."
+        },
+        {
+            "stt": 29,
+            "fieldName": "TYLE_TTCT_MOI",
+            "dataType": "Số",
+            "maxLength": 3,
+            "description": "Ghi tỷ lệ (%) tổn thương cơ thể do thương tật, bệnh tật, bệnh nghề nghiệp của lần giám định này theo kết luận của Hội đồng giám định y khoa."
+        },
+        {
+            "stt": 30,
+            "fieldName": "TONG_TYLE_TTCT",
+            "dataType": "Số",
+            "maxLength": 3,
+            "description": "Ghi tổng tỷ lệ tổn thương cơ thể, do thương tật, bệnh tật, bệnh nghề nghiệp (nêu có) theo kết luận của Hội đồng giám định y khoa. Lưu ý: chỉ ghi trường thông tin này trong trường hợp khám giám định tổng hợp, khám bổ sung, khám vết thương còn sót."
+        },
+        {
+            "stt": 31,
+            "fieldName": "DANG_KHUYETTAT",
+            "dataType": "Số",
+            "maxLength": 1,
+            "description": "Ghi mã dạng khuyết tật theo quy định về dạng khuyết tật tại Mẫu số 01 ban hành kèm theo Thông tư số 01/2019/TT-BLĐTBXH... (1: Vận động; 2: Nghe, nói; 3: Nhìn; 4: Thần kinh, tâm thần; 5: Trí tuệ; 6: Khác). Trường thông tin này chỉ ghi trong trường hợp khám giám định người khuyết tật [1]."
+        },
+        {
+            "stt": 32,
+            "fieldName": "MUC_DO_KHUYETTAT",
+            "dataType": "Số",
+            "maxLength": 1,
+            "description": "Ghi mã mức độ khuyết tật theo quy định về mức độ khuyết tật tại Mẫu số 01 ban hành kèm theo Thông tư số 01/2019/TT-BLĐTBXH... (1: Thực hiện được; 2: Thực hiện được nhưng cần trợ giúp; 3: Không thực hiện được; 4: Không xác định được). Trường thông tin này chỉ ghi trong trường hợp khám giám định người khuyết tật [2]."
+        },
+        {
+            "stt": 33,
+            "fieldName": "DE_NGHI",
+            "dataType": "Chuỗi",
+            "maxLength": "n",
+            "description": "Ghi nội dung đề nghị."
+        },
+        {
+            "stt": 34,
+            "fieldName": "DUOC_XACDINH",
+            "dataType": "Chuỗi",
+            "maxLength": "n",
+            "description": "Ghi ghi chú được xác định, ghi đầy đủ nội dung theo quy định tại khoản 2 Điều 4 Thông tư số 56/2017/TT-BYT (Đối với các trường hợp không tự kiểm soát hoặc không tự thực hiện được các hoạt động đi lại, mặc quần áo, vệ sinh cá nhân...)."
+        },
+        {
+            "stt": 35,
+            "fieldName": "DU_PHONG",
+            "dataType": "Chuỗi",
+            "maxLength": "n",
+            "description": "Trường dữ liệu dự phòng khi cần thiết."
+        }
+    ]
+}

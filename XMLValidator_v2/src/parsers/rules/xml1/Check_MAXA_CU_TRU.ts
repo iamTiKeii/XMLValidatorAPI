@@ -6,7 +6,19 @@ import { DictionaryCacheInstance } from '../../dictionary.cache';
 
 export class Check_MAXA_CU_TRU extends Xml1RuleBase
     {
-        public get key(): string { return 'MAXA_CU_TRU'; }
+  constructor() {
+    super({
+      ruleId: 'RULE_XML1_MAXA_CU_TRU_01',
+      xmlType: 'XML1',
+      field: 'MAXA_CU_TRU',
+      severity: 'ERROR',
+      description: 'Kiểm tra quy định cho trường MAXA_CU_TRU',
+      errorMessage: 'MAXA_CU_TRU quá kích thước tối đa (5 ký tự)',
+      reference: 'QĐ 3176/QĐ-BYT',
+    });
+  }
+
+        
 
         public check(model: Xml1Model, context: HoSoContext): ErrorDetails | null
         {

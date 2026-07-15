@@ -1,0 +1,169 @@
+{
+    "id": "xml11",
+    "name": "Bảng 11. Chỉ tiêu dữ liệu giấy chứng nhận nghỉ việc hưởng bảo hiểm xã hội",
+    "description": "Bảng dữ liệu dùng để cấp giấy chứng nhận nghỉ việc hưởng bảo hiểm xã hội cho người lao động điều trị ngoại trú.",
+    "fileName": "xml11.json",
+    "fields": [
+        {
+            "stt": 1,
+            "fieldName": "MA_LK",
+            "dataType": "Chuỗi",
+            "maxLength": 100,
+            "description": "Là mã đợt điều trị duy nhất (dùng để liên kết giữa Bảng chỉ tiêu tổng hợp khám bệnh, chữa bệnh (bảng XML 1) và các bảng còn lại ban hành kèm theo Quyết định này trong một lần khám bệnh, chữa bệnh (PRIMARY KEY)) [1]."
+        },
+        {
+            "stt": 2,
+            "fieldName": "SO_CT",
+            "dataType": "Chuỗi",
+            "maxLength": 200,
+            "description": "Ghi số chứng từ, là mã lưu trữ giấy chứng nhận nghỉ việc hưởng BHXH tại cơ sở KBCB [1]."
+        },
+        {
+            "stt": 3,
+            "fieldName": "SO_SERI",
+            "dataType": "Chuỗi",
+            "maxLength": 200,
+            "description": "Ghi số định danh chứng từ (Giấy chứng nhận nghỉ việc hưởng BHXH) của mỗi đợt điều trị theo quy định của cơ sở KBCB [1]."
+        },
+        {
+            "stt": 4,
+            "fieldName": "SO_KCB",
+            "dataType": "Chuỗi",
+            "maxLength": 200,
+            "description": "Ghi số chứng từ phục vụ việc quản lý nội bộ của cơ sở KBCB theo Phụ lục 07 Thông tư 18/2022/TT-BYT của Bộ trưởng Bộ Y tế [1]."
+        },
+        {
+            "stt": 5,
+            "fieldName": "DON_VI",
+            "dataType": "Chuỗi",
+            "maxLength": 1024,
+            "description": "Ghi tên đơn vị của người hưởng BHXH. Lưu ý: Ghi rõ đơn vị nơi người bệnh làm việc và đóng bảo hiểm xã hội theo thông tin do người đến khám bệnh cung cấp; Trường hợp con ốm thì ghi tên đơn vị mà người cha (bố) hoặc mẹ đang làm việc và đóng bảo hiểm xã hội theo thông tin do người đến khám bệnh cung cấp. Thực hiện việc ghi giấy chứng nhận nghỉ việc hưởng BHXH theo hướng dẫn tại Thông tư 18/2022/TT-BYT của Bộ trưởng Bộ Y tế [1, 2]."
+        },
+        {
+            "stt": 6,
+            "fieldName": "MA_BHXH",
+            "dataType": "Chuỗi",
+            "maxLength": 10,
+            "description": "Ghi mã số BHXH của người bệnh. (Lưu ý: Đổi kiểu dữ liệu thành chuỗi) [2]."
+        },
+        {
+            "stt": 7,
+            "fieldName": "MA_THE_BHYT",
+            "dataType": "Chuỗi",
+            "maxLength": "n",
+            "description": "Ghi mã thẻ BHYT của người bệnh do cơ quan BHXH cấp. Lưu ý: Khi tiếp đón người bệnh, cơ sở KBCB có trách nhiệm tra cứu trên Cổng tiếp nhận dữ liệu Hệ thống thông tin giám định BHYT của BHXH Việt Nam để kiểm tra thông tin thẻ BHYT. Trường hợp cấp cứu mà người bệnh hoặc thân nhân người bệnh không xuất trình được thẻ BHYT ngay thì cơ sở KBCB tra cứu thông tin thẻ BHYT trước khi người bệnh ra viện. Đối với thẻ BHYT của các đối tượng có các mã QN, HC, LS, XK, CY, CA do BHXH Bộ Quốc phòng, BHXH Bộ Công an cấp: Tra cứu để kiểm tra thời hạn sử dụng của thẻ BHYT trong trường hợp các đối tượng này không còn phục vụ trong lực lượng Quân đội, Công an, Cơ yếu. Trường hợp trong thời gian điều trị, người bệnh được cấp thẻ BHYT mới có thay đổi thông tin liên quan đến mã thẻ thì ghi tiếp mã thẻ mới (mỗi mã thẻ gồm có 15 ký tự), giữa các mã thẻ cách nhau bằng dấu chấm phẩy “;”. Trường hợp người bệnh chưa có thẻ BHYT, cơ sở KBCB sử dụng chức năng “Thông tuyến khám chữa bệnh\\Tra cứu thẻ tạm của trẻ em hoặc của người hiến tạng” trên Cổng tiếp nhận dữ liệu Hệ thống thông tin giám định BHYT của BHXH Việt Nam để tra cứu mã thẻ BHYT tạm thời. Trường hợp người bệnh không KBCB BHYT thì để trống trường thông tin này [3]."
+        },
+        {
+            "stt": 8,
+            "fieldName": "CHAN_DOAN_RV",
+            "dataType": "Chuỗi",
+            "maxLength": "n",
+            "description": "Ghi đầy đủ chẩn đoán xác định bệnh chính, bệnh kèm theo và/hoặc các triệu chứng hoặc hội chứng, được bác sỹ ghi trong hồ sơ KBCB tại thời điểm kết thúc KBCB đối với người bệnh. Lưu ý: Đối với việc ghi chẩn đoán ra viện để phục vụ việc tạo lập giấy chứng nhận nghỉ việc hưởng bảo hiểm xã hội thì thực hiện theo hướng dẫn tại Thông tư số 18/2022/TT-BYT của Bộ trưởng Bộ Y tế, trong đó: Nội dung chẩn đoán phải mô tả cụ thể về tình trạng sức khỏe hoặc ghi tên bệnh hoặc mã bệnh; Trường hợp mắc bệnh cần chữa trị dài ngày thì ghi mã bệnh; trường hợp chưa có mã bệnh thì ghi đầy đủ tên bệnh (Việc ghi mã bệnh và tên bệnh thực hiện theo quy định tại Thông tư số 46/2016/TT-BYT ngày 30 tháng 12 năm 2016); Trường hợp điều trị dưỡng thai: Ghi rõ cụm từ “dưỡng thai” [4-6]."
+        },
+        {
+            "stt": 9,
+            "fieldName": "PP_DIEUTRI",
+            "dataType": "Chuỗi",
+            "maxLength": "n",
+            "description": "Ghi phương pháp điều trị cho người bệnh như nội khoa, ngoại khoa, xạ trị, hoá trị hoặc xạ trị + nội khoa [5]."
+        },
+        {
+            "stt": 10,
+            "fieldName": "MA_DINH_CHI_THAI",
+            "dataType": "Số",
+            "maxLength": 1,
+            "description": "Ghi mã \"1\" là đình chỉ thai nghén, mã \"0\" là không đình chỉ thai nghén. Trường hợp đình chỉ thai nghén bắt buộc nhập thông tin vào trường thông tin tuổi thai (TUOI_THAI) và trường thông tin nguyên nhân đình chỉ thai nghén (NGUYENNHAN_DINHCHI) [7]."
+        },
+        {
+            "stt": 11,
+            "fieldName": "NGUYENNHAN_DINHCHI",
+            "dataType": "Chuỗi",
+            "maxLength": "n",
+            "description": "Ghi nguyên nhân đình chỉ thai nghén. Lưu ý: Bắt buộc ghi trường thông tin này khi MA_DINH_CHI_THAI là mã \"1\" [7]."
+        },
+        {
+            "stt": 12,
+            "fieldName": "TUOI_THAI",
+            "dataType": "Số",
+            "maxLength": 2,
+            "description": "Ghi tuổi thai thực tế (theo tuần), trong đó tuổi thai luôn luôn lớn hơn hoặc bằng 1 và nhỏ hơn hoặc bằng tuổi 42 tuần tuổi. Lưu ý: Bắt buộc ghi trường thông tin này khi MA_DINH_CHI_THAI = 1 [7]."
+        },
+        {
+            "stt": 13,
+            "fieldName": "SO_NGAY_NGHI",
+            "dataType": "Số",
+            "maxLength": 3,
+            "description": "Ghi số ngày nghỉ căn cứ vào tình trạng sức khỏe của người bệnh. Lưu ý: Việc quyết định số ngày nghỉ phải căn cứ vào tình trạng sức khỏe của người bệnh nhưng tối đa không quá 30 ngày cho một lần cấp giấy chứng nhận nghỉ việc hưởng bảo hiểm xã hội. Riêng trường hợp người bệnh điều trị bệnh lao theo chương trình chống lao quốc gia thì thời gian nghỉ tối đa không quá 180 ngày cho một lần cấp giấy chứng nhận nghỉ việc hưởng bảo hiểm xã hội. Trường hợp người lao động bị sẩy thai, phá thai, nạo, hút thai, thai chết lưu mà tuổi thai từ 13 tuần tuổi trở lên thì thời gian nghỉ tối đa theo quy định của Luật bảo hiểm xã hội nhưng không quá 50 ngày cho một lần cấp giấy chứng nhận nghỉ việc hưởng bảo hiểm xã hội [8]."
+        },
+        {
+            "stt": 14,
+            "fieldName": "TU_NGAY",
+            "dataType": "Chuỗi",
+            "maxLength": 8,
+            "description": "Ghi ngày bắt đầu hưởng chế độ, theo định dạng yyyymmdd và phải trùng khớp với ngày người bệnh đến khám [9]."
+        },
+        {
+            "stt": 15,
+            "fieldName": "DEN_NGAY",
+            "dataType": "Chuỗi",
+            "maxLength": 8,
+            "description": "Ghi ngày kết thúc hưởng chế độ, theo định dạng yyyymmdd [9]."
+        },
+        {
+            "stt": 16,
+            "fieldName": "HO_TEN_CHA",
+            "dataType": "Chuỗi",
+            "maxLength": 255,
+            "description": "Ghi họ và tên cha (bố) của người bệnh (nếu có) trong trường hợp người bệnh là trẻ em dưới 07 tuổi theo quy định tại Phụ lục 7 Thông tư số 18/2022/TT-BYT của Bộ trưởng Bộ Y tế. Trường hợp không có cha (bố) thì để trống trường thông tin này [9]."
+        },
+        {
+            "stt": 17,
+            "fieldName": "HO_TEN_ME",
+            "dataType": "Chuỗi",
+            "maxLength": 255,
+            "description": "Ghi họ và tên mẹ của người bệnh (nếu có) trong trường hợp người bệnh là trẻ em dưới 07 tuổi theo quy định tại Phụ lục 7 Thông tư số 18/2022/TT-BYT của Bộ trưởng Bộ Y tế. Trường hợp không có mẹ thì để trống trường thông tin này [9]."
+        },
+        {
+            "stt": 18,
+            "fieldName": "MA_TTDV",
+            "dataType": "Chuỗi",
+            "maxLength": 255,
+            "description": "Ghi mã của người đứng đầu cơ sở KBCB hoặc người được người đứng đầu cơ sở KBCB ủy quyền được ký để cấp giấy chứng nhận nghỉ hưởng BHXH (mã hoá theo số GPHN). (Lưu ý: Đổi kiểu dữ liệu thành chuỗi và tăng kích thước tối đa 255 ký tự) [10]."
+        },
+        {
+            "stt": 19,
+            "fieldName": "MA_BS",
+            "dataType": "Chuỗi",
+            "maxLength": 255,
+            "description": "Ghi mã của Trưởng khoa hoặc Trưởng phòng hoặc Phó trưởng khoa hoặc Phó trưởng phòng hoặc Bác sỹ hành nghề KBCB ký tên theo quy định của Thủ trưởng cơ sở KBCB (mã hóa theo số GPHN). (Lưu ý: Tăng kích thước tối đa 255 ký tự) [11]."
+        },
+        {
+            "stt": 20,
+            "fieldName": "NGAY_CT",
+            "dataType": "Chuỗi",
+            "maxLength": 8,
+            "description": "Ghi ngày cấp chứng từ (Giấy chứng nhận nghỉ việc hưởng BHXH), theo định dạng yyyymmdd và phải trùng với ngày người lao động đến khám bệnh. Trường hợp đợt khám bệnh kéo dài từ 2 ngày trở lên thì ngày, tháng, năm cấp phải trùng với ngày cuối cùng của đợt người lao động đến khám bệnh và cần được chỉ định nghỉ ngoại trú [11, 12]."
+        },
+        {
+            "stt": 21,
+            "fieldName": "MA_THE_TAM",
+            "dataType": "Chuỗi",
+            "maxLength": 15,
+            "description": "Ghi mã thẻ BHYT tạm thời của trẻ em sinh ra hoặc của người hiến tạng nhưng chưa được cơ quan BHXH cấp thẻ BHYT. Cơ sở KBCB sử dụng chức năng “Thông tuyến khám chữa bệnh\\Tra cứu thẻ tạm của trẻ em hoặc của người hiến tạng” trên Cổng tiếp nhận dữ liệu Hệ thống thông tin giám định BHYT của BHXH Việt Nam để tra cứu mã thẻ BHYT tạm thời [12, 13]."
+        },
+        {
+            "stt": 22,
+            "fieldName": "MAU_SO",
+            "dataType": "Chuỗi",
+            "maxLength": 5,
+            "description": "Các cơ sở KBCB sử dụng chuỗi CT07 để xác định đây là Giấy nghỉ việc hưởng bảo hiểm xã hội. Mẫu số mặc định để trống không điền thì hệ thống tự điền CT07 [13]."
+        },
+        {
+            "stt": 23,
+            "fieldName": "DU_PHONG",
+            "dataType": "Chuỗi",
+            "maxLength": "n",
+            "description": "Trường dữ liệu dự phòng khi cần thiết [13]."
+        }
+    ]
+}

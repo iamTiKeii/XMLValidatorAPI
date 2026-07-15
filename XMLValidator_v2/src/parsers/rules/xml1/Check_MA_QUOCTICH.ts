@@ -6,7 +6,19 @@ import { DictionaryCacheInstance } from '../../dictionary.cache';
 
 export class Check_MA_QUOCTICH extends Xml1RuleBase
     {
-        public get key(): string { return 'MA_QUOCTICH'; }
+  constructor() {
+    super({
+      ruleId: 'RULE_XML1_MA_QUOCTICH_01',
+      xmlType: 'XML1',
+      field: 'MA_QUOCTICH',
+      severity: 'ERROR',
+      description: 'Kiểm tra quy định cho trường MA_QUOCTICH',
+      errorMessage: 'MA_QUOCTICH không được rỗng',
+      reference: 'QĐ 3176/QĐ-BYT',
+    });
+  }
+
+        
 
         public check(model: Xml1Model, context: HoSoContext): ErrorDetails | null
         {

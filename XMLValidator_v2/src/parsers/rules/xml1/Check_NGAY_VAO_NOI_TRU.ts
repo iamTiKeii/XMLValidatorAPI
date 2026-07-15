@@ -5,9 +5,19 @@ import { ErrorDetails } from '../../../dto/xml-check.dto';
 import { parseExactDate } from '../../../utils/date.helper';
 
 export class Check_NGAY_VAO_NOI_TRU extends Xml1RuleBase {
-  public get key(): string {
-    return 'NGAY_VAO_NOI_TRU';
+  constructor() {
+    super({
+      ruleId: 'RULE_XML1_NGAY_VAO_NOI_TRU_01',
+      xmlType: 'XML1',
+      field: 'NGAY_VAO_NOI_TRU',
+      severity: 'ERROR',
+      description: 'Kiểm tra quy định cho trường NGAY_VAO_NOI_TRU',
+      errorMessage: 'NGAY_VAO_NOI_TRU quá kích thước tối đa (12)',
+      reference: 'QĐ 3176/QĐ-BYT',
+    });
   }
+
+  
 
   public check(model: Xml1Model, context: HoSoContext): ErrorDetails | null {
     const raw = model.NGAY_VAO_NOI_TRU_RAW;

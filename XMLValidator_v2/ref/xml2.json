@@ -1,0 +1,281 @@
+{
+  "id": "xml2",
+  "name": "Bảng 2. Chỉ tiêu chi tiết thuốc",
+  "description": "Bảng dữ liệu chi tiết về thuốc (bao gồm cả oxy, dịch truyền, máu và chế phẩm máu) sử dụng cho người bệnh trong đợt khám bệnh, chữa bệnh.",
+  "fileName": "xml2.json",
+  "fields": [
+    {
+      "stt": 1,
+      "fieldName": "MA_LK",
+      "dataType": "Chuỗi",
+      "maxLength": 100,
+      "description": "Là mã đợt điều trị duy nhất (dùng để liên kết giữa Bảng chỉ tiêu tổng hợp khám bệnh, chữa bệnh (bảng XML 1) và các bảng còn lại ban hành kèm theo Quyết định này trong một lần khám bệnh, chữa bệnh (PRIMARY KEY))."
+    },
+    {
+      "stt": 2,
+      "fieldName": "STT",
+      "dataType": "Số",
+      "maxLength": 10,
+      "description": "Số thứ tự tăng từ 1 đến hết trong một lần gửi dữ liệu."
+    },
+    {
+      "stt": 3,
+      "fieldName": "MA_THUOC",
+      "dataType": "Chuỗi",
+      "maxLength": 255,
+      "description": "Ghi mã hoạt chất theo quy định tại Bộ mã danh mục dùng chung do Bộ Y tế ban hành. \n- Đối với thuốc do cơ sở KBCB tự bào chế, pha chế: ghi mã thuốc gồm mã các hoạt chất/thành phần, cách nhau bằng dấu cộng \"+\". Các hoạt chất/thành phần của thuốc nằm ngoài danh mục BHYT thì ghi theo cấu trúc YYYY.SĐK (YYYY là năm cấp số đăng ký, SĐK là số đăng ký nguyên liệu). \n- Khí oxy ghi mã \"40.17\"; khí NO ghi mã \"40.573\".\n- Máu và chế phẩm máu: Ghi theo mã danh mục dùng chung. Nếu có xét nghiệm kháng thể bất thường ghi thêm \".KT\"; xét nghiệm NAT ghi thêm \".NAT\"; cả hai thì ghi \".KTNAT\". Trường hợp mua máu từ đơn vị khác, sau mã tương đương bổ sung chữ \"K\" và 5 ký tự mã cơ sở KBCB cung cấp (ví dụ: N07.07.010.2.K01920). \n- Lưu ý: Trường hợp chế phẩm máu có sử dụng bộ dụng cụ gạn tách (kit) thì ghi mã bộ kit vào trường MA_VAT_TU tại Bảng 3; Thuốc thành phẩm không thuộc phạm vi chi trả BHYT thì để trống."
+    },
+    {
+      "stt": 4,
+      "fieldName": "MA_PP_CHEBIEN",
+      "dataType": "Chuỗi",
+      "maxLength": 255,
+      "description": "Ghi mã phương pháp chế biến vị thuốc cổ truyền theo Bộ mã DMDC do Bộ trưởng Bộ Y tế ban hành (theo Thông tư số 30/2017/TT-BYT). Trường hợp vị thuốc có nhiều phương pháp chế biến thì ghi đầy đủ các mã, phân cách bằng dấu chấm phẩy \";\"."
+    },
+    {
+      "stt": 5,
+      "fieldName": "MA_CSKCB_THUOC",
+      "dataType": "Chuỗi",
+      "maxLength": 10,
+      "description": "Ghi mã thể hiện nguồn gốc hoặc hình thức điều chuyển:\n- C.XXXXX: Nhận thuốc chuyển đến từ cơ sở KBCB khác (XXXXX là mã nơi chuyển đi).\n- K.XXXXX: Thuốc thanh toán ngoài giá dịch vụ cận lâm sàng chuyển thực hiện tại cơ sở khác (XXXXX là mã nơi thực hiện CLS).\n- M.XXXXX: Chế phẩm máu/xét nghiệm máu được thanh toán ngoài giá đơn vị máu (XXXXX là mã đơn vị cung cấp).\n- H.XXXXX: Cơ sở KBCB sử dụng thuốc được chỉ định bằng hình thức KBCB từ xa/hỗ trợ chuyên môn (XXXXX là mã cơ sở hỗ trợ)."
+    },
+    {
+      "stt": 6,
+      "fieldName": "MA_NHOM",
+      "dataType": "Số",
+      "maxLength": 2,
+      "description": "Là mã nhóm chi phí (ghi theo Phụ lục số 3 ban hành kèm theo Quyết định số 5937/QĐ-BYT ngày 30/12/2021)."
+    },
+    {
+      "stt": 7,
+      "fieldName": "TEN_THUOC",
+      "dataType": "Chuỗi",
+      "maxLength": 1024,
+      "description": "Ghi tên thuốc theo đúng tên được Cục Quản lý Dược hoặc Cục Quản lý Y, dược cổ truyền cấp số đăng ký. Trường hợp thuốc tự bào chế, chế biến thì ghi tên theo hồ sơ được người đứng đầu cơ sở KBCB phê duyệt."
+    },
+    {
+      "stt": 8,
+      "fieldName": "DON_VI_TINH",
+      "dataType": "Chuỗi",
+      "maxLength": 50,
+      "description": "Ghi đơn vị tính nhỏ nhất. Trường hợp đơn vị tính là chai, lọ, túi, ống nhưng chia nhỏ theo đơn vị quốc tế (UI) hoặc mililít (ml) thì khai báo đơn vị tính theo UI hoặc ml."
+    },
+    {
+      "stt": 9,
+      "fieldName": "HAM_LUONG",
+      "dataType": "Chuỗi",
+      "maxLength": 1024,
+      "description": "Ghi hàm lượng của thuốc theo giấy đăng ký lưu hành hoặc hồ sơ phê duyệt (thuốc tự bào chế). Thuốc nhiều thành phần ghi nối nhau bằng dấu \"+\". Đối với vị thuốc/bài thuốc cổ truyền ghi khối lượng từng dược liệu nối nhau bằng dấu \"+\". Để trống đối với khí y tế, máu, dịch truyền."
+    },
+    {
+      "stt": 10,
+      "fieldName": "DUONG_DUNG",
+      "dataType": "Chuỗi",
+      "maxLength": 4,
+      "description": "Ghi mã đường dùng tương ứng với đường dùng của thuốc theo thông tin được cấp giấy đăng ký lưu hành hoặc hồ sơ phê duyệt (đối với thuốc tự bào chế)."
+    },
+    {
+      "stt": 11,
+      "fieldName": "DANG_BAO_CHE",
+      "dataType": "Chuỗi",
+      "maxLength": 1024,
+      "description": "Ghi dạng bào chế của thuốc (hoặc dạng chế biến của vị thuốc cổ truyền) theo thông tin đăng ký lưu hành hoặc hồ sơ phê duyệt."
+    },
+    {
+      "stt": 12,
+      "fieldName": "LIEU_DUNG",
+      "dataType": "Chuỗi",
+      "maxLength": 1024,
+      "description": "Ghi liều dùng thuốc:\n- Ngoại trú: số lượng/lần + số lần/ngày + số ngày [tổng số].\n- Nội trú: số lượng/lần + số lần/ngày + 01 ngày [tổng số].\n- Thuốc thang (YHCT): lượng từng vị trong 1 thang + số thang + số ngày.\n- Thuốc dùng ngoài (nhỏ giọt, bôi...) không xác định liều lượng: số lần dùng/ngày + số ngày.\n- Nếu liều dùng thay đổi theo ngày thì ghi chi tiết."
+    },
+    {
+      "stt": 13,
+      "fieldName": "CACH_DUNG",
+      "dataType": "Chuỗi",
+      "maxLength": 1024,
+      "description": "Ghi lời dặn của thầy thuốc trên đơn thuốc hoặc y lệnh."
+    },
+    {
+      "stt": 14,
+      "fieldName": "SO_DANG_KY",
+      "dataType": "Chuỗi",
+      "maxLength": 255,
+      "description": "Ghi số đăng ký lưu hành. \n- Dược liệu nhập khẩu: Số giấy chứng nhận C/O. \n- Dược liệu nuôi trồng: Số GACP. \n- Thuốc nhập khẩu chưa có SĐK: Ghi theo giấy phép nhập khẩu (KD.YYYY.X.S). \n- Thuốc tự bào chế: HD/CP/VT + Mã CSKCB + Năm + Số thứ tự. \n- Dược liệu: ghi \"DL\"."
+    },
+    {
+      "stt": 15,
+      "fieldName": "TT_THAU",
+      "dataType": "Chuỗi",
+      "maxLength": 50,
+      "description": "Ghi thông tin thầu gồm: Số quyết định.Mã đơn vị ban hành;Gi;Ni;XXXX (trong đó Gi: Gói thầu, Ni: Nhóm thầu, XXXX: Năm). \n- Thuốc đàm phán giá/mua sắm tập trung quốc gia: Mã đơn vị là \"00\". \n- Áp thầu: Bổ sung mã đơn vị ban hành quyết định gốc.\n- Tự bào chế: Số văn bản gửi BHXH;Năm.\n- Tự sản xuất: Số quyết định trúng thầu;Năm."
+    },
+    {
+      "stt": 16,
+      "fieldName": "PHAM_VI",
+      "dataType": "Số",
+      "maxLength": 1,
+      "description": "Mã xác định phạm vi: \n1: Trong danh mục BHYT chi trả.\n2: Ngoài danh mục BHYT (Tự trả).\n3: Ngoài danh mục nhưng được BHYT chi trả cho đối tượng quân đội, công an, cơ yếu (Nghị định 70/2015/NĐ-CP)."
+    },
+    {
+      "stt": 17,
+      "fieldName": "TYLE_TT_BH",
+      "dataType": "Số",
+      "maxLength": 3,
+      "description": "Tỷ lệ thanh toán BHYT (%). Nếu không quy định tỷ lệ thì ghi 100, không thuộc phạm vi thanh toán ghi 0."
+    },
+    {
+      "stt": 18,
+      "fieldName": "SO_LUONG",
+      "dataType": "Số",
+      "maxLength": 10,
+      "description": "Số lượng thuốc thực tế sử dụng, làm tròn đến 3 chữ số thập phân."
+    },
+    {
+      "stt": 19,
+      "fieldName": "DON_GIA",
+      "dataType": "Số",
+      "maxLength": 15,
+      "description": "Đơn giá của thuốc (làm tròn 3 số lẻ). \n- CS y tế tư nhân: Ghi theo quy định tại khoản 3 Điều 95 Nghị định 24/2024/NĐ-CP. \n- Thuốc tự bào chế: Giá được phê duyệt. \n- Đơn vị tính nhỏ hơn thầu (ml, UI): Chia nhỏ đơn giá tương ứng."
+    },
+    {
+      "stt": 20,
+      "fieldName": "THANH_TIEN_BV",
+      "dataType": "Số",
+      "maxLength": 15,
+      "description": "Thành tiền theo giá bệnh viện = SO_LUONG * DON_GIA, làm tròn 2 số lẻ thập phân."
+    },
+    {
+      "stt": 21,
+      "fieldName": "THANH_TIEN_BH",
+      "dataType": "Số",
+      "maxLength": 15,
+      "description": "Thành tiền theo mức hưởng = SO_LUONG * DON_GIA * TYLE_TT_BH/100, làm tròn 2 số lẻ thập phân."
+    },
+    {
+      "stt": 22,
+      "fieldName": "T_NGUONKHAC_NSNN",
+      "dataType": "Số",
+      "maxLength": 15,
+      "description": "Số tiền thuốc được ngân sách nhà nước hỗ trợ."
+    },
+    {
+      "stt": 23,
+      "fieldName": "T_NGUONKHAC_VTNN",
+      "dataType": "Số",
+      "maxLength": 15,
+      "description": "Số tiền thuốc được viện trợ nước ngoài hỗ trợ."
+    },
+    {
+      "stt": 24,
+      "fieldName": "T_NGUONKHAC_VTTN",
+      "dataType": "Số",
+      "maxLength": 15,
+      "description": "Số tiền thuốc được viện trợ trong nước hỗ trợ."
+    },
+    {
+      "stt": 25,
+      "fieldName": "T_NGUONKHAC_CL",
+      "dataType": "Số",
+      "maxLength": 15,
+      "description": "Số tiền thuốc được các nguồn khác còn lại hỗ trợ."
+    },
+    {
+      "stt": 26,
+      "fieldName": "T_NGUONKHAC",
+      "dataType": "Số",
+      "maxLength": 15,
+      "description": "Tổng tiền nguồn khác chi trả. Khi > 0 thì giảm trừ lần lượt vào T_BNTT, T_BNCCT, T_BHTT."
+    },
+    {
+      "stt": 27,
+      "fieldName": "MUC_HUONG",
+      "dataType": "Số",
+      "maxLength": 3,
+      "description": "Mức hưởng BHYT tương ứng (ví dụ: 80, 95, 100). Trái tuyến nhân với tỷ lệ trái tuyến. Trường hợp mạn tính cấp tại xã hoặc tổng chi phí < 15% lương cơ sở: ghi 100."
+    },
+    {
+      "stt": 28,
+      "fieldName": "T_BNTT",
+      "dataType": "Số",
+      "maxLength": 15,
+      "description": "Tiền người bệnh tự trả ngoài phạm vi BHYT. Công thức: THANH_TIEN_BV * (1 - TYLE_TT_BH/100). Nếu có T_NGUONKHAC thì giảm trừ theo quy định."
+    },
+    {
+      "stt": 29,
+      "fieldName": "T_BNCCT",
+      "dataType": "Số",
+      "maxLength": 15,
+      "description": "Tiền người bệnh cùng chi trả. Công thức: THANH_TIEN_BH - T_BHTT. Nếu có T_NGUONKHAC thì giảm trừ theo quy định."
+    },
+    {
+      "stt": 30,
+      "fieldName": "T_BHTT",
+      "dataType": "Số",
+      "maxLength": 15,
+      "description": "Tiền đề nghị BHXH thanh toán. Công thức: THANH_TIEN_BH * MUC_HUONG/100. Nếu có T_NGUONKHAC thì giảm trừ theo quy định."
+    },
+    {
+      "stt": 31,
+      "fieldName": "MA_KHOA",
+      "dataType": "Chuỗi",
+      "maxLength": 50,
+      "description": "Ghi mã khoa nơi người bệnh được chỉ định sử dụng thuốc (theo Phụ lục 5 QĐ 5937/QĐ-BYT)."
+    },
+    {
+      "stt": 32,
+      "fieldName": "MA_BAC_SI",
+      "dataType": "Chuỗi",
+      "maxLength": 255,
+      "description": "Ghi mã người hành nghề (theo số GPHN/CCHN). \n- KBCB từ xa: MA_BAC_SI.TX.XXXXX.\n- Thực hành: Mã người hướng dẫn.CCCD người thực hành.\n- Điều động nhân lực: MA_BAC_SI.HD.XXXXX.\n- Chuyển giao kỹ thuật: MA_BAC_SI.CG.XXXXX."
+    },
+    {
+      "stt": 33,
+      "fieldName": "MA_DICH_VU",
+      "dataType": "Chuỗi",
+      "maxLength": 255,
+      "description": "Ghi mã DVKT nếu thuốc được sử dụng để thực hiện dịch vụ đó (ví dụ: thuốc cản quang, phóng xạ, thuốc trong xét nghiệm máu...). \n- Các trường hợp đặc biệt mã hóa thêm đuôi: chuyển mẫu (_K), dừng thực hiện (_TB), gây tê chưa có giá (_TT), chưa có giá (_0000)."
+    },
+    {
+      "stt": 34,
+      "fieldName": "NGAY_YL",
+      "dataType": "Chuỗi",
+      "maxLength": 12,
+      "description": "Thời điểm ra y lệnh (yyyymmddHHMM). Trường hợp hội chẩn từ xa ghi theo thời điểm bác sỹ tuyến trên kê đơn."
+    },
+    {
+      "stt": 35,
+      "fieldName": "NGAY_TH_YL",
+      "dataType": "Chuỗi",
+      "maxLength": 12,
+      "description": "Thời điểm thực hiện y lệnh. Chỉ bắt buộc nếu thuốc được sử dụng tại cơ sở KBCB."
+    },
+    {
+      "stt": 36,
+      "fieldName": "MA_PTTT",
+      "dataType": "Số",
+      "maxLength": 1,
+      "description": "Phương thức thanh toán (1: Phí dịch vụ; 2: Định suất; 3: DRG)."
+    },
+    {
+      "stt": 37,
+      "fieldName": "NGUON_CTRA",
+      "dataType": "Số",
+      "maxLength": 1,
+      "description": "Mã nguồn chi trả (1: BHYT; 2: Dự án/viện trợ; 3: CT mục tiêu QG; 4: Khác)."
+    },
+    {
+      "stt": 38,
+      "fieldName": "VET_THUONG_TP",
+      "dataType": "Số",
+      "maxLength": 1,
+      "description": "Ghi số '1' nếu thuốc dùng để điều trị vết thương/bệnh tái phát cho thương binh/người hưởng chính sách."
+    },
+    {
+      "stt": 39,
+      "fieldName": "DU_PHONG",
+      "dataType": "Chuỗi",
+      "maxLength": "n",
+      "description": "Trường dữ liệu dự phòng khi cần thiết."
+    }
+  ]
+}

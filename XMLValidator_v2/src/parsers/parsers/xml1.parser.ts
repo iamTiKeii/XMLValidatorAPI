@@ -35,6 +35,7 @@ export class Xml1Parser extends BaseXmlParser {
     model.GT_THE_TU = this.DT('GT_THE_TU') ?? undefined;
     model.GT_THE_DEN = this.DT('GT_THE_DEN') ?? undefined;
     model.NGAY_MIEN_CCT = this.DT('NGAY_MIEN_CCT') ?? undefined;
+    model.NGAY_MIEN_CCT_RAW = this.S('NGAY_MIEN_CCT') || undefined;
 
     model.LY_DO_VV = this.S('LY_DO_VV') || undefined;
     model.LY_DO_VNT = this.S('LY_DO_VNT') || undefined;
@@ -85,10 +86,10 @@ export class Xml1Parser extends BaseXmlParser {
     model.MA_KHUVUC = this.S('MA_KHUVUC') || undefined;
 
     model.CAN_NANG = this.D('CAN_NANG') ?? undefined;
-    model.CAN_NANG_CON = this.D('CAN_NANG_CON') ?? undefined;
-    model.NAM_NAM_LIEN_TUC = this.I('NAM_NAM_LIEN_TUC') ?? undefined;
+    model.CAN_NANG_CON = this.S('CAN_NANG_CON') || undefined;
+    model.NAM_NAM_LIEN_TUC = this.S('NAM_NAM_LIEN_TUC') || undefined;
 
-    model.NGAY_TAI_KHAM = this.DT('NGAY_TAI_KHAM') ?? undefined;
+    model.NGAY_TAI_KHAM = this.S('NGAY_TAI_KHAM') || undefined;
     model.MA_HSBA = this.S('MA_HSBA') || undefined;
     model.MA_TTDV = this.S('MA_TTDV') || undefined;
     model.DU_PHONG = this.S('DU_PHONG') || undefined;

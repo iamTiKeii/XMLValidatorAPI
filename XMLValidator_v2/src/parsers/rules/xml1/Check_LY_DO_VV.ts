@@ -6,7 +6,19 @@ import { DictionaryCacheInstance } from '../../dictionary.cache';
 
 export class Check_LY_DO_VV extends Xml1RuleBase
     {
-        public get key(): string { return 'LY_DO_VV'; }
+  constructor() {
+    super({
+      ruleId: 'RULE_XML1_LY_DO_VV_01',
+      xmlType: 'XML1',
+      field: 'LY_DO_VV',
+      severity: 'ERROR',
+      description: 'Kiểm tra quy định cho trường LY_DO_VV',
+      errorMessage: 'LY_DO_VV không được để trống',
+      reference: 'QĐ 3176/QĐ-BYT',
+    });
+  }
+
+        
 
         public check(model: Xml1Model, context: HoSoContext): ErrorDetails | null
         {

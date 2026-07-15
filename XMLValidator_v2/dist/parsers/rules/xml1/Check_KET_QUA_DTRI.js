@@ -4,7 +4,17 @@ exports.Check_KET_QUA_DTRI = void 0;
 const xml1RuleBase_1 = require("./xml1RuleBase");
 const dictionary_cache_1 = require("../../dictionary.cache");
 class Check_KET_QUA_DTRI extends xml1RuleBase_1.Xml1RuleBase {
-    get key() { return 'KET_QUA_DTRI'; }
+    constructor() {
+        super({
+            ruleId: 'RULE_XML1_KET_QUA_DTRI_01',
+            xmlType: 'XML1',
+            field: 'KET_QUA_DTRI',
+            severity: 'ERROR',
+            description: 'Kiểm tra quy định cho trường KET_QUA_DTRI',
+            errorMessage: 'KET_QUA_DTRI không được để trống',
+            reference: 'QĐ 3176/QĐ-BYT',
+        });
+    }
     check(model, context) {
         if (!model.KET_QUA_DTRI || !model.KET_QUA_DTRI.trim()) {
             return this.error("KET_QUA_DTRI không được để trống");

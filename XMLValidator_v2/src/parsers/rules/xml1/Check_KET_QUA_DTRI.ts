@@ -6,7 +6,19 @@ import { DictionaryCacheInstance } from '../../dictionary.cache';
 
 export class Check_KET_QUA_DTRI extends Xml1RuleBase
     {
-        public get key(): string { return 'KET_QUA_DTRI'; }
+  constructor() {
+    super({
+      ruleId: 'RULE_XML1_KET_QUA_DTRI_01',
+      xmlType: 'XML1',
+      field: 'KET_QUA_DTRI',
+      severity: 'ERROR',
+      description: 'Kiểm tra quy định cho trường KET_QUA_DTRI',
+      errorMessage: 'KET_QUA_DTRI không được để trống',
+      reference: 'QĐ 3176/QĐ-BYT',
+    });
+  }
+
+        
 
         public check(model: Xml1Model, context: HoSoContext): ErrorDetails | null
         {

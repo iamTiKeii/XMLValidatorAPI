@@ -6,7 +6,19 @@ import { DictionaryCacheInstance } from '../../dictionary.cache';
 
 export class Check_MATINH_CU_TRU extends Xml1RuleBase
     {
-        public get key(): string { return 'MATINH_CU_TRU'; }
+  constructor() {
+    super({
+      ruleId: 'RULE_XML1_MATINH_CU_TRU_01',
+      xmlType: 'XML1',
+      field: 'MATINH_CU_TRU',
+      severity: 'ERROR',
+      description: 'Kiểm tra quy định cho trường MATINH_CU_TRU',
+      errorMessage: 'MATINH_CU_TRU không được rỗng',
+      reference: 'QĐ 3176/QĐ-BYT',
+    });
+  }
+
+        
         public check(model: Xml1Model, context: HoSoContext): ErrorDetails | null
         {
             if (!model.MATINH_CU_TRU || !model.MATINH_CU_TRU.trim())

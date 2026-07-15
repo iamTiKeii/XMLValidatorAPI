@@ -4,7 +4,17 @@ exports.Check_MA_QUOCTICH = void 0;
 const xml1RuleBase_1 = require("./xml1RuleBase");
 const dictionary_cache_1 = require("../../dictionary.cache");
 class Check_MA_QUOCTICH extends xml1RuleBase_1.Xml1RuleBase {
-    get key() { return 'MA_QUOCTICH'; }
+    constructor() {
+        super({
+            ruleId: 'RULE_XML1_MA_QUOCTICH_01',
+            xmlType: 'XML1',
+            field: 'MA_QUOCTICH',
+            severity: 'ERROR',
+            description: 'Kiểm tra quy định cho trường MA_QUOCTICH',
+            errorMessage: 'MA_QUOCTICH không được rỗng',
+            reference: 'QĐ 3176/QĐ-BYT',
+        });
+    }
     check(model, context) {
         if (!model.MA_QUOCTICH || !model.MA_QUOCTICH.trim()) {
             return this.error(`${this.key} không được rỗng`);

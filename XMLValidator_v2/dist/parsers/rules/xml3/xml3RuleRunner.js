@@ -9,6 +9,8 @@ class Xml3RuleRunner {
             return errors;
         for (const model of models) {
             for (const rule of this.rules) {
+                if (!rule.isEnabled)
+                    continue;
                 const err = rule.check(model, context);
                 if (err) {
                     errors.push(err);

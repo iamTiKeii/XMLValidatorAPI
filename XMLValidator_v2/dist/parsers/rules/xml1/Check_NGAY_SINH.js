@@ -3,8 +3,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Check_NGAY_SINH = void 0;
 const xml1RuleBase_1 = require("./xml1RuleBase");
 class Check_NGAY_SINH extends xml1RuleBase_1.Xml1RuleBase {
-    get key() {
-        return 'NGAY_SINH';
+    constructor() {
+        super({
+            ruleId: 'RULE_XML1_NGAY_SINH_01',
+            xmlType: 'XML1',
+            field: 'NGAY_SINH',
+            severity: 'ERROR',
+            description: 'Kiểm tra quy định cho trường NGAY_SINH',
+            errorMessage: 'NGAY_SINH không được để trống',
+            reference: 'QĐ 3176/QĐ-BYT',
+        });
     }
     check(model, context) {
         if (!model.NGAY_SINH) {

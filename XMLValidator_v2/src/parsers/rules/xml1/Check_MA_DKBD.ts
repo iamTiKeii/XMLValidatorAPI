@@ -4,9 +4,19 @@ import { HoSoContext } from '../../../services/hoso-context';
 import { ErrorDetails } from '../../../dto/xml-check.dto';
 
 export class Check_MA_DKBD extends Xml1RuleBase {
-  public get key(): string {
-    return 'MA_DKBD';
+  constructor() {
+    super({
+      ruleId: 'RULE_XML1_MA_DKBD_01',
+      xmlType: 'XML1',
+      field: 'MA_DKBD',
+      severity: 'ERROR',
+      description: 'Kiểm tra quy định cho trường MA_DKBD',
+      errorMessage: 'MA_DKBD không được để trống',
+      reference: 'QĐ 3176/QĐ-BYT',
+    });
   }
+
+  
 
   public check(model: Xml1Model, context: HoSoContext): ErrorDetails | null {
     if (!model.MA_DKBD || !model.MA_DKBD.trim()) {

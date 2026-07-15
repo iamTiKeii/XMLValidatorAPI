@@ -1,1 +1,1 @@
-{"version":3,"file":"xml13RuleBase.js","sourceRoot":"","sources":["../../../../src/parsers/rules/xml13/xml13RuleBase.ts"],"names":[],"mappings":";;;AASA,MAAsB,aAAa;IAIvB,KAAK,CAAC,OAAe;QAC7B,OAAO;YACL,GAAG,EAAE,IAAI,CAAC,GAAG;YACb,OAAO;SACR,CAAC;IACJ,CAAC;CACF;AAVD,sCAUC"}
+{"version":3,"file":"xml13RuleBase.js","sourceRoot":"","sources":["../../../../src/parsers/rules/xml13/xml13RuleBase.ts"],"names":[],"mappings":";;;AAGA,4CAAwC;AAQxC,MAAsB,aAAc,SAAQ,oBAAoB;CAAyB;AAAzF,sCAAyF"}

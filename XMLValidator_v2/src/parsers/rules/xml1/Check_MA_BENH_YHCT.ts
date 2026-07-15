@@ -6,7 +6,19 @@ import { DictionaryCacheInstance } from '../../dictionary.cache';
 
 export class Check_MA_BENH_YHCT extends Xml1RuleBase
     {
-        public get key(): string { return 'MA_BENH_YHCT'; }
+  constructor() {
+    super({
+      ruleId: 'RULE_XML1_MA_BENH_YHCT_01',
+      xmlType: 'XML1',
+      field: 'MA_BENH_YHCT',
+      severity: 'ERROR',
+      description: 'Kiểm tra quy định cho trường MA_BENH_YHCT',
+      errorMessage: 'MA_BENH_YHCT quá kích thước tối đa (255)',
+      reference: 'QĐ 3176/QĐ-BYT',
+    });
+  }
+
+        
 
         public check(model: Xml1Model, context: HoSoContext): ErrorDetails | null
         {

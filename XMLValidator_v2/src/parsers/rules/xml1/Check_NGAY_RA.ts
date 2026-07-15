@@ -5,9 +5,19 @@ import { ErrorDetails } from '../../../dto/xml-check.dto';
 import { parseExactDate } from '../../../utils/date.helper';
 
 export class Check_NGAY_RA extends Xml1RuleBase {
-  public get key(): string {
-    return 'NGAY_RA';
+  constructor() {
+    super({
+      ruleId: 'RULE_XML1_NGAY_RA_01',
+      xmlType: 'XML1',
+      field: 'NGAY_RA',
+      severity: 'ERROR',
+      description: 'Kiểm tra quy định cho trường NGAY_RA',
+      errorMessage: 'NGAY_RA không được để trống',
+      reference: 'QĐ 3176/QĐ-BYT',
+    });
   }
+
+  
 
   public check(model: Xml1Model, context: HoSoContext): ErrorDetails | null {
     const raw = model.NGAY_RA_RAW;

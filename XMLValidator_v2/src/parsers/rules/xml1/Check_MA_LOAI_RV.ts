@@ -6,7 +6,19 @@ import { DictionaryCacheInstance } from '../../dictionary.cache';
 
 export class Check_MA_LOAI_RV extends Xml1RuleBase
     {
-        public get key(): string { return 'MA_LOAI_RV'; }
+  constructor() {
+    super({
+      ruleId: 'RULE_XML1_MA_LOAI_RV_01',
+      xmlType: 'XML1',
+      field: 'MA_LOAI_RV',
+      severity: 'ERROR',
+      description: 'Kiểm tra quy định cho trường MA_LOAI_RV',
+      errorMessage: 'MA_LOAI_RV không được để trống',
+      reference: 'QĐ 3176/QĐ-BYT',
+    });
+  }
+
+        
 
         public check(model: Xml1Model, context: HoSoContext): ErrorDetails | null
         {

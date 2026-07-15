@@ -16,7 +16,17 @@ export class ErrorDetails {
 
   @ApiProperty({ example: 'MA_LK không được rỗng', description: 'Chi tiết thông báo lỗi' })
   message: string;
+
+  @ApiProperty({ example: 'RULE_XML1_MA_LK_01', required: false, description: 'ID của rule kiểm tra' })
+  ruleId?: string;
+
+  @ApiProperty({ example: 'ERROR', required: false, description: 'Mức độ nghiêm trọng (ERROR/WARNING)' })
+  severity?: string;
+
+  @ApiProperty({ example: 'QĐ 3176/QĐ-BYT - Bảng 1, STT 1', required: false, description: 'Điều khoản tham chiếu QĐ3176' })
+  reference?: string;
 }
+
 
 export class XMLError {
   @ApiProperty({ example: 'XML1', description: 'Loại hồ sơ (XML1 - XML15)' })

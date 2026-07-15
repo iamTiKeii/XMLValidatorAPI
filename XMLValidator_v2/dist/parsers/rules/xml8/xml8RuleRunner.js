@@ -8,6 +8,8 @@ class Xml8RuleRunner {
         if (!model)
             return errors;
         for (const rule of this.rules) {
+            if (!rule.isEnabled)
+                continue;
             const err = rule.check(model, context);
             if (err) {
                 errors.push(err);

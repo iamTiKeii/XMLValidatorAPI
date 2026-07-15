@@ -6,7 +6,19 @@ import { DictionaryCacheInstance } from '../../dictionary.cache';
 
 export class Check_DIEN_THOAI extends Xml1RuleBase
     {
-        public get key(): string { return 'DIEN_THOAI'; }
+  constructor() {
+    super({
+      ruleId: 'RULE_XML1_DIEN_THOAI_01',
+      xmlType: 'XML1',
+      field: 'DIEN_THOAI',
+      severity: 'ERROR',
+      description: 'Kiểm tra quy định cho trường DIEN_THOAI',
+      errorMessage: 'DIEN_THOAI quá kích thước quy định ( 15 ký tự )',
+      reference: 'QĐ 3176/QĐ-BYT',
+    });
+  }
+
+        
 
         public check(model: Xml1Model, context: HoSoContext): ErrorDetails | null
         {

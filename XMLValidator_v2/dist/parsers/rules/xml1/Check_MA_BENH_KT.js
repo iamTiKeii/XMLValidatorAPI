@@ -3,7 +3,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Check_MA_BENH_KT = void 0;
 const xml1RuleBase_1 = require("./xml1RuleBase");
 class Check_MA_BENH_KT extends xml1RuleBase_1.Xml1RuleBase {
-    get key() { return 'MA_BENH_KT'; }
+    constructor() {
+        super({
+            ruleId: 'RULE_XML1_MA_BENH_KT_01',
+            xmlType: 'XML1',
+            field: 'MA_BENH_KT',
+            severity: 'ERROR',
+            description: 'Kiểm tra quy định cho trường MA_BENH_KT',
+            errorMessage: 'MA_BENH_KT quá kích thước tối đa (100)',
+            reference: 'QĐ 3176/QĐ-BYT',
+        });
+    }
     check(model, context) {
         var value = model.MA_BENH_KT;
         if (!value || !value.trim())

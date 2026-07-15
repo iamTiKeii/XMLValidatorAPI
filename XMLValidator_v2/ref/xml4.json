@@ -1,0 +1,92 @@
+{
+    "id": "xml4",
+    "name": "Bảng 4. Chỉ tiêu chi tiết dịch vụ cận lâm sàng",
+    "description": "Bảng dữ liệu chi tiết về các chỉ số xét nghiệm, chẩn đoán hình ảnh, thăm dò chức năng đã thực hiện cho người bệnh.",
+    "fileName": "xml4.json",
+    "fields": [
+        {
+            "stt": 1,
+            "fieldName": "MA_LK",
+            "dataType": "Chuỗi",
+            "maxLength": 100,
+            "description": "Là mã đợt điều trị duy nhất (dùng để liên kết giữa Bảng chỉ tiêu tổng hợp khám bệnh, chữa bệnh (bảng XML 1) và các bảng còn lại ban hành kèm theo Quyết định này trong một lần khám bệnh, chữa bệnh (PRIMARY KEY)) [1]."
+        },
+        {
+            "stt": 2,
+            "fieldName": "STT",
+            "dataType": "Số",
+            "maxLength": 10,
+            "description": "Số thứ tự tăng từ 1 đến hết trong một lần gửi dữ liệu [1]."
+        },
+        {
+            "stt": 3,
+            "fieldName": "MA_DICH_VU",
+            "dataType": "Chuỗi",
+            "maxLength": 50,
+            "description": "Ghi mã dịch vụ kỹ thuật cận lâm sàng, thực hiện theo Phụ lục số 1 ban hành kèm theo Quyết định số 7603/QĐ-BYT ngày 25 tháng 12 năm 2018 của Bộ trưởng Bộ Y tế [1]."
+        },
+        {
+            "stt": 4,
+            "fieldName": "MA_CHI_SO",
+            "dataType": "Chuỗi",
+            "maxLength": 255,
+            "description": "Ghi mã chỉ số xét nghiệm, chẩn đoán hình ảnh, thăm dò chức năng theo Phụ lục số 11 ban hành kèm theo Quyết định số 7603/QĐ-BYT ngày 25 tháng 12 năm 2018 của Bộ trưởng Bộ Y tế về việc ban hành danh mục bộ mã dùng chung áp dụng trong quản lý KBCB và thanh toán BHYT. Trường hợp chưa có mã chỉ số thì tạm thời mã hoá bằng tên chỉ số (viết liền không có dấu). Chỉ ghi các chỉ số có đơn vị đo lường [2]."
+        },
+        {
+            "stt": 5,
+            "fieldName": "TEN_CHI_SO",
+            "dataType": "Chuỗi",
+            "maxLength": 255,
+            "description": "Ghi tên chỉ số xét nghiệm, chẩn đoán hình ảnh, thăm dò chức năng theo quy định. Chỉ ghi các chỉ số có đơn vị đo lường [3]."
+        },
+        {
+            "stt": 6,
+            "fieldName": "GIA_TRI",
+            "dataType": "Chuỗi",
+            "maxLength": 255,
+            "description": "Ghi giá trị chỉ số (kết quả xét nghiệm, thăm dò chức năng). Trường hợp giá trị xét nghiệm để đánh giá kết quả điều trị có sau ngày người bệnh kết thúc đợt KBCB, cơ sở KBCB bổ sung đầy đủ thông tin trường này và gửi hồ sơ thay thế lên Cổng tiếp nhận để đề nghị thanh toán. Chỉ ghi các chỉ số có đơn vị đo lường [4]."
+        },
+        {
+            "stt": 7,
+            "fieldName": "DON_VI_DO",
+            "dataType": "Chuỗi",
+            "maxLength": 50,
+            "description": "Ghi đơn vị đo của chỉ số xét nghiệm, thăm dò chức năng theo Phụ lục 11 ban hành kèm theo Quyết định số 7603/QĐ-BYT ngày 25 tháng 12 năm 2018 của Bộ trưởng Bộ Y tế. Đối với các chỉ số không có đơn vị đo thì để trống trường thông tin này [4]."
+        },
+        {
+            "stt": 8,
+            "fieldName": "MO_TA",
+            "dataType": "Chuỗi",
+            "maxLength": "n",
+            "description": "Ghi các mô tả kết quả cận lâm sàng (chẩn đoán hình ảnh, thăm dò chức năng, giải phẫu bệnh) của người đọc kết quả. Trường hợp không có kết quả thì để trống trường thông tin này [5]."
+        },
+        {
+            "stt": 9,
+            "fieldName": "KET_LUAN",
+            "dataType": "Chuỗi",
+            "maxLength": "n",
+            "description": "Ghi các kết luận của người đọc kết quả. Trường hợp xét nghiệm có kết quả xác định ở trường GIA_TRI thì để trống trường thông tin này [5]."
+        },
+        {
+            "stt": 10,
+            "fieldName": "NGAY_KQ",
+            "dataType": "Chuỗi",
+            "maxLength": 12,
+            "description": "Ghi thời điểm có kết quả cận lâm sàng; gồm 12 ký tự, theo cấu trúc: yyyymmddHHMM. Trường hợp sau 07 ngày mới có kết quả thì cơ sở KBCB nhập thông tin ngày kết quả cận lâm sàng trực tiếp trên Cổng tiếp nhận dữ liệu Hệ thống thông tin giám định BHYT của BHXH Việt Nam, nhưng không quá 60 ngày kể từ ngày kết thúc đợt KBCB (để phù hợp với kết quả xét nghiệm nuôi cấy vi khuẩn lao) [6]."
+        },
+        {
+            "stt": 11,
+            "fieldName": "MA_BS_DOC_KQ",
+            "dataType": "Chuỗi",
+            "maxLength": 255,
+            "description": "Ghi mã của người có thẩm quyền đọc hoặc duyệt kết quả đọc (mã hóa theo số GPHN). Lưu ý: \n- Trường hợp người có thẩm quyền đọc hoặc duyệt kết quả đọc là bác sỹ tuyến/cấp chuyên môn kỹ thuật cao hơn theo hình thức KBCB từ xa, hỗ trợ KBCB từ xa thì ghi theo nguyên tắc MA_BAC_SI.TX.XXXXX (trong đó XXXXX là mã cơ sở KCB nơi hỗ trợ chuyên môn).\n- Trường hợp dịch vụ kỹ thuật được thực hiện bởi bác sỹ tại cơ sở KBCB chuyển giao kỹ thuật theo quy định tại Điều 84, Điều 85 Nghị định số 96/2023/NĐ-CP thì ghi theo nguyên tắc: MA_BAC_SI.CG.XXXXX (trong đó XXXXX là mã cơ sở KBCB chuyển giao kỹ thuật).\n- Trường hợp dịch vụ kỹ thuật không bắt buộc phải có bác sĩ đọc kết quả thì để trống [7, 8]."
+        },
+        {
+            "stt": 12,
+            "fieldName": "DU_PHONG",
+            "dataType": "Chuỗi",
+            "maxLength": "n",
+            "description": "Trường dữ liệu dự phòng khi cần thiết [8]."
+        }
+    ]
+}

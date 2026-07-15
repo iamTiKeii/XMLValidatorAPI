@@ -6,7 +6,19 @@ import { DictionaryCacheInstance } from '../../dictionary.cache';
 
 export class Check_SO_CCCD extends Xml1RuleBase
     {
-        public get key(): string { return 'SO_CCCD'; }
+  constructor() {
+    super({
+      ruleId: 'RULE_XML1_SO_CCCD_01',
+      xmlType: 'XML1',
+      field: 'SO_CCCD',
+      severity: 'ERROR',
+      description: 'Kiểm tra quy định cho trường SO_CCCD',
+      errorMessage: 'SO_CCCD quá kích thước tối đa (15 ký tự)',
+      reference: 'QĐ 3176/QĐ-BYT',
+    });
+  }
+
+        
 
         public check(model: Xml1Model, context: HoSoContext): ErrorDetails | null
         {

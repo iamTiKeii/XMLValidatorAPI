@@ -6,7 +6,19 @@ import { DictionaryCacheInstance } from '../../dictionary.cache';
 
 export class Check_MA_LK extends Xml1RuleBase
     {
-        public get key(): string { return 'MA_LK'; }
+  constructor() {
+    super({
+      ruleId: 'RULE_XML1_MA_LK_01',
+      xmlType: 'XML1',
+      field: 'MA_LK',
+      severity: 'ERROR',
+      description: 'Kiểm tra quy định cho trường MA_LK',
+      errorMessage: 'MA_LK không được rỗng',
+      reference: 'QĐ 3176/QĐ-BYT',
+    });
+  }
+
+        
 
         public check(model: Xml1Model, context: HoSoContext): ErrorDetails | null
         {

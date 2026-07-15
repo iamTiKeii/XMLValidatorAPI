@@ -3,8 +3,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Check_T_THUOC = void 0;
 const xml1RuleBase_1 = require("./xml1RuleBase");
 class Check_T_THUOC extends xml1RuleBase_1.Xml1RuleBase {
-    get key() {
-        return 'T_THUOC';
+    constructor() {
+        super({
+            ruleId: 'RULE_XML1_T_THUOC_01',
+            xmlType: 'XML1',
+            field: 'T_THUOC',
+            severity: 'ERROR',
+            description: 'Kiểm tra quy định cho trường T_THUOC',
+            errorMessage: 'T_THUOC phải bằng 0 khi không có thuốc',
+            reference: 'QĐ 3176/QĐ-BYT',
+        });
     }
     check(model, context) {
         const hasXml2 = context.xml2 && context.xml2.length > 0;

@@ -6,7 +6,19 @@ import { DictionaryCacheInstance } from '../../dictionary.cache';
 
 export class Check_PP_DIEU_TRI extends Xml1RuleBase
     {
-        public get key(): string { return 'PP_DIEU_TRI'; }
+  constructor() {
+    super({
+      ruleId: 'RULE_XML1_PP_DIEU_TRI_01',
+      xmlType: 'XML1',
+      field: 'PP_DIEU_TRI',
+      severity: 'ERROR',
+      description: 'Kiểm tra quy định cho trường PP_DIEU_TRI',
+      errorMessage: 'PP_DIEU_TRI không được để trống',
+      reference: 'QĐ 3176/QĐ-BYT',
+    });
+  }
+
+        
 
         public check(model: Xml1Model, context: HoSoContext): ErrorDetails | null
         {

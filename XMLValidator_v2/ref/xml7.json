@@ -1,0 +1,190 @@
+{
+    "id": "xml7",
+    "name": "Bảng 7. Chỉ tiêu dữ liệu giấy ra viện",
+    "description": "Bảng dữ liệu chứa thông tin chi tiết về giấy ra viện của người bệnh, bao gồm thông tin hành chính, chẩn đoán, phương pháp điều trị và các thông tin liên quan đến nghỉ hưởng BHXH. Lưu ý: Trường hợp đẻ sinh đôi hoặc sinh nhiều hơn thì cơ sở y tế tạo lập, gửi dữ liệu XML giấy ra viện cho từng trẻ.",
+    "fileName": "xml7.json",
+    "fields": [
+        {
+            "stt": 1,
+            "fieldName": "MA_LK",
+            "dataType": "Chuỗi",
+            "maxLength": 100,
+            "description": "Là mã đợt điều trị duy nhất (dùng để liên kết giữa Bảng chỉ tiêu tổng hợp khám bệnh, chữa bệnh (bảng XML 1) và các bảng còn lại ban hành kèm theo Quyết định này trong một lần khám bệnh, chữa bệnh (PRIMARY KEY))."
+        },
+        {
+            "stt": 2,
+            "fieldName": "SO_LUU_TRU",
+            "dataType": "Chuỗi",
+            "maxLength": 200,
+            "description": "Ghi số lưu trữ, là số hồ sơ bệnh án của người bệnh trong đợt điều trị."
+        },
+        {
+            "stt": 3,
+            "fieldName": "MA_YTE",
+            "dataType": "Chuỗi",
+            "maxLength": 200,
+            "description": "Ghi mã y tế, lấy theo mã số người bệnh quy định tại trường MA_BN tại Bảng XML 1 ban hành kèm theo quyết định này."
+        },
+        {
+            "stt": 4,
+            "fieldName": "MA_KHOA_RV",
+            "dataType": "Chuỗi",
+            "maxLength": 200,
+            "description": "Ghi mã khoa nơi tổng kết hồ sơ bệnh án của người bệnh."
+        },
+        {
+            "stt": 5,
+            "fieldName": "NGAY_VAO",
+            "dataType": "Chuỗi",
+            "maxLength": 12,
+            "description": "Ghi thời điểm người bệnh đến KBCB, gồm 12 ký tự, theo định dạng yyyymmddHHMM. Ví dụ: người bệnh đến KBCB lúc 15 giờ 20 phút ngày 31/03/2017 được hiển thị là: 201703311520."
+        },
+        {
+            "stt": 6,
+            "fieldName": "NGAY_RA",
+            "dataType": "Chuỗi",
+            "maxLength": 12,
+            "description": "Ghi thời điểm người bệnh kết thúc lần khám bệnh hoặc đợt điều trị tại cơ sở KBCB, gồm 12 ký tự theo định dạng yyyymmddHHMM. Lưu ý: Trường hợp điều trị ngoại trú thì ghi thời điểm kết thúc việc khám, chỉ định điều trị. (Bãi bỏ phần lưu ý chi tiết cũ tại Quyết định số 130/QĐ-BYT)."
+        },
+        {
+            "stt": 7,
+            "fieldName": "MA_DINH_CHI_THAI",
+            "dataType": "Số",
+            "maxLength": 1,
+            "description": "Ghi mã \"1\" là đình chỉ thai nghén, mã \"0\" là không đình chỉ thai nghén. Trường hợp đình chỉ thai nghén bắt buộc nhập thông tin vào trường thông tin tuổi thai (TUOI_THAI) và trường thông tin nguyên nhân đình chỉ thai nghén (NGUYENNHAN_DINHCHI)."
+        },
+        {
+            "stt": 8,
+            "fieldName": "NGUYENNHAN_DINHCHI",
+            "dataType": "Chuỗi",
+            "maxLength": "n",
+            "description": "Ghi nguyên nhân đình chỉ thai nghén. Lưu ý: Bắt buộc ghi trường thông tin này khi MA_DINH_CHI_THAI là mã \"1\"."
+        },
+        {
+            "stt": 9,
+            "fieldName": "THOIGIAN_DINHCHI",
+            "dataType": "Chuỗi",
+            "maxLength": 12,
+            "description": "Ghi thời điểm đình chỉ thai nghén, gồm 12 ký tự, theo định dạng yyyymmddHHMM. Lưu ý: Bắt buộc ghi trường thông tin này khi MA_DINH_CHI_THAI = 1."
+        },
+        {
+            "stt": 10,
+            "fieldName": "TUOI_THAI",
+            "dataType": "Số",
+            "maxLength": 2,
+            "description": "Ghi rõ tuần tuổi thai thực tế (kể cả trường hợp đình chỉ thai ngoài tử cung, thai trứng cần xác định rõ tuần tuổi thai), trong đó tuổi thai luôn luôn lớn hơn hoặc bằng 1 và nhỏ hơn hoặc bằng tuổi 42 tuần tuổi. Lưu ý: Bắt buộc ghi trường thông tin này khi MA_DINH_CHI_THAI = 1."
+        },
+        {
+            "stt": 11,
+            "fieldName": "CHAN_DOAN_RV",
+            "dataType": "Chuỗi",
+            "maxLength": 1500,
+            "description": "Ghi đầy đủ các chẩn đoán xác định bệnh chính, bệnh kèm theo trong quá trình điều trị, không bao gồm các chẩn đoán nghi ngờ, theo dõi, chẩn đoán phân biệt nhưng đã loại trừ trong quá trình điều trị. \nLưu ý: Đối với việc ghi chẩn đoán ra viện để phục vụ việc tạo lập giấy chứng nhận nghỉ việc hưởng bảo hiểm xã hội thì thực hiện theo hướng dẫn tại Thông tư số 18/2022/TT-BYT của Bộ Y tế, trong đó: \n- Nội dung chẩn đoán phải mô tả cụ thể về tình trạng sức khỏe hoặc ghi tên bệnh hoặc mã bệnh. \n- Trường hợp mắc bệnh cần chữa trị dài ngày thì ghi mã bệnh; trường hợp chưa có mã bệnh thì ghi đầy đủ tên bệnh. Việc ghi mã bệnh và tên bệnh thực hiện theo quy định tại Thông tư số 46/2016/TT-BYT ngày 30 tháng 12 năm 2016 của Bộ trưởng Bộ Y tế ban hành danh mục bệnh dài ngày; \n- Trường hợp điều trị dưỡng thai: Ghi rõ cụm từ \"dưỡng thai\"."
+        },
+        {
+            "stt": 12,
+            "fieldName": "PP_DIEUTRI",
+            "dataType": "Chuỗi",
+            "maxLength": "n",
+            "description": "Ghi phương pháp điều trị cho người bệnh như nội khoa, ngoại khoa, xạ trị, hoá trị hoặc xạ trị kết hợp nội khoa (xạ trị + nội khoa)."
+        },
+        {
+            "stt": 13,
+            "fieldName": "GHI_CHU",
+            "dataType": "Chuỗi",
+            "maxLength": 1500,
+            "description": "Trường thông tin này áp dụng đối với trường hợp cấp giấy ra viện để giải quyết chế độ BHXH. Ghi theo hướng dẫn tại mẫu Phụ lục 3 ban hành kèm theo Thông tư số 18/2022/TT-BYT của Bộ trưởng Bộ Y tế."
+        },
+        {
+            "stt": 14,
+            "fieldName": "MA_TTDV",
+            "dataType": "Chuỗi",
+            "maxLength": 255,
+            "description": "Ghi mã của người đứng đầu cơ sở KBCB hoặc người được người đứng đầu cơ sở KBCB ủy quyền được ký và đóng dấu của cơ sở KBCB đó (mã hoá theo số GPHN)."
+        },
+        {
+            "stt": 15,
+            "fieldName": "MA_BS",
+            "dataType": "Chuỗi",
+            "maxLength": 255,
+            "description": "Ghi mã của Trưởng khoa hoặc Trưởng phòng hoặc Phó trưởng khoa hoặc Phó trưởng phòng hoặc Bác sỹ hành nghề KBCB ký tên theo quy định của Thủ trưởng cơ sở KBCB (mã hoá theo số GPHN)."
+        },
+        {
+            "stt": 16,
+            "fieldName": "TEN_BS",
+            "dataType": "Chuỗi",
+            "maxLength": 255,
+            "description": "Ghi họ và tên của Trưởng khoa hoặc Phó trưởng khoa được uỷ quyền ký tên theo quy định của Thủ trưởng cơ sở KBCB."
+        },
+        {
+            "stt": 17,
+            "fieldName": "NGAY_CT",
+            "dataType": "Chuỗi",
+            "maxLength": 8,
+            "description": "Ghi ngày chứng từ (Giấy ra viện), theo định dạng yyyymmdd."
+        },
+        {
+            "stt": 18,
+            "fieldName": "MA_CHA",
+            "dataType": "Chuỗi",
+            "maxLength": 10,
+            "description": "Ghi mã số định danh y tế (mã số BHXH) của người cha đối với trường hợp người bệnh là trẻ em dưới 16 tuổi (Nếu có cha (bố)). Trường hợp không có cha hoặc người cha không có mã số BHXH thì để trống trường thông tin này."
+        },
+        {
+            "stt": 19,
+            "fieldName": "MA_ME",
+            "dataType": "Chuỗi",
+            "maxLength": 10,
+            "description": "Ghi mã số định danh y tế (mã số BHXH) của người mẹ đối với trường hợp người bệnh là trẻ em dưới 16 tuổi (Nếu có mẹ). Trường hợp không có mẹ hoặc người mẹ không có mã số BHXH thì để trống trường thông tin này."
+        },
+        {
+            "stt": 20,
+            "fieldName": "MA_THE_TAM",
+            "dataType": "Chuỗi",
+            "maxLength": 15,
+            "description": "Ghi mã thẻ BHYT tạm thời của trẻ em sinh ra hoặc của người hiến tạng nhưng chưa được cơ quan BHXH cấp thẻ BHYT. Cơ sở KBCB sử dụng chức năng \"Thông tuyến khám chữa bệnh\\Tra cứu thẻ tạm của trẻ em hoặc của người hiến tạng\" trên Cổng tiếp nhận dữ liệu Hệ thống thông tin giám định BHYT của BHXH Việt Nam để tra cứu mã thẻ BHYT tạm thời."
+        },
+        {
+            "stt": 21,
+            "fieldName": "HO_TEN_CHA",
+            "dataType": "Chuỗi",
+            "maxLength": 255,
+            "description": "Ghi họ và tên cha đối với trường hợp người bệnh là trẻ em dưới 16 tuổi (Nếu có cha (bố)) theo quy định tại Phụ lục 3 Thông tư số 56/2017/TT-BYT của Bộ Y tế. Trường hợp không có cha (bố) thì để trống trường thông tin này."
+        },
+        {
+            "stt": 22,
+            "fieldName": "HO_TEN_ME",
+            "dataType": "Chuỗi",
+            "maxLength": 255,
+            "description": "Ghi họ và tên mẹ đối với trường hợp người bệnh là trẻ em dưới 16 tuổi (Nếu có mẹ) theo quy định tại Phụ lục 3 Thông tư số 56/2017/TT-BYT của Bộ Y tế. Trường hợp không có mẹ thì để trống trường thông tin này."
+        },
+        {
+            "stt": 23,
+            "fieldName": "SO_NGAY_NGHI",
+            "dataType": "Số",
+            "maxLength": 3,
+            "description": "Ghi rõ số ngày mà người bệnh cần nghỉ để điều trị ngoại trú sau khi ra viện."
+        },
+        {
+            "stt": 24,
+            "fieldName": "NGOAITRU_TUNGAY",
+            "dataType": "Chuỗi",
+            "maxLength": 8,
+            "description": "Ghi ngày bắt đầu nghỉ ngoại trú sau khi điều trị của người được cấp giấy ra viện theo định dạng yyyymmdd."
+        },
+        {
+            "stt": 25,
+            "fieldName": "NGOAITRU_DENNGAY",
+            "dataType": "Chuỗi",
+            "maxLength": 8,
+            "description": "Ghi ngày kết thúc nghỉ ngoại trú sau khi điều trị của người được cấp giấy ra viện theo định dạng yyyymmdd."
+        },
+        {
+            "stt": 26,
+            "fieldName": "DU_PHONG",
+            "dataType": "Chuỗi",
+            "maxLength": "n",
+            "description": "Trường dữ liệu dự phòng khi cần thiết. Bổ sung thêm trường dự phòng."
+        }
+    ]
+}

@@ -3,7 +3,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Check_MATINH_CU_TRU = void 0;
 const xml1RuleBase_1 = require("./xml1RuleBase");
 class Check_MATINH_CU_TRU extends xml1RuleBase_1.Xml1RuleBase {
-    get key() { return 'MATINH_CU_TRU'; }
+    constructor() {
+        super({
+            ruleId: 'RULE_XML1_MATINH_CU_TRU_01',
+            xmlType: 'XML1',
+            field: 'MATINH_CU_TRU',
+            severity: 'ERROR',
+            description: 'Kiểm tra quy định cho trường MATINH_CU_TRU',
+            errorMessage: 'MATINH_CU_TRU không được rỗng',
+            reference: 'QĐ 3176/QĐ-BYT',
+        });
+    }
     check(model, context) {
         if (!model.MATINH_CU_TRU || !model.MATINH_CU_TRU.trim()) {
             return this.error(`${this.key} không được rỗng`);

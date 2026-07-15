@@ -4,8 +4,16 @@ exports.Check_NGAY_RA = void 0;
 const xml1RuleBase_1 = require("./xml1RuleBase");
 const date_helper_1 = require("../../../utils/date.helper");
 class Check_NGAY_RA extends xml1RuleBase_1.Xml1RuleBase {
-    get key() {
-        return 'NGAY_RA';
+    constructor() {
+        super({
+            ruleId: 'RULE_XML1_NGAY_RA_01',
+            xmlType: 'XML1',
+            field: 'NGAY_RA',
+            severity: 'ERROR',
+            description: 'Kiểm tra quy định cho trường NGAY_RA',
+            errorMessage: 'NGAY_RA không được để trống',
+            reference: 'QĐ 3176/QĐ-BYT',
+        });
     }
     check(model, context) {
         const raw = model.NGAY_RA_RAW;

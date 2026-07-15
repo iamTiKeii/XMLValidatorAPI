@@ -6,7 +6,19 @@ import { DictionaryCacheInstance } from '../../dictionary.cache';
 
 export class Check_GIOI_TINH extends Xml1RuleBase
     {
-        public get key(): string { return 'GIOI_TINH'; }
+  constructor() {
+    super({
+      ruleId: 'RULE_XML1_GIOI_TINH_01',
+      xmlType: 'XML1',
+      field: 'GIOI_TINH',
+      severity: 'ERROR',
+      description: 'Kiểm tra quy định cho trường GIOI_TINH',
+      errorMessage: 'GIOI_TINH không được để trống',
+      reference: 'QĐ 3176/QĐ-BYT',
+    });
+  }
+
+        
 
         public check(model: Xml1Model, context: HoSoContext): ErrorDetails | null
         {

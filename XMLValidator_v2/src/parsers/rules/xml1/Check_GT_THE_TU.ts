@@ -4,9 +4,19 @@ import { HoSoContext } from '../../../services/hoso-context';
 import { ErrorDetails } from '../../../dto/xml-check.dto';
 
 export class Check_GT_THE_TU extends Xml1RuleBase {
-  public get key(): string {
-    return 'GT_THE_TU';
+  constructor() {
+    super({
+      ruleId: 'RULE_XML1_GT_THE_TU_01',
+      xmlType: 'XML1',
+      field: 'GT_THE_TU',
+      severity: 'ERROR',
+      description: 'Kiểm tra quy định cho trường GT_THE_TU',
+      errorMessage: 'GT_THE_TU không được để trống',
+      reference: 'QĐ 3176/QĐ-BYT',
+    });
   }
+
+  
 
   public check(model: Xml1Model, context: HoSoContext): ErrorDetails | null {
     if (!model.GT_THE_TU) {

@@ -7,6 +7,9 @@ export declare class RequestModel {
 export declare class ErrorDetails {
     key: string;
     message: string;
+    ruleId?: string;
+    severity?: string;
+    reference?: string;
 }
 export declare class XMLError {
     type: string;

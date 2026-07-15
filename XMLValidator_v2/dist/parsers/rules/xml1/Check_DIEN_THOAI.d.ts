@@ -3,6 +3,6 @@ import { Xml1Model } from '../../../interfaces/xml-models.interface';
 import { HoSoContext } from '../../../services/hoso-context';
 import { ErrorDetails } from '../../../dto/xml-check.dto';
 export declare class Check_DIEN_THOAI extends Xml1RuleBase {
-    get key(): string;
+    constructor();
     check(model: Xml1Model, context: HoSoContext): ErrorDetails | null;
 }

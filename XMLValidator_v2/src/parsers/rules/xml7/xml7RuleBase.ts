@@ -1,20 +1,12 @@
 import { Xml7Model } from '../../../interfaces/xml-models.interface';
 import { HoSoContext } from '../../../services/hoso-context';
 import { ErrorDetails } from '../../../dto/xml-check.dto';
+import { BaseRule } from '../base.rule';
 
 export interface IXml7Rule {
   readonly key: string;
+  readonly isEnabled: boolean;
   check(model: Xml7Model, context: HoSoContext): ErrorDetails | null;
 }
 
-export abstract class Xml7RuleBase implements IXml7Rule {
-  public abstract get key(): string;
-  public abstract check(model: Xml7Model, context: HoSoContext): ErrorDetails | null;
-
-  protected error(message: string): ErrorDetails {
-    return {
-      key: this.key,
-      message,
-    };
-  }
-}
+export abstract class Xml7RuleBase extends BaseRule<Xml7Model> implements IXml7Rule {}

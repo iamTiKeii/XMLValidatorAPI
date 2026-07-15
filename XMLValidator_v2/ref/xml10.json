@@ -1,0 +1,99 @@
+{
+    "id": "xml10",
+    "name": "Bảng 10. Chỉ tiêu dữ liệu giấy chứng nhận nghỉ dưỡng thai",
+    "description": "Bảng dữ liệu chi tiết thông tin về giấy chứng nhận nghỉ dưỡng thai cấp cho người mang thai.",
+    "fileName": "xml10.json",
+    "fields": [
+        {
+            "stt": 1,
+            "fieldName": "MA_LK",
+            "dataType": "Chuỗi",
+            "maxLength": 100,
+            "description": "Là mã đợt điều trị duy nhất (dùng để liên kết giữa Bảng chỉ tiêu tổng hợp khám bệnh, chữa bệnh (bảng XML 1) và các bảng còn lại ban hành kèm theo Quyết định này trong một lần khám bệnh, chữa bệnh (PRIMARY KEY))."
+        },
+        {
+            "stt": 2,
+            "fieldName": "SO_SERI",
+            "dataType": "Chuỗi",
+            "maxLength": 200,
+            "description": "Ghi số Seri chứng từ (Giấy chứng nhận nghỉ dưỡng thai) do cơ sở KBCB quy định theo mẫu tại Phụ lục 6 ban hành kèm theo Thông tư 56/2017/TT-BYT của Bộ trưởng Bộ Y tế."
+        },
+        {
+            "stt": 3,
+            "fieldName": "SO_CT",
+            "dataType": "Chuỗi",
+            "maxLength": 200,
+            "description": "Ghi số chứng từ phục vụ việc quản lý nội bộ của cơ sở KBCB quy định theo mẫu tại Phụ lục 6 ban hành kèm theo Thông tư 56/2017/TT-BYT của Bộ trưởng Bộ Y tế."
+        },
+        {
+            "stt": 4,
+            "fieldName": "SO_NGAY",
+            "dataType": "Số",
+            "maxLength": 3,
+            "description": "Ghi số ngày nghỉ căn cứ vào tình trạng sức khỏe của người bệnh (SO_NGAY = DEN_NGAY - TU_NGAY)."
+        },
+        {
+            "stt": 5,
+            "fieldName": "DON_VI",
+            "dataType": "Chuỗi",
+            "maxLength": 1024,
+            "description": "Ghi tên đơn vị của người hưởng. Lưu ý: Ghi rõ đơn vị nơi người bệnh làm việc và đóng bảo hiểm xã hội theo thông tin do người đến khám bệnh cung cấp; Thực hiện việc ghi giấy chứng nhận nghỉ dưỡng thai theo hướng dẫn tại Phụ lục 6 ban hành kèm theo Thông tư 56/2017/TT-BYT của Bộ trưởng Bộ Y tế."
+        },
+        {
+            "stt": 6,
+            "fieldName": "CHAN_DOAN_RV",
+            "dataType": "Chuỗi",
+            "maxLength": "n",
+            "description": "Ghi cụm từ \"dưỡng thai\"."
+        },
+        {
+            "stt": 7,
+            "fieldName": "TU_NGAY",
+            "dataType": "Chuỗi",
+            "maxLength": 8,
+            "description": "Ghi ngày bắt đầu nghỉ dưỡng thai, theo định dạng yyyymmdd. Lưu ý: Việc ghi ngày bắt đầu được nghỉ phải trùng với ngày người bệnh đến khám. Ví dụ: Ngày khám là ngày 13 tháng 7 năm 2018 và phải nghỉ 30 ngày thì tại phần số ngày nghỉ để điều trị bệnh ghi là 30 ngày và ghi rõ là từ ngày 13 tháng 7 năm 2018 đến ngày 11 tháng 8 năm 2018)."
+        },
+        {
+            "stt": 8,
+            "fieldName": "DEN_NGAY",
+            "dataType": "Chuỗi",
+            "maxLength": 8,
+            "description": "Ghi ngày kết thúc nghỉ dưỡng thai, theo định dạng yyyymmdd."
+        },
+        {
+            "stt": 9,
+            "fieldName": "MA_TTDV",
+            "dataType": "Chuỗi",
+            "maxLength": 255,
+            "description": "Ghi mã của người đứng đầu cơ sở KBCB hoặc người được người đứng đầu cơ sở KBCB ủy quyền được ký để cấp giấy chứng nhận nghỉ dưỡng thai (mã hoá theo số GPHN)."
+        },
+        {
+            "stt": 10,
+            "fieldName": "TEN_BS",
+            "dataType": "Chuỗi",
+            "maxLength": 255,
+            "description": "Ghi họ và tên của Trưởng khoa hoặc Phó trưởng khoa hoặc Bác sỹ hành nghề KBCB được uỷ quyền ký tên theo quy định của Thủ trưởng cơ sở KBCB."
+        },
+        {
+            "stt": 11,
+            "fieldName": "MA_BS",
+            "dataType": "Chuỗi",
+            "maxLength": 255,
+            "description": "Ghi mã của Trưởng khoa hoặc Trưởng phòng hoặc Phó trưởng khoa hoặc Phó trưởng phòng hoặc Bác sỹ hành nghề KBCB ký tên theo quy định của Thủ trưởng cơ sở KBCB (mã hoá theo số GPHN)."
+        },
+        {
+            "stt": 12,
+            "fieldName": "NGAY_CT",
+            "dataType": "Chuỗi",
+            "maxLength": 8,
+            "description": "Ghi ngày cấp chứng từ (Giấy chứng nhận nghỉ dưỡng thai), theo định dạng yyyymmdd."
+        },
+        {
+            "stt": 13,
+            "fieldName": "DU_PHONG",
+            "dataType": "Chuỗi",
+            "maxLength": "n",
+            "description": "Trường dữ liệu dự phòng khi cần thiết. Bổ sung thêm trường dự phòng."
+        }
+    ]
+}

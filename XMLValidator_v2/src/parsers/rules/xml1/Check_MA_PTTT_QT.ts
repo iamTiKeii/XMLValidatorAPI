@@ -6,7 +6,19 @@ import { DictionaryCacheInstance } from '../../dictionary.cache';
 
 export class Check_MA_PTTT_QT extends Xml1RuleBase
     {
-        public get key(): string { return 'MA_PTTT_QT'; }
+  constructor() {
+    super({
+      ruleId: 'RULE_XML1_MA_PTTT_QT_01',
+      xmlType: 'XML1',
+      field: 'MA_PTTT_QT',
+      severity: 'ERROR',
+      description: 'Kiểm tra quy định cho trường MA_PTTT_QT',
+      errorMessage: 'MA_PTTT_QT quá kích thước tối đa (125)',
+      reference: 'QĐ 3176/QĐ-BYT',
+    });
+  }
+
+        
 
         public check(model: Xml1Model, context: HoSoContext): ErrorDetails | null
         {

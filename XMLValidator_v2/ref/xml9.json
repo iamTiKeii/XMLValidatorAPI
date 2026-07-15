@@ -1,0 +1,253 @@
+{
+    "id": "xml9",
+    "name": "Bảng 9. Chỉ tiêu dữ liệu giấy chứng sinh",
+    "description": "Bảng dữ liệu ghi nhận thông tin phục vụ cấp Giấy chứng sinh.",
+    "fileName": "xml9.json",
+    "fields": [
+        {
+            "stt": 1,
+            "fieldName": "MA_LK",
+            "dataType": "Chuỗi",
+            "maxLength": 100,
+            "description": "Là mã đợt điều trị duy nhất (dùng để liên kết giữa Bảng chỉ tiêu tổng hợp khám bệnh, chữa bệnh (bảng XML 1) và các bảng còn lại ban hành kèm theo Quyết định này trong một lần khám bệnh, chữa bệnh (PRIMARY KEY))."
+        },
+        {
+            "stt": 2,
+            "fieldName": "MA_BHXH_NND",
+            "dataType": "Chuỗi",
+            "maxLength": 10,
+            "description": "Ghi mã số BHXH người nuôi dưỡng (nếu có). (Đổi kiểu dữ liệu thành chuỗi)."
+        },
+        {
+            "stt": 3,
+            "fieldName": "MA_THE_NND",
+            "dataType": "Chuỗi",
+            "maxLength": 15,
+            "description": "Ghi mã thẻ BHYT người nuôi dưỡng (nếu có)."
+        },
+        {
+            "stt": 4,
+            "fieldName": "HO_TEN_NND",
+            "dataType": "Chuỗi",
+            "maxLength": 255,
+            "description": "Ghi họ và tên của mẹ hoặc của người nuôi dưỡng."
+        },
+        {
+            "stt": 5,
+            "fieldName": "NGAYSINH_NND",
+            "dataType": "Chuỗi",
+            "maxLength": 8,
+            "description": "Ghi ngày sinh của mẹ hoặc người nuôi dưỡng, định dạng yyyymmdd."
+        },
+        {
+            "stt": 6,
+            "fieldName": "MA_DANTOC_NND",
+            "dataType": "Chuỗi",
+            "maxLength": 2,
+            "description": "Ghi mã dân tộc của mẹ hoặc người nuôi dưỡng theo Danh mục các dân tộc Việt Nam ban hành kèm theo Quyết định số 121-TCTK/PPCĐ ngày 02 tháng 3 năm 1979 của Tổng cục trưởng Tổng cục Thống kê để điền chi tiết). Tra cứu mã dân tộc tại đường link: http://tongdieutradanso.vn/danh-muc-cac-dan-toc-viet-nam.html. (Đổi kiểu dữ liệu thành chuỗi)."
+        },
+        {
+            "stt": 7,
+            "fieldName": "SO_CCCD_NND",
+            "dataType": "Chuỗi",
+            "maxLength": "n",
+            "description": "Ghi số căn cước công dân hoặc số định danh cá nhân trên thẻ căn cước của mẹ hoặc người nuôi dưỡng. Trường hợp người nuôi dưỡng là người nước ngoài thì ghi số hộ chiếu. (Đổi kiểu dữ liệu thành chuỗi; Thay đổi kích thước tối đa n ký tự)."
+        },
+        {
+            "stt": 8,
+            "fieldName": "NGAYCAP_CCCD_NND",
+            "dataType": "Chuỗi",
+            "maxLength": 8,
+            "description": "Ghi ngày cấp chứng minh nhân dân hoặc thẻ căn cước công dân hoặc hộ chiếu của mẹ hoặc người nuôi dưỡng, định dạng yyyymmdd."
+        },
+        {
+            "stt": 9,
+            "fieldName": "NOICAP_CCCD_NND",
+            "dataType": "Chuỗi",
+            "maxLength": 1024,
+            "description": "Ghi nơi cấp chứng minh nhân dân hoặc thẻ căn cước công dân hoặc hộ chiếu của mẹ hoặc người nuôi dưỡng."
+        },
+        {
+            "stt": 10,
+            "fieldName": "NOI_CU_TRU_NND",
+            "dataType": "Chuỗi",
+            "maxLength": 1024,
+            "description": "Ghi địa chỉ nơi cư trú hiện tại của mẹ hoặc người nuôi dưỡng. Lưu ý: \n- Nếu là người Việt Nam: Ghi địa chỉ nơi cư trú theo địa danh 4 cấp: Thôn/bản, xã/phường/thị trấn, quận/huyện/thành phố thuộc tỉnh, tỉnh/thành phố trực thuộc trung ương; \n- Trường hợp người nước ngoài có địa chỉ nơi cư trú tại Việt Nam thì ghi giống như người Việt Nam; \n- Trường hợp người nước ngoài không có địa chỉ nơi cư trú tại Việt Nam nhưng sinh đẻ tại cơ sở y tế của Việt Nam thì ghi tên tỉnh/thành phố/bang và quốc gia nơi họ đang sinh sống."
+        },
+        {
+            "stt": 11,
+            "fieldName": "MA_QUOCTICH",
+            "dataType": "Chuỗi",
+            "maxLength": 3,
+            "description": "Ghi mã quốc tịch của mẹ hoặc người nuôi dưỡng theo quy định tại Phụ lục 2 Thông tư số 07/2016/TT-BCA ngày 01 tháng 2 năm 2016 của Bộ trưởng Bộ Công an. (Đổi kiểu dữ liệu thành chuỗi)."
+        },
+        {
+            "stt": 12,
+            "fieldName": "MATINH_CU_TRU",
+            "dataType": "Chuỗi",
+            "maxLength": 3,
+            "description": "Mã đơn vị hành chính cấp tỉnh nơi cư trú hiện tại của mẹ hoặc người nuôi dưỡng (thường trú hoặc tạm trú). Ghi theo 02 ký tự cuối của mã đơn vị hành chính của tỉnh, thành phố trực thuộc Trung ương nơi người bệnh cư trú (Quy định tại Phụ lục 1 Thông tư số 07/2016/TT-BCA ngày 01/02/2016 của Bộ trưởng Bộ Công an)."
+        },
+        {
+            "stt": 13,
+            "fieldName": "MAHUYEN_CU_TRU",
+            "dataType": "Chuỗi",
+            "maxLength": 3,
+            "description": "Mã đơn vị hành chính cấp huyện nơi người bệnh đang cư trú (thường trú hoặc tạm trú). Ghi mã đơn vị hành chính cấp huyện theo Quyết định số 124/2004/QĐ-TTg ngày 08/7/2004 của Thủ tướng Chính phủ ban hành danh mục mã đơn vị hành chính, được cập nhật trên Cổng tiếp nhận dữ liệu thuộc Hệ thống thông tin giám định BHYT của BHXH Việt Nam."
+        },
+        {
+            "stt": 14,
+            "fieldName": "MAXA_CU_TRU",
+            "dataType": "Chuỗi",
+            "maxLength": 5,
+            "description": "Mã đơn vị hành chính cấp xã nơi người bệnh đang cư trú (thường trú hoặc tạm trú). Ghi mã đơn vị hành chính cấp xã theo Quyết định số 124/2004/QĐ-TTg ngày 08/7/2004 của Thủ tướng Chính phủ ban hành danh mục mã đơn vị hành chính, được cập nhật trên Cổng tiếp nhận dữ liệu thuộc Hệ thống thông tin giám định BHYT của BHXH Việt Nam. Trường hợp xã chưa có mã đơn vị hành chính thì để trống."
+        },
+        {
+            "stt": 15,
+            "fieldName": "HO_TEN_CHA",
+            "dataType": "Chuỗi",
+            "maxLength": 255,
+            "description": "Ghi họ và tên cha (bố) của trẻ được cấp giấy chứng sinh."
+        },
+        {
+            "stt": 16,
+            "fieldName": "MA_THE_TAM",
+            "dataType": "Chuỗi",
+            "maxLength": 15,
+            "description": "Ghi mã thẻ BHYT tạm thời của người con. Cơ sở KBCB sử dụng chức năng “Thông tuyến khám chữa bệnh\\Tra cứu thẻ tạm của trẻ em hoặc của người hiến tạng” trên Cổng tiếp nhận dữ liệu Hệ thống thông tin giám định BHYT của BHXH Việt Nam để tra cứu mã thẻ BHYT tạm thời."
+        },
+        {
+            "stt": 17,
+            "fieldName": "HO_TEN_CON",
+            "dataType": "Chuỗi",
+            "maxLength": 255,
+            "description": "Ghi họ và tên dự định đặt cho con (nếu có)."
+        },
+        {
+            "stt": 18,
+            "fieldName": "GIOI_TINH_CON",
+            "dataType": "Số",
+            "maxLength": 1,
+            "description": "Ghi giới tính con, trong đó: \n- Mã \"1\": Nam; \n- Mã \"2\": Nữ; \n- Mã \"3\": Chưa xác định."
+        },
+        {
+            "stt": 19,
+            "fieldName": "SO_CON",
+            "dataType": "Số",
+            "maxLength": 2,
+            "description": "Ghi số lượng con trong lần sinh này."
+        },
+        {
+            "stt": 20,
+            "fieldName": "LAN_SINH",
+            "dataType": "Số",
+            "maxLength": 2,
+            "description": "Ghi số lần sinh con (tính cả lần sinh này)."
+        },
+        {
+            "stt": 21,
+            "fieldName": "SO_CON_SONG",
+            "dataType": "Số",
+            "maxLength": 2,
+            "description": "Ghi số con hiện đang sống (tính cả trẻ sinh ra lần này)."
+        },
+        {
+            "stt": 22,
+            "fieldName": "CAN_NANG_CON",
+            "dataType": "Số",
+            "maxLength": 10,
+            "description": "Ghi số cân nặng của con, tính theo gram (ký hiệu là: g) (ví dụ: 3.6 kg = 3600g)."
+        },
+        {
+            "stt": 23,
+            "fieldName": "NGAY_SINH_CON",
+            "dataType": "Chuỗi",
+            "maxLength": 12,
+            "description": "Ghi ngày sinh con theo định dạng yyyymmddHHMM."
+        },
+        {
+            "stt": 24,
+            "fieldName": "NOI_SINH_CON",
+            "dataType": "Chuỗi",
+            "maxLength": 1024,
+            "description": "Ghi địa chỉ nơi con được sinh ra. Lưu ý: \n- Trường hợp trẻ em được sinh ra tại bệnh viện, thì ghi tên bệnh viện và địa danh hành chính nơi trẻ em được sinh ra. (Ví dụ: bệnh viện đa khoa tỉnh Nam Định); \n- Trường hợp trẻ em được sinh tại cơ sở y tế khác thì ghi tên cơ sở y tế và địa danh hành chính 3 cấp nơi trẻ em sinh ra (Ví dụ: Trạm y tế xã Liên Bảo, huyện Vụ Bản, tỉnh Nam Định); \n- Trường hợp trẻ em được sinh tại nhà thì ghi địa chỉ nhà và địa danh 3 cấp: cấp xã/phường, quận/huyện, tỉnh/thành phố trực thuộc trung ương (Ví dụ: sinh tại nhà ở xã Liên Bảo, huyện Vụ Bản, tỉnh Nam Định); \n- Trường hợp trẻ em được sinh ra tại nơi khác, ngoài cơ sở KBCB thì cũng ghi nơi trẻ em được sinh ra và địa danh 3 cấp hành chính. (Ví dụ: đẻ trên đường đi, tại xã Liên Bảo, huyện Vụ Bản, tỉnh Nam Định). \n- Trường hợp trẻ em bị bỏ rơi thì ghi rõ trẻ bị bỏ rơi và nơi tìm thấy trẻ, với địa danh 3 cấp hành chính. (Ví dụ: trẻ bị bỏ rơi tại xã Liên Bảo, huyện Vụ Bản, tỉnh Nam Định)."
+        },
+        {
+            "stt": 25,
+            "fieldName": "TINH_TRANG_CON",
+            "dataType": "Chuỗi",
+            "maxLength": "n",
+            "description": "Ghi rõ tình trạng của trẻ tại thời điểm làm Giấy chứng sinh: khỏe mạnh, yếu, dị tật hoặc các biểu hiện liên quan đến sức khỏe khác (nếu có). Lưu ý: Nếu trẻ bị dị dạng, dị tật, ghi cụ thể loại dị dạng, dị tật, kể cả khuyết tật về hình thái của trẻ nếu phát hiện được."
+        },
+        {
+            "stt": 26,
+            "fieldName": "SINHCON_PHAUTHUAT",
+            "dataType": "Số",
+            "maxLength": 1,
+            "description": "Ghi: \n- Mã \"1\": sinh con phải phẫu thuật; \n- Mã \"0\": sinh con không phải phẫu thuật."
+        },
+        {
+            "stt": 27,
+            "fieldName": "SINHCON_DUOI32TUAN",
+            "dataType": "Số",
+            "maxLength": 1,
+            "description": "Ghi: \n- Mã \"1\": sinh con dưới 32 tuần tuổi; \n- Mã \"0\" là không sinh con dưới 32 tuần tuổi."
+        },
+        {
+            "stt": 28,
+            "fieldName": "GHI_CHU",
+            "dataType": "Chuỗi",
+            "maxLength": "n",
+            "description": "Trường hợp sinh con phải phẫu thuật hoặc sinh con dưới 32 tuần tuổi hoặc vừa sinh con dưới 32 tuần tuổi lại vừa phải phẫu thuật thì trong phần ghi chú phải ghi rõ một trong các nội dung sau \"Sinh con phải phẫu thuật\" hoặc \"Sinh con dưới 32 tuần tuổi\" hoặc \"Phẫu thuật, sinh con dưới 32 tuần tuổi\"."
+        },
+        {
+            "stt": 29,
+            "fieldName": "NGUOI_DO_DE",
+            "dataType": "Chuỗi",
+            "maxLength": 255,
+            "description": "Ghi họ và tên người đỡ đẻ."
+        },
+        {
+            "stt": 30,
+            "fieldName": "NGUOI_GHI_PHIEU",
+            "dataType": "Chuỗi",
+            "maxLength": 255,
+            "description": "Ghi họ và tên người ghi phiếu."
+        },
+        {
+            "stt": 31,
+            "fieldName": "NGAY_CT",
+            "dataType": "Chuỗi",
+            "maxLength": 8,
+            "description": "Ghi ngày cấp chứng từ (Giấy chứng sinh), định dạng yyyymmdd, ghi theo ngày dương lịch."
+        },
+        {
+            "stt": 32,
+            "fieldName": "SO",
+            "dataType": "Chuỗi",
+            "maxLength": 200,
+            "description": "Ghi số của chứng từ (Giấy chứng sinh) tại cơ sở KBCB."
+        },
+        {
+            "stt": 33,
+            "fieldName": "QUYEN_SO",
+            "dataType": "Chuỗi",
+            "maxLength": 200,
+            "description": "Ghi quyển số của chứng từ (Giấy chứng sinh) tại cơ sở KBCB."
+        },
+        {
+            "stt": 34,
+            "fieldName": "MA_TTDV",
+            "dataType": "Chuỗi",
+            "maxLength": 255,
+            "description": "Ghi mã của người đứng đầu cơ sở KBCB hoặc người được người đứng đầu cơ sở KBCB ủy quyền được ký để cấp giấy chứng sinh (mã hoá theo số GPHN). (Đổi kiểu dữ liệu thành chuỗi và tăng kích thước tối đa 255 ký tự)."
+        },
+        {
+            "stt": 35,
+            "fieldName": "DU_PHONG",
+            "dataType": "Chuỗi",
+            "maxLength": "n",
+            "description": "Trường dữ liệu dự phòng khi cần thiết. Bổ sung thêm trường dự phòng."
+        }
+    ]
+}

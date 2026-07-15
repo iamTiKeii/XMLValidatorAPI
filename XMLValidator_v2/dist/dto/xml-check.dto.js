@@ -30,6 +30,9 @@ __decorate([
 class ErrorDetails {
     key;
     message;
+    ruleId;
+    severity;
+    reference;
 }
 exports.ErrorDetails = ErrorDetails;
 __decorate([
@@ -40,6 +43,18 @@ __decorate([
     (0, swagger_1.ApiProperty)({ example: 'MA_LK không được rỗng', description: 'Chi tiết thông báo lỗi' }),
     __metadata("design:type", String)
 ], ErrorDetails.prototype, "message", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)({ example: 'RULE_XML1_MA_LK_01', required: false, description: 'ID của rule kiểm tra' }),
+    __metadata("design:type", String)
+], ErrorDetails.prototype, "ruleId", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)({ example: 'ERROR', required: false, description: 'Mức độ nghiêm trọng (ERROR/WARNING)' }),
+    __metadata("design:type", String)
+], ErrorDetails.prototype, "severity", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)({ example: 'QĐ 3176/QĐ-BYT - Bảng 1, STT 1', required: false, description: 'Điều khoản tham chiếu QĐ3176' }),
+    __metadata("design:type", String)
+], ErrorDetails.prototype, "reference", void 0);
 class XMLError {
     type;
     details;

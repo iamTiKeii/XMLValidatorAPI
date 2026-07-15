@@ -63,9 +63,10 @@ export interface Xml1Model {
   MA_CSKCB?: string;
   MA_KHUVUC?: string;
   CAN_NANG?: number;
-  CAN_NANG_CON?: number;
-  NAM_NAM_LIEN_TUC?: number;
-  NGAY_TAI_KHAM?: Date;
+  CAN_NANG_CON?: string;
+  NAM_NAM_LIEN_TUC?: string;
+  NGAY_TAI_KHAM?: string;
+  NGAY_MIEN_CCT_RAW?: string;
   MA_HSBA?: string;
   MA_TTDV?: string;
   DU_PHONG?: string;
